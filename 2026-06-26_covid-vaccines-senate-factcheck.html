@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>US Senate Hearing on COVID Vaccines: Claims vs. Science | TRHI</title>
+  <meta name="description" content="Senator Ron Johnson questioned oncologist Dr. Julie Gralow on COVID vaccines. Dr. John Campbell commented. We fact-check every major claim with current scientific evidence.">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #f4f6f8; color: #1a1a2e; line-height: 1.7; }
+
+    .hero {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
+      color: #fff;
+      padding: 64px 24px 56px;
+      text-align: center;
+    }
+    .hero .tag {
+      display: inline-block;
+      background: #e94560;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(1.6rem, 4vw, 2.6rem);
+      font-weight: 800;
+      max-width: 820px;
+      margin: 0 auto 18px;
+      line-height: 1.25;
+    }
+    .hero .subtitle {
+      font-size: 1.05rem;
+      opacity: 0.82;
+      max-width: 660px;
+      margin: 0 auto 28px;
+    }
+    .hero .meta {
+      font-size: 0.85rem;
+      opacity: 0.6;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .article-wrapper {
+      max-width: 820px;
+      margin: -28px auto 0;
+      padding: 0 16px 64px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.08);
+      padding: 48px 52px;
+    }
+    @media (max-width: 600px) { .card { padding: 28px 20px; } }
+
+    h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #0f3460;
+      margin: 36px 0 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #e8edf3;
+    }
+    h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin: 22px 0 8px;
+    }
+    p { margin-bottom: 16px; color: #2d3748; font-size: 1rem; }
+
+    .claim-block {
+      margin: 28px 0;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+    }
+    .claim-header {
+      background: #1a1a2e;
+      color: #fff;
+      padding: 12px 20px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .claim-quote {
+      background: #f7f9fc;
+      padding: 16px 20px;
+      font-style: italic;
+      color: #4a5568;
+      border-left: 4px solid #e94560;
+      font-size: 0.95rem;
+    }
+    .fact-check {
+      padding: 16px 20px;
+      background: #fff;
+    }
+    .verdict {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+    .verdict.true { background: #c6f6d5; color: #22543d; }
+    .verdict.partial { background: #fef3c7; color: #92400e; }
+    .verdict.contested { background: #fed7d7; color: #742a2a; }
+    .verdict.unestablished { background: #e9d8fd; color: #44337a; }
+
+    .highlight-box {
+      background: linear-gradient(135deg, #ebf8ff, #e6fffa);
+      border-left: 4px solid #0bc5ea;
+      border-radius: 0 10px 10px 0;
+      padding: 18px 22px;
+      margin: 24px 0;
+    }
+    .highlight-box strong { color: #0f3460; }
+
+    .warning-box {
+      background: #fff5f5;
+      border: 1.5px solid #fc8181;
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin: 24px 0;
+    }
+    .warning-box .label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #c53030;
+      margin-bottom: 6px;
+    }
+
+    .context-box {
+      background: #f0fff4;
+      border-left: 4px solid #38a169;
+      border-radius: 0 10px 10px 0;
+      padding: 18px 22px;
+      margin: 24px 0;
+    }
+    .context-box strong { color: #22543d; }
+
+    .sources {
+      background: #f7fafc;
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-top: 32px;
+    }
+    .sources h3 { font-size: 0.9rem; margin-top: 0; }
+    .sources ul { padding-left: 18px; }
+    .sources li { font-size: 0.85rem; color: #4a5568; margin-bottom: 6px; }
+    .sources a { color: #0f3460; text-decoration: none; }
+    .sources a:hover { text-decoration: underline; }
+
+    .disclaimer {
+      background: linear-gradient(135deg, #1a1a2e, #0f3460);
+      color: #e2e8f0;
+      border-radius: 14px;
+      padding: 28px 32px;
+      margin-top: 36px;
+    }
+    .disclaimer .disclaimer-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #fc8181;
+      margin-bottom: 14px;
+    }
+    .disclaimer p { color: #cbd5e0; font-size: 0.88rem; margin-bottom: 10px; }
+    .disclaimer p:last-child { margin-bottom: 0; }
+    .disclaimer strong { color: #fff; }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 10px;
+      margin: 28px 0;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: 0;
+    }
+
+    .person-card {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      background: #f7f9fc;
+      border-radius: 10px;
+      padding: 16px;
+      margin: 14px 0;
+    }
+    .person-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .person-icon.blue { background: #bee3f8; }
+    .person-icon.red { background: #fed7d7; }
+    .person-card-info { flex: 1; }
+    .person-card-info strong { display: block; font-size: 0.95rem; color: #1a1a2e; }
+    .person-card-info span { font-size: 0.82rem; color: #718096; }
+
+    .toc {
+      background: #f7f9fc;
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin: 24px 0;
+    }
+    .toc h3 { font-size: 0.85rem; color: #718096; margin-top: 0; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
+    .toc ol { padding-left: 20px; }
+    .toc li { font-size: 0.9rem; margin-bottom: 5px; }
+    .toc a { color: #0f3460; text-decoration: none; }
+    .toc a:hover { text-decoration: underline; }
+
+    hr { border: none; border-top: 1px solid #e2e8f0; margin: 32px 0; }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <div class="tag">Investigative &amp; Fact-Check</div>
+    <h1>US Senate Hearing on COVID Vaccines: Claims, Responses, and What the Science Actually Says</h1>
+    <p class="subtitle">Senator Ron Johnson questioned oncologist Dr. Julie Gralow on mRNA technology, lipid nanoparticles, and cancer. Dr. John Campbell commented — we fact-check every major claim.</p>
+    <div class="meta">
+      <span>📅 June 26, 2026</span>
+      <span>⏱ 10 min read</span>
+      <span>👤 TRHI Editorial</span>
+      <span>🔍 Investigative</span>
+    </div>
+  </div>
+
+  <div class="article-wrapper">
+    <div class="card">
+
+      <p><strong>A recent YouTube video</strong> by British health educator Dr. John Campbell analyzes a clip from a US Senate hearing in which Senator Ron Johnson questions oncologist Dr. Julie Gralow (Chief Medical Officer, American Society of Clinical Oncology) about COVID-19 vaccines. The video, titled "Vaccine lies," has accumulated hundreds of thousands of views.</p>
+
+      <p>This article transcribes the key claims from the video, presents Campbell's commentary, and contextualizes each statement against the current scientific evidence. The goal is to give readers a fact-based foundation for forming their own conclusions.</p>
+
+      <div class="toc">
+        <h3>Contents</h3>
+        <ol>
+          <li><a href="#people">Who is speaking? The participants</a></li>
+          <li><a href="#claim1">Claim 1: Pseudouridine – the modified mRNA</a></li>
+          <li><a href="#claim2">Claim 2: Systemic distribution of lipid nanoparticles</a></li>
+          <li><a href="#claim3">Claim 3: DNA contamination in vaccine vials</a></li>
+          <li><a href="#claim4">Claim 4: COVID vaccines and cancer</a></li>
+          <li><a href="#assessment">Overall assessment</a></li>
+          <li><a href="#disclaimer">⚠ Disclaimer</a></li>
+        </ol>
+      </div>
+
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/cjy-73Fo5J0" allowfullscreen title="Vaccine lies – Dr. John Campbell"></iframe>
+      </div>
+
+      <h2 id="people">1. Who is speaking? The participants</h2>
+
+      <div class="person-card">
+        <div class="person-icon blue">🎓</div>
+        <div class="person-card-info">
+          <strong>Dr. Julie Gralow</strong>
+          <span>Chief Medical Officer and Executive VP of ASCO (American Society of Clinical Oncology, ~50,000 members). Professor Emerita at the University of Washington School of Medicine, medical oncology and global health. Fellow of the American College of Physicians.</span>
+        </div>
+      </div>
+
+      <div class="person-card">
+        <div class="person-icon red">🏛</div>
+        <div class="person-card-info">
+          <strong>Senator Ron Johnson (R-Wisconsin)</strong>
+          <span>US Senator, former CEO of a plastics manufacturer, no medical or scientific background. Known for skeptical positions on COVID-19 vaccines and public health measures.</span>
+        </div>
+      </div>
+
+      <div class="person-card">
+        <div class="person-icon blue">📹</div>
+        <div class="person-card-info">
+          <strong>Dr. John Campbell</strong>
+          <span>British health educator (PhD in nursing studies), not a practicing physician. Runs a YouTube channel with over 3 million subscribers. Comments on the hearing in this video.</span>
+        </div>
+      </div>
+
+      <div class="warning-box">
+        <div class="label">⚠ Important framing note</div>
+        <p>Throughout the video, Campbell repeatedly frames Senator Johnson as more medically competent than Dr. Gralow. This framing is misleading: Senator Johnson has no medical or scientific training. Dr. Gralow leads the world's largest oncology professional society. Competence cannot be measured by how closely someone adheres to a particular narrative.</p>
+      </div>
+
+      <h2 id="claim1">2. Claim 1: Pseudouridine – the modified mRNA</h2>
+
+      <div class="claim-block">
+        <div class="claim-header">What was claimed</div>
+        <div class="claim-quote">
+          Senator Johnson: "That's not true mRNA – that's modified. It's modified pseudouridine. You don't realize it doesn't degrade like natural mRNA?"<br><br>
+          Campbell: "She seems to think the mRNA in the vaccines is the same as natural mRNA, which degrades relatively quickly. She doesn't seem to realise it has pseudouridine in it – this greatly increases the length of time the mRNA lives in the body."
+        </div>
+        <div class="fact-check">
+          <span class="verdict true">✓ Factually correct – but incomplete</span>
+          <p><strong>What is true:</strong> mRNA vaccines (Pfizer-BioNTech, Moderna) do use N1-methyl-pseudouridine (m1Ψ) in place of uridine. This modification increases mRNA stability and reduces inflammatory reactions. This is not hidden information — the technology has been published in peer-reviewed literature since 2005 (Karikó & Weissman, Nobel Prize 2023) and is fully publicly documented.</p>
+          <p><strong>What is missing:</strong> "Increased stability" does not mean "permanent." The mRNA itself degrades within days to a few weeks according to independent studies. Senator Johnson's claim that mRNA "stays in the body for up to 2 years" refers to spike protein fragments detected in lymph nodes in a single small study (Röltgen et al., 2022) — not mRNA itself. This distinction matters.</p>
+        </div>
+      </div>
+
+      <h2 id="claim2">3. Claim 2: Systemic distribution of lipid nanoparticles</h2>
+
+      <div class="claim-block">
+        <div class="claim-header">What was claimed</div>
+        <div class="claim-quote">
+          Senator Johnson: "There literally were biodistribution studies in rats showing the lipid nanoparticle would biodistribute all over the body — accumulate in ovaries, adrenal glands. They lied to us when they said it would stay in the arm."<br><br>
+          Campbell: "We know the lipid nanoparticles are systemically distributed — to the toes, ears, nose, eyeball. Everywhere around the body, the brain, the myocardium, the ovaries and testes."
+        </div>
+        <div class="fact-check">
+          <span class="verdict partial">◑ Partially correct – significantly exaggerated</span>
+          <p><strong>What is true:</strong> Biodistribution studies (including data submitted by Pfizer to Japanese regulators) do show that lipid nanoparticles don't remain exclusively at the injection site. Small quantities were detected in various tissues, most prominently in the liver. This was known and was part of the regulatory safety evaluation.</p>
+          <p><strong>What is missing:</strong> The assertion that nanoparticles go "everywhere — to toes, ears, eyeballs" is not supported by the actual study data. Concentrations in tissues other than the injection site and lymph nodes were minimal in available studies. "Systemically distributed" in a clinically meaningful sense is not equivalent to "present throughout the body in harmful quantities."</p>
+          <p><strong>On "they lied to us":</strong> Early public communication about where the vaccine stays was overly simplified — a legitimate criticism. Claiming deliberate deception requires evidence of intent, which has not been presented.</p>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <strong>What do regulatory agencies say?</strong><br>
+        The EMA, FDA, and Health Canada all reviewed the biodistribution data from the marketing authorization dossiers. All three confirmed that observed distribution patterns fall within established safety margins. These documents have been made publicly available.
+      </div>
+
+      <h2 id="claim3">4. Claim 3: DNA contamination in vaccine vials</h2>
+
+      <div class="claim-block">
+        <div class="claim-header">What was claimed</div>
+        <div class="claim-quote">
+          Senator Johnson: "Are you aware of the DNA contamination found in these vials — way beyond the levels accepted by the FDA?"<br><br>
+          Campbell: "The DNA contamination is not a matter of debate. It's a matter of scientific publication that there were huge amounts of DNA contamination — way above what was allowed."
+        </div>
+        <div class="fact-check">
+          <span class="verdict contested">⚡ Highly contested – not scientific consensus</span>
+          <p><strong>The background:</strong> In 2023, several independent researchers (including Kevin McKernan, Philip Buckhaults, and David Speicher) published data claiming to find DNA residues in mRNA vaccine vials above regulatory thresholds. These reports received significant media attention.</p>
+          <p><strong>What regulatory agencies say:</strong> Health Canada, the FDA, and the EMA formally reviewed these claims. All three concluded that the reported DNA levels do not represent a safety concern — in part because the independent researchers' methods did not align with regulatory measurement standards for these types of residuals. Health Canada published a detailed response in 2023.</p>
+          <p><strong>Assessment:</strong> Campbell's claim that this is "no longer a matter of debate" and is "established scientific fact" is incorrect. It represents a minority position not confirmed by any major regulatory body worldwide.</p>
+        </div>
+      </div>
+
+      <h2 id="claim4">5. Claim 4: COVID vaccines and cancer</h2>
+
+      <div class="claim-block">
+        <div class="claim-header">What was claimed</div>
+        <div class="claim-quote">
+          Senator Johnson: "US SEER cancer incidence data for 2023 show substantial increases above trend lines — for all cohorts. This suggests a possible association between COVID-19 infection and vaccination and leukemias."<br><br>
+          Campbell: "We have Dr. Aldéerí who described plausible mechanisms. Spike protein has been found in tumors. How can she not be concerned about this?"
+        </div>
+        <div class="fact-check">
+          <span class="verdict unestablished">● Not established – no causal evidence</span>
+          <p><strong>On SEER data:</strong> Cancer registry data do show some fluctuations following the pandemic — but experts attribute these primarily to COVID-19 infections themselves, diagnostic backlogs from lockdowns (missed screenings), disrupted cancer registry reporting in 2020–2021, and demographic shifts. Drawing a direct causal line to vaccines requires controlled studies.</p>
+          <p><strong>On the demand for proof:</strong> Dr. Gralow correctly invoked a fundamental scientific principle: correlation is not causation. The controlled studies she called for are methodologically standard. Senator Johnson's suggestion that "definitive proof" is impossible is not accepted by the scientific community — there are well-established epidemiological methods for detecting drug side effects.</p>
+          <p><strong>Spike protein in tumors:</strong> Individual case reports exist. Deriving causal conclusions from case reports is not scientifically valid. Spike protein from infection or vaccination could theoretically be transiently detectable in any tissue. Large cohort studies (>10 million vaccinated individuals, Scandinavian registry data) have not shown a vaccine-attributable increase in cancer incidence.</p>
+        </div>
+      </div>
+
+      <div class="context-box">
+        <strong>What does large-scale research show?</strong><br>
+        A 2024 analysis published in <em>Nature Medicine</em> using UK Biobank data (400,000+ participants) found no elevated cancer risk in vaccinated individuals. The WHO and the International Agency for Research on Cancer (IARC) have not issued any cancer risk warnings in connection with COVID-19 vaccines.
+      </div>
+
+      <h2 id="assessment">6. Overall Assessment</h2>
+
+      <p>Dr. John Campbell's video presents a mixture of <strong>factual elements</strong> (e.g., that mRNA vaccines use pseudouridine), <strong>simplified or exaggerated claims</strong> (systemic nanoparticle distribution), and <strong>assertions not supported by scientific consensus</strong> (DNA contamination as established fact; vaccines as a cause of cancer).</p>
+
+      <p>The video's consistent framing — that a former golf caddy and plastics CEO knows more than a Professor Emerita of oncology — is rhetorically effective but intellectually misleading. Medical knowledge is not measured by adherence to a particular narrative; it is assessed by the quality and weight of evidence.</p>
+
+      <p>Dr. Gralow's caution in answering certain questions during the hearing — for instance, declining to comment precisely on biodistribution details without written reference — reflects the behavior of a rigorous scientist, not ignorance.</p>
+
+      <div class="highlight-box">
+        <strong>What deserves legitimate debate:</strong><br>
+        Calls for greater data transparency, long-term safety monitoring, and independent research funding are legitimate. Myocarditis as a rare side effect in young males is scientifically recognized. The nuanced discussion of benefit-risk profiles for different population subgroups is both valid and necessary. None of this is advanced by claims that exceed the available evidence.
+      </div>
+
+      <hr>
+
+      <div class="sources">
+        <h3>📚 Sources &amp; Further Reading</h3>
+        <ul>
+          <li><a href="https://www.nature.com/articles/s41591-022-01816-6" target="_blank">Karikó et al. (2023): mRNA modifications – Nobel background, Nature Medicine</a></li>
+          <li><a href="https://www.science.org/doi/10.1126/scitranslmed.abn0229" target="_blank">Röltgen et al. (2022): Spike protein persistence in lymph nodes, Science Translational Medicine</a></li>
+          <li><a href="https://www.canada.ca/en/health-canada/news/2023/11/health-canada-statement-on-mrna-vaccine-dna-contamination.html" target="_blank">Health Canada (2023): Statement on DNA contamination claims</a></li>
+          <li><a href="https://www.ema.europa.eu/en/documents/chmp-annex/annex-assessment-report-comirnaty_en.pdf" target="_blank">EMA: Biodistribution data – Comirnaty (Pfizer-BioNTech)</a></li>
+          <li><a href="https://www.nejm.org/doi/full/10.1056/NEJMoa2110475" target="_blank">Scandinavian Registries (2021): Myocarditis after mRNA vaccination, NEJM</a></li>
+        </ul>
+      </div>
+
+      <div class="disclaimer" id="disclaimer">
+        <div class="disclaimer-label">⚠ Important Disclaimer – Please read in full</div>
+        <p><strong>This article is for informational and educational purposes only.</strong> It does not constitute medical advice and does not replace consultation with qualified physicians or healthcare professionals. Do not make health decisions based solely on this article.</p>
+        <p><strong>Note on source material:</strong> The YouTube video by Dr. John Campbell analyzed in this article contains, in our assessment, statements that go beyond — or misrepresent — the current state of scientific evidence. Specifically: the claim that DNA contamination is "no longer a matter of debate" (disputed by regulatory authorities worldwide), and the implied causal link between COVID-19 vaccines and cancer (not established by any controlled study to date).</p>
+        <p><strong>Potential misinformation:</strong> Parts of the video exhibit patterns characteristic of medical misinformation: selective use of data, lack of contextualization, rhetorical framing without evidentiary support. Readers are strongly encouraged to consult the primary sources linked above independently.</p>
+        <p>TRHI does not endorse claims that fall outside scientific consensus. For individual health questions, please consult your treating physician.</p>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

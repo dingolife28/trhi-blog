@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vitamin D: Das Sonnenvitamin, das dein Immunsystem rettet | TRHI Blog</title>
+  <meta name="description" content="Warum Vitamin-D-Mangel gefährlicher ist als du denkst – und wie du ihn behebst. Mit interaktivem Quiz!" />
+  <style>
+    :root {
+      --primary: #2d6a4f;
+      --primary-light: #52b788;
+      --accent: #f4a261;
+      --bg: #f8f9fa;
+      --card: #ffffff;
+      --text: #1b1b1b;
+      --muted: #6c757d;
+      --radius: 14px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, #1b4332 100%);
+      color: white;
+      padding: 64px 24px 48px;
+      text-align: center;
+    }
+    .hero .tag {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 99px;
+      margin-bottom: 18px;
+    }
+    .hero h1 {
+      font-size: clamp(1.6rem, 4vw, 2.6rem);
+      font-weight: 800;
+      line-height: 1.2;
+      max-width: 720px;
+      margin: 0 auto 16px;
+    }
+    .hero .meta {
+      font-size: 0.85rem;
+      opacity: 0.75;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    /* ── LAYOUT ── */
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ── ARTICLE ── */
+    .article {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 48px 40px;
+      margin: 40px auto;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+    }
+
+    @media (max-width: 600px) {
+      .article { padding: 28px 20px; }
+    }
+
+    .article h2 {
+      font-size: 1.35rem;
+      color: var(--primary);
+      margin: 36px 0 12px;
+    }
+    .article p { margin-bottom: 16px; color: #333; }
+
+    .article ul {
+      padding-left: 20px;
+      margin-bottom: 16px;
+    }
+    .article ul li { margin-bottom: 8px; }
+
+    /* ── HIGHLIGHT BOX ── */
+    .highlight {
+      background: #d8f3dc;
+      border-left: 4px solid var(--primary-light);
+      padding: 16px 20px;
+      border-radius: 8px;
+      margin: 24px 0;
+      font-size: 0.97rem;
+    }
+    .highlight strong { color: var(--primary); }
+
+    /* ── AFFILIATE CARDS ── */
+    .affiliate-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 16px;
+      margin: 28px 0;
+    }
+    .aff-card {
+      background: #fff;
+      border: 1.5px solid #e0e0e0;
+      border-radius: var(--radius);
+      padding: 18px;
+      text-align: center;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .aff-card:hover {
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      transform: translateY(-2px);
+    }
+    .aff-card .emoji { font-size: 2rem; margin-bottom: 8px; }
+    .aff-card h4 { font-size: 0.95rem; margin-bottom: 6px; color: var(--text); }
+    .aff-card p { font-size: 0.8rem; color: var(--muted); margin-bottom: 12px; }
+    .aff-btn {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 7px 16px;
+      border-radius: 99px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .aff-btn:hover { background: var(--primary-light); }
+
+    /* ── SOURCES ── */
+    .sources {
+      font-size: 0.78rem;
+      color: var(--muted);
+      border-top: 1px solid #e0e0e0;
+      padding-top: 16px;
+      margin-top: 32px;
+    }
+    .sources a { color: var(--primary); text-decoration: none; }
+
+    /* ══════════════════════════════════════
+       QUIZ SECTION
+    ══════════════════════════════════════ */
+    .quiz-section {
+      background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
+      padding: 48px 24px;
+    }
+    .quiz-section h2 {
+      text-align: center;
+      color: white;
+      font-size: 1.6rem;
+      margin-bottom: 6px;
+    }
+    .quiz-section .quiz-sub {
+      text-align: center;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 32px;
+      font-size: 0.95rem;
+    }
+
+    .quiz-card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 32px;
+      max-width: 680px;
+      margin: 0 auto;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    }
+
+    /* progress bar */
+    .progress-bar-wrap {
+      background: #e9ecef;
+      border-radius: 99px;
+      height: 6px;
+      margin-bottom: 24px;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary-light), var(--accent));
+      border-radius: 99px;
+      transition: width 0.4s ease;
+    }
+
+    .q-counter {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-align: right;
+      margin-bottom: 6px;
+    }
+
+    .q-text {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+
+    .options { display: flex; flex-direction: column; gap: 10px; }
+
+    .option-btn {
+      background: #f8f9fa;
+      border: 2px solid #e0e0e0;
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s;
+      color: var(--text);
+    }
+    .option-btn:hover:not(:disabled) {
+      border-color: var(--primary-light);
+      background: #d8f3dc;
+    }
+    .option-btn.correct {
+      background: #d8f3dc;
+      border-color: var(--primary);
+      font-weight: 700;
+    }
+    .option-btn.wrong {
+      background: #ffe3e3;
+      border-color: #e63946;
+    }
+    .option-btn:disabled { cursor: default; }
+
+    .feedback {
+      margin-top: 14px;
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      display: none;
+    }
+    .feedback.show { display: block; }
+    .feedback.correct { background: #d8f3dc; color: #1b4332; }
+    .feedback.wrong { background: #ffe3e3; color: #7d0000; }
+
+    .next-btn {
+      margin-top: 18px;
+      display: none;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 99px;
+      padding: 12px 28px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .next-btn:hover { background: var(--primary-light); }
+    .next-btn.show { display: inline-block; }
+
+    /* result screen */
+    .result-screen {
+      text-align: center;
+      display: none;
+    }
+    .result-screen.show { display: block; }
+    .score-circle {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary-light), var(--primary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 2rem;
+      font-weight: 800;
+      color: white;
+    }
+    .result-screen h3 {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+    }
+    .result-screen p { color: var(--muted); margin-bottom: 20px; }
+
+    .share-row {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+    .share-btn {
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 99px;
+      padding: 10px 22px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .share-btn:hover { opacity: 0.85; }
+    .retry-btn {
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 99px;
+      padding: 10px 22px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .retry-btn:hover { background: var(--primary-light); }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 32px 20px;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    footer a { color: var(--primary); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<!-- ════════ HERO ════════ -->
+<header class="hero">
+  <div class="tag">🌞 Gesundheit &amp; Immunsystem</div>
+  <h1>Vitamin D: Das Sonnenvitamin, das dein Immunsystem rettet – und das die meisten von uns kaum haben</h1>
+  <div class="meta">
+    <span>📅 8. Juni 2026</span>
+    <span>⏱ ~6 Min Lesezeit</span>
+    <span>✅ Wissenschaftlich belegt</span>
+  </div>
+</header>
+
+<!-- ════════ ARTIKEL ════════ -->
+<div class="container">
+  <article class="article">
+
+    <p>
+      Es gibt Nährstoffe, die in der öffentlichen Wahrnehmung chronisch unterschätzt werden. Vitamin D ist einer davon. Nicht weil die Forschung fehlt – ganz im Gegenteil. Wenige Mikronährstoffe sind so intensiv untersucht worden. Aber irgendwie hat es sich noch nicht herumgesprochen, wie fundamental es für Gesundheit, Immunfunktion und sogar die Sterblichkeit ist.
+    </p>
+
+    <p>
+      Schätzungen zufolge haben in Mitteleuropa bis zu <strong>60 % der Bevölkerung</strong> im Winter einen klinisch relevanten Vitamin-D-Mangel. Und „klinisch relevant" bedeutet hier: nachweisbarer Einfluss auf die Gesundheit.
+    </p>
+
+    <h2>🔬 Was Vitamin D im Körper tatsächlich tut</h2>
+
+    <p>
+      Vitamin D ist strenggenommen kein Vitamin, sondern ein Prohormon – es wird in der Haut unter UV-B-Einstrahlung gebildet und dann in Leber und Niere in seine aktive Form (Calcitriol) umgewandelt. Diese aktive Form dockt an Rezeptoren an, die sich in fast jedem Körpergewebe befinden: im Immunsystem, im Herz, im Gehirn, in den Muskeln, in den Knochen.
+    </p>
+
+    <div class="highlight">
+      <strong>Was das bedeutet:</strong> Vitamin D ist kein Spezialwerkzeug für Knochen. Es ist ein Systemregulator. Wer dauerhaft zu wenig hat, beeinträchtigt gleichzeitig Immunabwehr, Muskelkraft, Stimmung und Entzündungskontrolle.
+    </div>
+
+    <p>
+      Konkret belegt ist der Zusammenhang zwischen niedrigen Vitamin-D-Spiegeln und erhöhtem Risiko für:
+    </p>
+    <ul>
+      <li>Häufige Atemwegsinfekte und verlängerte Krankheitsdauer</li>
+      <li>Autoimmunerkrankungen (Multiple Sklerose, rheumatoide Arthritis, Morbus Crohn)</li>
+      <li>Depressive Verstimmungen und saisonale Affektive Störung (SAD)</li>
+      <li>Muskelschwäche und erhöhtes Sturzrisiko bei älteren Menschen</li>
+      <li>Colorektales Karzinom – eine Metaanalyse über 1 Million Teilnehmende (2025) zeigte einen klaren inversen Zusammenhang zwischen Vitamin-D-Spiegel und Darmkrebsrisiko</li>
+    </ul>
+
+    <h2>🌍 Warum wir so häufig zu wenig haben</h2>
+
+    <p>
+      Das Problem ist geometrisch: In Mitteleuropa (nördlich des 35. Breitengrades) steht die Sonne zwischen Oktober und März zu flach, als dass nennenswert Vitamin D in der Haut produziert werden könnte – selbst bei Aufenthalt im Freien. Dazu kommen Büroarbeitszeiten, Sonnenschutzmittel (notwendig, aber sie blockieren die UV-B-Produktion) und eine Ernährung, die selten wirklich reich an Vitamin D ist.
+    </p>
+
+    <p>
+      Fettreicher Fisch (Lachs, Makrele, Hering) und Eigelb liefern Vitamin D in relevanten Mengen. Alles andere – Milch, Fleisch, Gemüse – kaum. Wer also nicht regelmäßig Seefisch isst und im Sommer wenig Zeit draußen verbringt, hat ein strukturelles Problem.
+    </p>
+
+    <h2>🧪 Welcher Spiegel ist das Ziel?</h2>
+
+    <p>
+      Die Forschungslage deutet darauf hin, dass ein Serumspiegel von 25(OH)D zwischen <strong>40 und 60 ng/ml</strong> (100–150 nmol/l) mit den günstigsten Gesundheitsoutcomes assoziiert ist. Die meisten Labore markieren bereits Werte über 20 ng/ml als „normal" – das ist jedoch ein statistischer Normalbereich, kein Optimalwert.
+    </p>
+
+    <p>
+      Für die meisten Erwachsenen liegt die sinnvolle Supplementierungsdosis im Bereich von <strong>2.000 bis 4.000 IE täglich</strong> – in Absprache mit dem Arzt, idealerweise nach einer Blutuntersuchung. Vitamin D ist fettlöslich, wird also mit einer fetthaltigen Mahlzeit am besten aufgenommen.
+    </p>
+
+    <div class="highlight">
+      <strong>Tipp:</strong> Vitamin D3 (Cholecalciferol) ist die Form, die der Körper auch selbst produziert – und die in Studien die besseren Resultate zeigt als D2. Viele Experten empfehlen, es gemeinsam mit Vitamin K2 einzunehmen, da K2 dafür sorgt, dass das durch Vitamin D aufgenommene Calcium in den Knochen landet und nicht in den Arterienwänden.
+    </div>
+
+    <h2>💪 Vitamin D und Sport: Ein unterschätzter Zusammenhang</h2>
+
+    <p>
+      Für aktive Menschen ist Vitamin D aus einem weiteren Grund interessant: Es beeinflusst direkt die Muskelprotein­synthese und die neuromuskuläre Funktion. Studien an Sportlern zeigen, dass niedrige Spiegel mit schlechterer Explosivkraft, längerer Erholung nach intensiven Einheiten und höherem Verletzungsrisiko assoziiert sind. Profivereine in der Premier League und der NBA testen ihre Athleten routinemäßig auf Vitamin D – das sagt einiges darüber aus, wie ernst die Sportmedizin das nimmt.
+    </p>
+
+    <!-- AFFILIATE SECTION -->
+    <h2>🛒 Gut versorgt: unsere Empfehlungen</h2>
+
+    <div class="affiliate-grid">
+      <div class="aff-card">
+        <div class="emoji">☀️</div>
+        <h4>Vitamin D3 + K2</h4>
+        <p>Hochdosiert, in Olivenöl gelöst für optimale Aufnahme. 4.000 IE D3 + 100 µg K2 pro Kapsel.</p>
+        <a class="aff-btn" href="#" onclick="return false;">Zum Produkt →</a>
+      </div>
+      <div class="aff-card">
+        <div class="emoji">🐟</div>
+        <h4>Omega-3 Premium</h4>
+        <p>Fettreicher Fisch täglich ist unrealistisch – dieses Öl liefert 1.000 mg EPA+DHA pro Portion.</p>
+        <a class="aff-btn" href="#" onclick="return false;">Zum Produkt →</a>
+      </div>
+      <div class="aff-card">
+        <div class="emoji">📖</div>
+        <h4>„Lifespan" – David Sinclair</h4>
+        <p>Harvard-Genetiker erklärt, welche Faktoren – darunter Mikronährstoffe – wirklich über Longevity entscheiden.</p>
+        <a class="aff-btn" href="#" onclick="return false;">Bei Amazon →</a>
+      </div>
+    </div>
+
+    <div class="sources">
+      <strong>Quellen:</strong>
+      <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3166406/">NIH – Vitamin D and the Immune System</a> |
+      <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10490553/">Nutrients 2023 – Vitamin D Systematic Review</a> |
+      <a href="https://www.medicalnewstoday.com/articles/3-ways-vitamin-d-may-boost-longevity-according-to-research-edited">Medical News Today – Vitamin D &amp; Longevity</a>
+      <br><em>Affiliate-Hinweis: Dieser Artikel enthält Partnerlinks. Käufe darüber unterstützen TRHI ohne Mehrkosten für dich.</em>
+    </div>
+
+  </article>
+</div>
+
+<!-- ════════════════════════════════════════
+     INTERAKTIVES QUIZ
+════════════════════════════════════════ -->
+<section class="quiz-section" aria-label="Wissensquiz Vitamin D">
+  <h2>🧠 Test dein Wissen!</h2>
+  <p class="quiz-sub">5 Fragen rund um Vitamin D, Immunsystem &amp; natürliche Gesundheit</p>
+
+  <div class="quiz-card" id="quizCard">
+
+    <!-- Progress -->
+    <div class="q-counter" id="qCounter">Frage 1 von 5</div>
+    <div class="progress-bar-wrap">
+      <div class="progress-bar-fill" id="progressBar" style="width:20%"></div>
+    </div>
+
+    <!-- Question View -->
+    <div id="questionView">
+      <div class="q-text" id="qText"></div>
+      <div class="options" id="optionsContainer"></div>
+      <div class="feedback" id="feedback"></div>
+      <button class="next-btn" id="nextBtn">Weiter →</button>
+    </div>
+
+    <!-- Result View -->
+    <div class="result-screen" id="resultScreen">
+      <div class="score-circle" id="scoreCircle"></div>
+      <h3 id="resultTitle"></h3>
+      <p id="resultText"></p>
+      <div class="share-row">
+        <button class="retry-btn" id="retryBtn">Nochmal versuchen 🔄</button>
+        <button class="share-btn" id="shareBtn">Ergebnis teilen 📣</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════ FOOTER ════════ -->
+<footer>
+  <p>© 2026 TRHI – Bildung für natürliche Gesundheit &amp; Sport.
+    Kein medizinischer Rat – konsultiere bei gesundheitlichen Fragen immer einen Arzt.</p>
+</footer>
+
+<!-- ═══════════════════════
+     QUIZ JAVASCRIPT
+═══════════════════════ -->
+<script>
+  const questions = [
+    {
+      q: "Ab welchem Breitengrad kann der Körper im Winter kaum noch Vitamin D durch Sonneneinstrahlung produzieren?",
+      options: ["20. Breitengrad (z. B. Karibik)", "35. Breitengrad (z. B. Mittelmeerraum)", "50. Breitengrad (z. B. Deutschland)", "65. Breitengrad (z. B. Skandinavien)"],
+      correct: 1,
+      explanation: "Bereits nördlich des 35. Breitengrades – also ab dem Mittelmeerraum – ist der Sonnenwinkel im Winter zu flach für eine relevante Vitamin-D-Produktion. Deutschland liegt auf ~51°N."
+    },
+    {
+      q: "Was ist der optimale Vitamin-D-Spiegel im Blut laut aktueller Forschung?",
+      options: ["10–20 ng/ml", "20–30 ng/ml", "40–60 ng/ml", "80–100 ng/ml"],
+      correct: 2,
+      explanation: "Aktuelle Studien zeigen die günstigsten Gesundheitsoutcomes bei 40–60 ng/ml (100–150 nmol/l). Laborwerte über 20 ng/ml gelten statistisch als „normal" – sind aber kein Optimalwert."
+    },
+    {
+      q: "Warum empfehlen viele Experten Vitamin D3 zusammen mit K2 einzunehmen?",
+      options: [
+        "K2 verbessert den Geschmack",
+        "K2 sorgt dafür, dass Calcium in die Knochen gelangt statt in Arterienwände",
+        "K2 verhindert Vitamin-D-Überdosierung",
+        "Beide zusammen sind günstiger herzustellen"
+      ],
+      correct: 1,
+      explanation: "Vitamin D3 steigert die Calcium-Aufnahme im Darm. Vitamin K2 (MK-7) aktiviert Proteine, die Calcium in den Knochen einlagern und aus Gefäßen fernhalten. Zusammen wirken sie synergistisch."
+    },
+    {
+      q: "Welche Lebensmittelgruppe enthält nennenswerte Mengen an Vitamin D?",
+      options: [
+        "Grünes Gemüse (Spinat, Brokkoli)",
+        "Getreideprodukte (Vollkorn, Haferflocken)",
+        "Fettreicher Fisch (Lachs, Makrele, Hering)",
+        "Milchprodukte (Joghurt, Käse)"
+      ],
+      correct: 2,
+      explanation: "Fettreicher Fisch ist die mit Abstand beste natürliche Vitamin-D-Quelle. 100 g Lachs liefern ~600–1000 IE. Milchprodukte enthalten nur minimale Mengen, außer sie sind angereichert."
+    },
+    {
+      q: "Was zeigt die Forschung über den Zusammenhang zwischen Vitamin D und Sport?",
+      options: [
+        "Vitamin D hat keinen nachweisbaren Effekt auf sportliche Leistung",
+        "Zu viel Vitamin D schadet der Muskelkraft",
+        "Niedrige Spiegel sind mit schlechterer Explosivkraft und längerer Erholung assoziiert",
+        "Nur Ausdauersportler profitieren von Vitamin D"
+      ],
+      correct: 2,
+      explanation: "Studien an Sportlern zeigen: Niedriger Vitamin-D-Spiegel korreliert mit reduzierter Explosivkraft, längeren Erholungszeiten und höherem Verletzungsrisiko. Profimannschaften testen routinemäßig."
+    }
+  ];
+
+  let current = 0, score = 0, answered = false;
+
+  const qText        = document.getElementById('qText');
+  const optionsCont  = document.getElementById('optionsContainer');
+  const feedback     = document.getElementById('feedback');
+  const nextBtn      = document.getElementById('nextBtn');
+  const qCounter     = document.getElementById('qCounter');
+  const progressBar  = document.getElementById('progressBar');
+  const questionView = document.getElementById('questionView');
+  const resultScreen = document.getElementById('resultScreen');
+  const scoreCircle  = document.getElementById('scoreCircle');
+  const resultTitle  = document.getElementById('resultTitle');
+  const resultText   = document.getElementById('resultText');
+  const retryBtn     = document.getElementById('retryBtn');
+  const shareBtn     = document.getElementById('shareBtn');
+
+  function renderQuestion() {
+    const q = questions[current];
+    answered = false;
+    feedback.classList.remove('show', 'correct', 'wrong');
+    nextBtn.classList.remove('show');
+    qCounter.textContent = `Frage ${current + 1} von ${questions.length}`;
+    progressBar.style.width = `${((current + 1) / questions.length) * 100}%`;
+    qText.textContent = q.q;
+    optionsCont.innerHTML = '';
+
+    q.options.forEach((opt, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'option-btn';
+      btn.textContent = opt;
+      btn.addEventListener('click', () => handleAnswer(i, btn));
+      optionsCont.appendChild(btn);
+    });
+  }
+
+  function handleAnswer(idx, btn) {
+    if (answered) return;
+    answered = true;
+    const q = questions[current];
+    const allBtns = optionsCont.querySelectorAll('.option-btn');
+    allBtns.forEach(b => b.disabled = true);
+
+    if (idx === q.correct) {
+      score++;
+      btn.classList.add('correct');
+      feedback.textContent = '✅ Richtig! ' + q.explanation;
+      feedback.className = 'feedback correct show';
+    } else {
+      btn.classList.add('wrong');
+      allBtns[q.correct].classList.add('correct');
+      feedback.textContent = '❌ Nicht ganz. ' + q.explanation;
+      feedback.className = 'feedback wrong show';
+    }
+
+    nextBtn.classList.add('show');
+    nextBtn.textContent = current < questions.length - 1 ? 'Nächste Frage →' : 'Ergebnis sehen 🎯';
+  }
+
+  nextBtn.addEventListener('click', () => {
+    current++;
+    if (current < questions.length) {
+      renderQuestion();
+    } else {
+      showResult();
+    }
+  });
+
+  function showResult() {
+    questionView.style.display = 'none';
+    resultScreen.classList.add('show');
+    progressBar.style.width = '100%';
+    qCounter.textContent = 'Quiz abgeschlossen!';
+    scoreCircle.textContent = `${score}/${questions.length}`;
+
+    const pct = score / questions.length;
+    if (pct === 1) {
+      resultTitle.textContent = '🏆 Perfekt! Du bist ein Vitamin-D-Experte!';
+      resultText.textContent  = 'Beeindruckend! Du hast alle Fragen richtig beantwortet. Teile dein Ergebnis und fordere Freunde heraus.';
+    } else if (pct >= 0.6) {
+      resultTitle.textContent = '🌟 Sehr gut! Solides Grundwissen!';
+      resultText.textContent  = 'Du kennst dich gut aus. Lies nochmal den Artikel – vielleicht findest du die Lücken!';
+    } else {
+      resultTitle.textContent = '💡 Gut angefangen! Da geht noch was.';
+      resultText.textContent  = 'Der Artikel oben enthält alle Antworten. Ein zweiter Durchgang lohnt sich!';
+    }
+  }
+
+  retryBtn.addEventListener('click', () => {
+    current = 0; score = 0;
+    questionView.style.display = '';
+    resultScreen.classList.remove('show');
+    renderQuestion();
+  });
+
+  shareBtn.addEventListener('click', () => {
+    const text = `Ich habe ${score} von ${questions.length} Punkten im TRHI Vitamin-D-Quiz erreicht! Teste dein Wissen: `;
+    if (navigator.share) {
+      navigator.share({ title: 'TRHI Vitamin-D-Quiz', text, url: window.location.href });
+    } else {
+      navigator.clipboard.writeText(text + window.location.href)
+        .then(() => alert('Link kopiert! Teile ihn mit Freunden.'));
+    }
+  });
+
+  // init
+  renderQuestion();
+</script>
+
+</body>
+</html>

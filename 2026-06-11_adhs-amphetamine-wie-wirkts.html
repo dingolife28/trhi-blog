@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="pageTitle">ADHS & Amphetamine: Was wirklich in deinem Kind vorgeht | TRHI</title>
+<style>
+  :root {
+    --green-dark: #2d6a4f;
+    --green-light: #52b788;
+    --orange: #f4a261;
+    --bg: #f6f9f7;
+    --text: #1b2b22;
+    --muted: #5a6f64;
+    --card-radius: 16px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+
+  /* ── NAVBAR ── */
+  .navbar {
+    background: #fff;
+    border-bottom: 1px solid #e3ece6;
+    padding: 0 24px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(45,106,79,0.07);
+  }
+  .logo-wrap { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .logo-tagline { font-size: 0.68rem; color: var(--muted); font-weight: 500; letter-spacing: 0.03em; display: none; }
+  @media(min-width: 480px) { .logo-tagline { display: block; } }
+
+  .lang-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    background: #f0f5f2;
+    border-radius: 999px;
+    padding: 3px;
+    border: 1px solid #d6e8dc;
+  }
+  .lang-btn {
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: none;
+    background: transparent;
+    font-size: 0.82rem;
+    font-weight: 700;
+    cursor: pointer;
+    color: var(--muted);
+    transition: all 0.18s ease;
+    letter-spacing: 0.03em;
+  }
+  .lang-btn.active {
+    background: var(--green-dark);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(45,106,79,0.25);
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, #1b3a2b 0%, var(--green-dark) 55%, #40916c 130%);
+    color: #fff;
+    padding: 52px 20px 80px;
+    text-align: center;
+  }
+  .tag {
+    display: inline-block;
+    background: rgba(244,162,97,0.18);
+    border: 1px solid var(--orange);
+    color: var(--orange);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 5px 15px;
+    border-radius: 999px;
+    margin-bottom: 18px;
+  }
+  .hero h1 { font-size: clamp(1.6rem, 5vw, 2.5rem); font-weight: 800; max-width: 760px; margin: 0 auto 16px; line-height: 1.2; }
+  .hero .meta { color: rgba(255,255,255,0.75); font-size: 0.9rem; }
+  .hero .meta span:not(:last-child)::after { content: "•"; margin: 0 9px; color: rgba(255,255,255,0.35); }
+
+  /* ── ARTICLE CARD ── */
+  .wrap { max-width: 740px; margin: -46px auto 36px; padding: 0 20px; }
+  .card { background: #fff; border-radius: var(--card-radius); box-shadow: 0 12px 40px rgba(27,58,43,0.11); padding: clamp(22px, 5vw, 48px); }
+  .card p { margin-bottom: 16px; font-size: 1rem; }
+  .card h2 { color: var(--green-dark); font-size: clamp(1.2rem, 4vw, 1.5rem); font-weight: 800; margin: 34px 0 14px; }
+  .card h3 { color: var(--green-dark); font-size: 1.05rem; font-weight: 700; margin: 22px 0 8px; }
+  .lede { font-size: 1.1rem; color: var(--muted); border-left: 4px solid var(--green-light); padding-left: 16px; margin-bottom: 20px; }
+
+  .box { border-radius: 12px; padding: 18px 20px; margin: 20px 0; font-size: 0.97rem; }
+  .box-green { background: #eef7f1; border: 1px solid #c8e6d6; border-left: 5px solid var(--green-light); }
+  .box-orange { background: #fff8f0; border: 1px solid #fbe3c9; border-left: 5px solid var(--orange); }
+  .box-blue  { background: #f0f4ff; border: 1px solid #d0daff; border-left: 5px solid #6b8cff; }
+  .box strong { color: var(--green-dark); }
+  .box-orange strong { color: #c9622a; }
+  .box-blue strong { color: #3a56cc; }
+
+  .faq-item { margin-bottom: 22px; }
+  .faq-q { font-weight: 700; color: var(--green-dark); font-size: 1rem; margin-bottom: 6px; }
+
+  .tips { background: #fff8f0; border: 1px solid #fbe3c9; border-radius: 12px; padding: 22px 24px; margin: 24px 0; }
+  .tips h3 { color: var(--orange); margin-bottom: 12px; font-size: 1rem; }
+  .tips ul { padding-left: 20px; }
+  .tips li { margin-bottom: 9px; }
+
+  /* ── AFFILIATE ── */
+  .affiliate-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(185px,1fr)); gap: 14px; margin-top: 16px; }
+  .product-card { border: 1px solid #e3ece6; border-radius: 12px; padding: 16px; text-align: center; text-decoration: none; color: var(--text); display: flex; flex-direction: column; transition: transform .15s, box-shadow .15s; }
+  .product-card:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(45,106,79,0.13); }
+  .product-card .icon { font-size: 1.9rem; margin-bottom: 8px; }
+  .product-card .cat { font-size: 0.7rem; text-transform: uppercase; letter-spacing: .05em; color: var(--green-light); font-weight: 700; margin-bottom: 5px; }
+  .product-card .name { font-weight: 700; font-size: .9rem; margin-bottom: 5px; }
+  .product-card .desc { font-size: .83rem; color: var(--muted); flex-grow: 1; margin-bottom: 12px; }
+  .product-card .cta { display: inline-block; background: var(--green-dark); color: #fff; font-size: .8rem; font-weight: 600; padding: 8px 12px; border-radius: 8px; }
+  .affiliate-note { font-size: .78rem; color: var(--muted); margin-top: 12px; font-style: italic; }
+  .disclaimer { margin-top: 28px; font-size: .83rem; color: var(--muted); background: #f3f6f4; border-radius: 10px; padding: 14px 16px; }
+  .sources { font-size: .82rem; color: var(--muted); margin-top: 12px; }
+  .sources a { word-break: break-word; color: var(--green-dark); }
+
+  /* ── QUIZ ── */
+  .quiz-section { background: linear-gradient(160deg, var(--green-dark), var(--green-light)); padding: 50px 20px 64px; }
+  .quiz-card { max-width: 620px; margin: 0 auto; background: #fff; border-radius: var(--card-radius); box-shadow: 0 16px 50px rgba(0,0,0,0.18); padding: clamp(22px,5vw,40px); }
+  .quiz-intro h2 { color: var(--green-dark); font-size: 1.4rem; margin-bottom: 8px; }
+  .quiz-intro p { color: var(--muted); margin-bottom: 18px; font-size: .95rem; }
+  .btn { display: inline-block; background: var(--orange); color: #fff; border: none; font-weight: 700; font-size: .95rem; padding: 12px 26px; border-radius: 999px; cursor: pointer; transition: background .15s, transform .1s; }
+  .btn:hover { background: #e6904a; transform: translateY(-1px); }
+  .btn.secondary { background: transparent; color: var(--green-dark); border: 2px solid var(--green-light); }
+  .btn.secondary:hover { background: #eef7f1; }
+  .progress-row { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+  .progress-track { flex-grow: 1; height: 9px; background: #e7f0ea; border-radius: 999px; overflow: hidden; }
+  .progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg,var(--green-light),var(--green-dark)); border-radius: 999px; transition: width .35s ease; }
+  .score-pill { background: var(--green-dark); color: #fff; font-size: .78rem; font-weight: 700; padding: 5px 12px; border-radius: 999px; white-space: nowrap; }
+  .question-text { font-size: 1.05rem; font-weight: 700; margin-bottom: 16px; color: var(--text); }
+  .options { display: flex; flex-direction: column; gap: 9px; }
+  .option { text-align: left; border: 2px solid #e3ece6; background: #fbfdfc; border-radius: 10px; padding: 12px 15px; font-size: .95rem; cursor: pointer; transition: border-color .15s, background .15s; color: var(--text); }
+  .option:hover:not(:disabled) { border-color: var(--green-light); background: #f1f8f3; }
+  .option:disabled { cursor: default; }
+  .option.correct { border-color: var(--green-dark); background: #e3f3e9; font-weight: 700; }
+  .option.incorrect { border-color: #e07a5f; background: #fbe9e5; }
+  .feedback { margin-top: 14px; padding: 13px 15px; border-radius: 10px; font-size: .9rem; background: #eef7f1; border-left: 4px solid var(--green-light); display: none; }
+  .feedback.show { display: block; }
+  .feedback.wrong { background: #fbe9e5; border-left-color: #e07a5f; }
+  .quiz-actions { margin-top: 20px; text-align: right; }
+  .result-screen { text-align: center; display: none; }
+  .result-screen.show { display: block; }
+  .result-emoji { font-size: 2.8rem; margin-bottom: 6px; }
+  .result-screen h2 { color: var(--green-dark); margin-bottom: 6px; }
+  .result-score { font-size: 1rem; color: var(--muted); margin-bottom: 6px; }
+  .result-msg { margin-bottom: 20px; }
+  .result-actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+
+  footer.site-footer { text-align: center; color: var(--muted); font-size: .8rem; padding: 24px 20px 36px; }
+</style>
+</head>
+<body>
+
+<!-- ══ NAVBAR ══ -->
+<nav class="navbar">
+  <a class="logo-wrap" href="#">
+    <!-- TRHI Logo SVG -->
+    <svg width="108" height="34" viewBox="0 0 108 34" xmlns="http://www.w3.org/2000/svg" aria-label="TRHI Logo">
+      <!-- Leaf background -->
+      <ellipse cx="17" cy="17" rx="12" ry="14" fill="#52b788" opacity="0.15" transform="rotate(-12 17 17)"/>
+      <!-- EKG pulse line -->
+      <polyline points="7,17 11,17 13,10.5 16,23.5 18.5,17 22,17" fill="none" stroke="#2d6a4f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- TRHI wordmark -->
+      <text x="32" y="22.5" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="19" font-weight="800" fill="#2d6a4f" letter-spacing="-0.4">TRHI</text>
+      <!-- Orange dot accent -->
+      <circle cx="101" cy="8" r="3.5" fill="#f4a261"/>
+    </svg>
+    <span class="logo-tagline">The Real Health Institute</span>
+  </a>
+  <div class="lang-toggle" role="group" aria-label="Language selector">
+    <button class="lang-btn active" id="btnDE" onclick="setLang('de')" aria-pressed="true">DE</button>
+    <button class="lang-btn" id="btnEN" onclick="setLang('en')" aria-pressed="false">EN</button>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<header class="hero">
+  <span class="tag" data-i18n="tag"></span>
+  <h1 data-i18n="heroTitle"></h1>
+  <p class="meta">
+    <span data-i18n="date"></span>
+    <span data-i18n="readTime"></span>
+    <span data-i18n="audience"></span>
+  </p>
+</header>
+
+<!-- ══ ARTICLE ══ -->
+<div class="wrap">
+  <article class="card">
+    <p class="lede" data-i18n="lede"></p>
+
+    <h2 data-i18n="s1h"></h2>
+    <p data-i18n="s1p1"></p>
+    <p data-i18n="s1p2"></p>
+    <div class="box box-green"><span data-i18n="box1"></span></div>
+    <p data-i18n="s1p3"></p>
+
+    <h2 data-i18n="s2h"></h2>
+    <p data-i18n="s2p1"></p>
+    <p data-i18n="s2p2"></p>
+    <div class="box box-orange"><span data-i18n="box2"></span></div>
+    <p data-i18n="s2p3"></p>
+
+    <h2 data-i18n="s3h"></h2>
+
+    <div class="faq-item">
+      <p class="faq-q" data-i18n="faq1q"></p>
+      <p data-i18n="faq1a"></p>
+    </div>
+    <div class="box box-blue"><span data-i18n="box3"></span></div>
+
+    <div class="faq-item">
+      <p class="faq-q" data-i18n="faq2q"></p>
+      <p data-i18n="faq2a"></p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q" data-i18n="faq3q"></p>
+      <p data-i18n="faq3a"></p>
+    </div>
+
+    <h2 data-i18n="s4h"></h2>
+    <p data-i18n="s4p1"></p>
+
+    <div class="tips">
+      <h3 data-i18n="tipsTitle"></h3>
+      <ul>
+        <li data-i18n="tip1"></li>
+        <li data-i18n="tip2"></li>
+        <li data-i18n="tip3"></li>
+        <li data-i18n="tip4"></li>
+        <li data-i18n="tip5"></li>
+      </ul>
+    </div>
+
+    <p data-i18n="s4p2"></p>
+
+    <!-- Affiliate -->
+    <h2 data-i18n="affTitle"></h2>
+    <p data-i18n="affIntro"></p>
+    <div class="affiliate-grid">
+      <a class="product-card" href="#" rel="sponsored noopener" target="_blank">
+        <div class="icon">📖</div>
+        <div class="cat" data-i18n="affCat1"></div>
+        <div class="name" data-i18n="affName1"></div>
+        <div class="desc" data-i18n="affDesc1"></div>
+        <span class="cta" data-i18n="affCta"></span>
+      </a>
+      <a class="product-card" href="#" rel="sponsored noopener" target="_blank">
+        <div class="icon">🧘</div>
+        <div class="cat" data-i18n="affCat2"></div>
+        <div class="name" data-i18n="affName2"></div>
+        <div class="desc" data-i18n="affDesc2"></div>
+        <span class="cta" data-i18n="affCta"></span>
+      </a>
+      <a class="product-card" href="#" rel="sponsored noopener" target="_blank">
+        <div class="icon">🧠</div>
+        <div class="cat" data-i18n="affCat3"></div>
+        <div class="name" data-i18n="affName3"></div>
+        <div class="desc" data-i18n="affDesc3"></div>
+        <span class="cta" data-i18n="affCta"></span>
+      </a>
+    </div>
+    <p class="affiliate-note" data-i18n="affNote"></p>
+
+    <div class="disclaimer" data-i18n="disclaimer"></div>
+    <div class="sources">
+      <strong data-i18n="sourcesLabel"></strong><br>
+      Wilens, T.E. et al. (2003): Stimulant therapy and risk for subsequent substance use disorders. <em>Pediatrics</em>. <a href="https://doi.org/10.1542/peds.112.1.179" target="_blank" rel="noopener">DOI 10.1542/peds.112.1.179</a><br>
+      Frontiers in Psychiatry (2025): Amphetamines: a current epidemic. <a href="https://doi.org/10.3389/fpsyt.2025.1460341" target="_blank" rel="noopener">DOI 10.3389/fpsyt.2025.1460341</a><br>
+      Child Mind Institute: <a href="https://childmind.org/article/adhd-meds-lead-addiction/" target="_blank" rel="noopener">ADHD Medication and Addiction Risk</a><br>
+      ADxS.org: <a href="https://www.adxs.org/en/page/483/stimulants-mph-amp-for-adhd" target="_blank" rel="noopener">Stimulants for ADHD — Mechanism & Long-term Effects</a>
+    </div>
+  </article>
+</div>
+
+<!-- ══ QUIZ ══ -->
+<section class="quiz-section">
+  <div class="quiz-card">
+    <div id="quizIntro">
+      <h2 data-i18n="quizTitle"></h2>
+      <p data-i18n="quizIntroText"></p>
+      <button class="btn" id="startBtn" data-i18n="quizStart"></button>
+    </div>
+    <div id="quizPlay" style="display:none;">
+      <div class="progress-row">
+        <span id="qCounter" style="font-size:.83rem;color:var(--muted);white-space:nowrap;"></span>
+        <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+        <span class="score-pill" id="scorePill">0 Pts</span>
+      </div>
+      <div class="question-text" id="questionText"></div>
+      <div class="options" id="optionsList"></div>
+      <div class="feedback" id="feedbackBox"></div>
+      <div class="quiz-actions"><button class="btn" id="nextBtn" style="display:none;"></button></div>
+    </div>
+    <div id="resultScreen" class="result-screen">
+      <div class="result-emoji" id="resultEmoji">🏆</div>
+      <h2 id="resultTitle"></h2>
+      <p class="result-score" id="resultScoreText"></p>
+      <p class="result-msg" id="resultMsg"></p>
+      <div class="result-actions">
+        <button class="btn secondary" id="restartBtn" data-i18n="quizRestart"></button>
+        <button class="btn" id="shareBtn" data-i18n="quizShare"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  © 2026 TRHI — The Real Health Institute · <span data-i18n="footerText"></span>
+</footer>
+
+<script>
+// ══════════════════════════════
+//  TRANSLATIONS
+// ══════════════════════════════
+const T = {
+  de: {
+    pageTitle:   "ADHS & Amphetamine: Was wirklich in deinem Kind vorgeht | TRHI",
+    tag:         "ADHS & Medikamente",
+    heroTitle:   "ADHS und Amphetamine: Was wirklich in deinem Kind vorgeht",
+    date:        "11. Juni 2026",
+    readTime:    "6 Min. Lesezeit",
+    audience:    "Für Eltern & Betroffene",
+    lede:        "Dein Kind ist impulsiv, vergesslich und kann kaum stillsitzen – und der Arzt empfiehlt eine Substanz, die auch als Dopingmittel bekannt ist? Das klingt beängstigend. Die Wissenschaft zeigt: Es ist komplizierter – und oft weniger beängstigend – als du denkst.",
+
+    s1h:  "Was ADHS wirklich ist – keine Frage des Willens",
+    s1p1: "ADHS ist keine Erziehungsschwäche und keine Phase. Es ist eine neurologische Besonderheit: Bestimmte Bereiche im Gehirn – vor allem der präfrontale Kortex, der für Planung, Impulskontrolle und Konzentration zuständig ist – arbeiten mit zu wenig Dopamin und Noradrenalin. Zwei Botenstoffe, die das Gehirn braucht, um Prioritäten zu setzen.",
+    s1p2: "Stell dir vor, dein Auto hat einen Motor, der nicht ruhig im Leerlauf läuft. Es ruckelt, geht aus, springt unerwartet an. Das ist kein Fahrerfehler – das ist Mechanik. Kinder mit ADHS wollen sich konzentrieren. Sie können es nur schwerer steuern als andere.",
+    box1: "<strong>Wichtig zu wissen:</strong> ADHS betrifft rund 5–7 % aller Kinder und 3–5 % der Erwachsenen weltweit. Die Diagnose erfolgt klinisch – durch Beobachtung, Tests und Ausschluss anderer Ursachen, nicht durch einen einfachen Bluttest.",
+    s1p3: "Genau hier setzen amphetaminbasierte Medikamente an – nicht um das Kind zu betäuben, sondern um den Dopaminmangel auszugleichen.",
+
+    s2h:  "Wie Amphetamine bei ADHS wirken – der entscheidende Unterschied",
+    s2p1: "In Deutschland wird bei ADHS hauptsächlich Methylphenidat (Ritalin, Medikinet, Concerta) eingesetzt. Wenn das nicht ausreicht, kommt Lisdexamfetamin (Elvanse) zum Einsatz – eine amphetaminbasierte Substanz, die seit 2013 für Kinder ab 6 Jahren und seit 2019 für Erwachsene in Europa zugelassen ist.",
+    s2p2: "Beide Wirkstoffe erhöhen die Verfügbarkeit von Dopamin und Noradrenalin im Gehirn. Elvanse ist dabei ein sogenanntes Prodrug – es wird erst im Körper aktiviert. Das verlangsamt die Wirkung und macht es schwerer missbrauchbar als klassische Amphetamine.",
+    box2: "<strong>Der &bdquo;Paradox&rdquo;-Effekt erklärt:</strong> Menschen ohne ADHS fühlen sich durch Stimulanzien in niedrigen Dosen aufgedreht oder euphorisch. Menschen mit ADHS fühlen sich häufig ruhiger und klarer – weil ihr Gehirn endlich die Regulierung bekommt, die ihm fehlt. Es ist kein Paradox. Es ist Biologie.",
+    s2p3: "Eine Studie aus dem Jahr 2025 (Frontiers in Psychiatry) betont: Die steigende Verschreibung von Amphetaminen erfordert eine genaue Diagnose und regelmäßige Überprüfung – denn Medikamente ersetzen keine Therapie, sondern ergänzen sie.",
+
+    s3h:  "Die Fragen, die sich Eltern wirklich stellen",
+    faq1q: "Wird mein Kind abhängig?",
+    faq1a: "Das ist die am häufigsten gestellte Frage – und die Antwort überrascht viele: Behandelte Kinder mit ADHS entwickeln im Erwachsenenalter seltener eine Suchterkrankung als unbehandelte. Eine Metaanalyse von Wilens et al. (2003, Pediatrics) zeigte, dass eine frühe Stimulanzientherapie das spätere Suchtrisiko sogar senken kann – möglicherweise weil das unbehandelte ADHS-Gehirn andere Wege sucht, seinen Dopaminmangel zu kompensieren.",
+    box3: "<strong>Forschungsbefund:</strong> Unbehandelte ADHS-Patienten greifen häufiger zu Alkohol, Cannabis oder anderen Substanzen – wohl als unbewusste Selbstmedikation. Die gezielte medizinische Behandlung kann genau das verhindern.",
+    faq2q: "Wird mein Kind durch das Medikament zum Zombie?",
+    faq2a: "Wenn ein Kind apathisch, emotionslos oder ständig niedergeschlagen wirkt, ist das meist ein Zeichen für eine zu hohe Dosis – nicht für das Medikament an sich. In diesem Fall sollte die Dosis angepasst werden. Bei der richtigen Dosis berichten viele Eltern: \"Er ist immer noch er selbst – nur ruhiger und konzentrierter.\"",
+    faq3q: "Muss mein Kind das für immer nehmen?",
+    faq3a: "Nein. ADHS-Medikamente werden regelmäßig neu bewertet – oft jährlich. Viele Kinder reduzieren die Dosis im Teenager- oder Erwachsenenalter. Einige brauchen die Unterstützung dauerhaft, andere gar nicht mehr. Das ist keine Niederlage – das ist individuelle Medizin.",
+
+    s4h:  "Was wirklich auf Nebenwirkungen zu achten ist",
+    s4p1: "Amphetaminbasierte Medikamente haben echte Nebenwirkungen. Kein seriöser Arzt wird das bestreiten. Wichtig ist, sie zu kennen – nicht um Angst zu machen, sondern damit du weißt, worauf du achten musst.",
+    tipsTitle: "🔎 Was du im Blick behalten solltest",
+    tip1: "<strong>Appetit:</strong> Viele Kinder haben weniger Hunger, besonders mittags. Lösung: Frühstück vor der Einnahme, kalorienreiches Abendessen, keine Verbote.",
+    tip2: "<strong>Schlaf:</strong> Das Einschlafen kann sich verzögern. Uhrzeit der Einnahme mit dem Arzt besprechen – manchmal reicht eine kleine Verschiebung.",
+    tip3: "<strong>Herzfrequenz & Blutdruck:</strong> Leicht erhöht – deshalb sind regelmäßige Kontrolluntersuchungen Pflicht, kein Kann.",
+    tip4: "<strong>Wachstum:</strong> Bei Langzeitbehandlung kann das Wachstum leicht verlangsamt sein. Studien zeigen: Es holt sich im Laufe der Zeit meist auf.",
+    tip5: "<strong>Stimmungsschwankungen beim Abklingen:</strong> Wenn das Medikament nachlässt (Rebound-Effekt), können kurze Gereiztheit oder Erschöpfung auftreten. Das ist normal – aber besprechbar.",
+    s4p2: "Das Wichtigste: ADHS-Medikamente sind ein Baustein – kein Allheilmittel. Am wirksamsten sind sie in Kombination mit Verhaltenstherapie, klaren Strukturen zu Hause und einem verständnisvollen Umfeld. Medikamente öffnen eine Tür. Was dahinter passiert, liegt bei euch.",
+
+    affTitle: "Weiterführende Empfehlungen",
+    affIntro: "Wer tiefer einsteigen möchte: Diese drei Empfehlungen haben sich in der ADHS-Community bewährt.",
+    affCat1: "Buch für Eltern",
+    affName1: "\"ADHS – Das Praxisbuch\" für Familien",
+    affDesc1: "Verständliche Erklärungen, Alltagsstrategien und Gesprächsleitfäden für Eltern – ohne medizinisches Vorwissen.",
+    affCat2: "Kurs / Coaching",
+    affName2: "Elterncoaching ADHS (Online)",
+    affDesc2: "Strukturierte Begleitung für Eltern: Wie du Grenzen setzt, Routinen aufbaust und dein Kind wirklich erreichst.",
+    affCat3: "App & Tool",
+    affName3: "ADHS-Tagebuch App",
+    affDesc3: "Symptome, Medikamentenwirkung und Stimmungsverläufe einfach tracken – für konstruktive Arztgespräche.",
+    affCta: "Mehr erfahren →",
+    affNote: "Affiliate-Hinweis: Bei Käufen über verlinkte Empfehlungen erhält TRHI ggf. eine Provision – ohne Mehrkosten für dich. Auswahl redaktionell unabhängig.",
+
+    disclaimer: "⚠️ Dieser Artikel informiert und ersetzt keine ärztliche Beratung. ADHS-Diagnose und Medikation gehören in professionelle Hände. Bitte sprich mit einem Kinder- und Jugendpsychiater oder Neuropädiater.",
+    sourcesLabel: "Quellen:",
+
+    quizTitle:    "🧠 Teste dein Wissen",
+    quizIntroText:"5 Fragen rund um ADHS und Medikamente – du wirst überrascht sein, was du schon weißt.",
+    quizStart:    "Quiz starten",
+    quizRestart:  "Nochmal versuchen",
+    quizShare:    "Ergebnis teilen",
+
+    footerText: "Wissenschaftlich fundiert, verständlich erklärt.",
+
+    questions: [
+      {
+        q: "Welcher Botenstoff ist bei ADHS im Gehirn zu gering vorhanden?",
+        opts: ["Serotonin und Melatonin","Dopamin und Noradrenalin","Cortisol und Adrenalin","Oxytocin und Histamin"],
+        correct: 1,
+        ec: "✅ Richtig! Bei ADHS ist vor allem die Dopamin- und Noradrenalin-Signalgebung im präfrontalen Kortex gestört – dem Bereich für Planung und Impulskontrolle.",
+        ew: "❌ Bei ADHS sind vor allem Dopamin und Noradrenalin betroffen – die Botenstoffe, die dem Gehirn helfen, Prioritäten zu setzen und Impulse zu kontrollieren."
+      },
+      {
+        q: "Was bedeutet der sogenannte Paradox-Effekt bei ADHS-Medikamenten?",
+        opts: ["Kinder schlafen durch die Stimulanzien besser","Das Medikament wirkt bei ADHS-Gehirnen beruhigend statt aufputschend","Die Wirkung kehrt sich nach einer Woche um","Kinder mit ADHS reagieren gar nicht auf das Medikament"],
+        correct: 1,
+        ec: "✅ Genau – weil das ADHS-Gehirn einen Dopaminmangel hat, wirkt die Regulierung nach oben wie eine Beruhigung. Nicht Paradox, sondern Biologie.",
+        ew: "❌ Der Paradox-Effekt beschreibt, dass Stimulanzien ADHS-Gehirne eher beruhigen als aufputschen – weil sie ein vorhandenes Defizit ausgleichen, nicht überreizen."
+      },
+      {
+        q: "Was zeigt die Forschung zum Suchtrisiko bei behandelten ADHS-Patienten?",
+        opts: ["Das Suchtrisiko steigt durch frühe Medikation deutlich","Behandelte Patienten haben ein ähnlich hohes Risiko wie unbehandelte","Behandelte Patienten entwickeln seltener spätere Suchterkrankungen","Medikamente erhöhen nur das Alkohol-, nicht das Drogenrisiko"],
+        correct: 2,
+        ec: "✅ Richtig – eine frühe Stimulanzientherapie kann das spätere Suchtrisiko sogar senken, da das unbehandelte Gehirn häufig andere Wege zur Dopamin-Regulation sucht.",
+        ew: "❌ Studien (u. a. Wilens 2003) zeigen: Behandelte ADHS-Patienten entwickeln im Erwachsenenalter seltener Suchterkrankungen als unbehandelte."
+      },
+      {
+        q: "Was bedeutet es, wenn ein Kind nach ADHS-Medikation apathisch und emotionslos wirkt?",
+        opts: ["Das ist die normale, gewünschte Wirkung","Die Dosis ist wahrscheinlich zu hoch – Arzt kontaktieren","Das Medikament beginnt zu wirken – abwarten","Das Kind braucht zusätzliche Schlaftabletten"],
+        correct: 1,
+        ec: "✅ Richtig! Apathie und Emotionslosigkeit sind Zeichen einer zu hohen Dosis. Das Medikament selbst ist nicht das Problem – die Dosierung muss angepasst werden.",
+        ew: "❌ Apathie ist kein Therapieziel, sondern ein Warnsignal für eine zu hohe Dosis. Der Arzt sollte die Einstellung überprüfen."
+      },
+      {
+        q: "Was ist Elvanse (Lisdexamfetamin) und warum gilt es als sicherer als klassische Amphetamine?",
+        opts: ["Ein Beruhigungsmittel auf Pflanzenbasis","Ein Prodrug – es wird erst im Körper aktiviert und wirkt langsamer","Ein schnell wirkendes Notfallmedikament","Ein Nahrungsergänzungsmittel ohne Zulassung"],
+        correct: 1,
+        ec: "✅ Korrekt! Elvanse ist ein Prodrug – inaktiv bis es verstoffwechselt wird. Das macht es langsamer wirksam und schwerer missbrauchbar als direkt wirksame Amphetamine.",
+        ew: "❌ Elvanse ist ein Prodrug: Es wird erst im Körper aktiviert. Diese Verzögerung macht es kontrollierter und weniger anfällig für Missbrauch als klassische Amphetamine."
+      }
+    ],
+
+    qOf: "Frage",
+    qOfOf: "von",
+    pts: "Punkte",
+    resultTitles: ["Nicht aufgegeben? 💪","Auf dem richtigen Weg!","Gut informiert!","Sehr gut!","ADHS-Experte!"],
+    resultMsgs: [
+      "Schau den Artikel noch einmal durch – besonders die FAQ-Abschnitte. Das Thema ist wichtig.",
+      "Du hast die Grundlagen. Ein zweiter Durchgang lohnt sich.",
+      "Solide Kenntnisse! Du kannst gut mit anderen darüber reden.",
+      "Du weißt wirklich Bescheid. Teile dieses Wissen – andere Eltern brauchen es.",
+      "Perfekt! Du könntest anderen Eltern selbst erklären, wie das alles funktioniert."
+    ],
+    scoreOf: "Du hast %s von 5 Punkten."
+  },
+
+  en: {
+    pageTitle:   "ADHD & Amphetamines: What's Really Happening in Your Child's Brain | TRHI",
+    tag:         "ADHD & Medication",
+    heroTitle:   "ADHD and Amphetamines: What's Really Happening in Your Child's Brain",
+    date:        "June 11, 2026",
+    readTime:    "6 min read",
+    audience:    "For parents & those affected",
+    lede:        "Your child is impulsive, forgetful, and can barely sit still – and the doctor recommends a substance also known as a performance-enhancing drug? That sounds scary. Science shows: it's more complicated – and often less frightening – than you think.",
+
+    s1h:  "What ADHD Really Is – Not a Question of Willpower",
+    s1p1: "ADHD is not a failure of parenting and not just a phase. It's a neurological difference: certain areas of the brain – especially the prefrontal cortex, responsible for planning, impulse control, and focus – work with insufficient dopamine and noradrenaline. Two neurotransmitters the brain needs to set priorities.",
+    s1p2: "Imagine your car has an engine that doesn't idle smoothly. It stutters, stalls, fires up unexpectedly. That's not a driver error – that's mechanics. Children with ADHD want to concentrate. They just have a harder time controlling it than others.",
+    box1: "<strong>Important to know:</strong> ADHD affects around 5–7% of all children and 3–5% of adults worldwide. Diagnosis is clinical – through observation, testing, and ruling out other causes. There is no simple blood test.",
+    s1p3: "This is precisely where amphetamine-based medications come in – not to sedate the child, but to compensate for the dopamine deficit.",
+
+    s2h:  "How Amphetamines Work in ADHD – The Crucial Difference",
+    s2p1: "In Germany, ADHD is primarily treated with methylphenidate (Ritalin, Medikinet, Concerta). When that is insufficient, lisdexamfetamine (Vyvanse/Elvanse) is used – an amphetamine-based substance approved in Europe for children from age 6 (since 2013) and adults (since 2019).",
+    s2p2: "Both active ingredients increase the availability of dopamine and noradrenaline in the brain. Elvanse is a so-called prodrug – it is only activated inside the body. This slows the onset of effects and makes it harder to misuse than classic amphetamines.",
+    box2: "<strong>The \"paradox\" effect explained:</strong> People without ADHD feel hyper or euphoric from stimulants at low doses. People with ADHD often feel calmer and clearer – because their brain finally gets the regulation it's been missing. It's not a paradox. It's biology.",
+    s2p3: "A 2025 study in Frontiers in Psychiatry emphasizes: the rising prescription of amphetamines requires accurate diagnosis and regular review – because medication does not replace therapy, it complements it.",
+
+    s3h:  "The Questions Parents Really Ask",
+    faq1q: "Will my child become addicted?",
+    faq1a: "This is the most frequently asked question – and the answer surprises many: treated children with ADHD develop substance use disorders in adulthood less often than untreated children. A meta-analysis by Wilens et al. (2003, Pediatrics) showed that early stimulant therapy can actually reduce later addiction risk – possibly because the untreated ADHD brain seeks other ways to compensate for its dopamine deficit.",
+    box3: "<strong>Research finding:</strong> Untreated ADHD patients are more likely to turn to alcohol, cannabis, or other substances – likely as unconscious self-medication. Targeted medical treatment can prevent exactly this.",
+    faq2q: "Will my child become a zombie on the medication?",
+    faq2a: "If a child seems apathetic, emotionless, or persistently low, this is usually a sign of a dose that is too high – not the medication itself. In this case, the dose needs to be adjusted. At the right dose, many parents report: \"She's still herself – just calmer and more focused.\"",
+    faq3q: "Does my child have to take this forever?",
+    faq3a: "No. ADHD medications are regularly reassessed – often annually. Many children reduce their dose in their teen or adult years. Some need the support long-term, others no longer need it at all. That's not failure – that's personalized medicine.",
+
+    s4h:  "What Side Effects to Actually Watch For",
+    s4p1: "Amphetamine-based medications have real side effects. No responsible doctor will deny that. The important thing is to know them – not to create fear, but so you know what to watch out for.",
+    tipsTitle: "🔎 What to keep an eye on",
+    tip1: "<strong>Appetite:</strong> Many children are less hungry, especially at lunch. Solution: breakfast before taking the medication, calorie-dense dinner, no restrictions.",
+    tip2: "<strong>Sleep:</strong> Falling asleep may be delayed. Discuss the timing of medication with the doctor – sometimes a small shift in timing is enough.",
+    tip3: "<strong>Heart rate & blood pressure:</strong> Slightly elevated – which is why regular check-ups are mandatory, not optional.",
+    tip4: "<strong>Growth:</strong> Long-term treatment may slightly slow growth. Studies show it usually catches up over time.",
+    tip5: "<strong>Mood as the medication wears off:</strong> When the medication fades (rebound effect), brief irritability or exhaustion can occur. This is normal – and worth discussing.",
+    s4p2: "The most important thing: ADHD medication is one building block – not a cure-all. It works best in combination with behavioral therapy, clear structures at home, and a supportive environment. Medication opens a door. What happens behind it is up to you.",
+
+    affTitle: "Further Recommendations",
+    affIntro: "For those who want to go deeper: these three resources have proven valuable in the ADHD community.",
+    affCat1: "Book for Parents",
+    affName1: "\"ADHD – The Practical Guide\" for Families",
+    affDesc1: "Clear explanations, everyday strategies, and conversation guides for parents – no medical background needed.",
+    affCat2: "Course / Coaching",
+    affName2: "ADHD Parenting Coaching (Online)",
+    affDesc2: "Structured support for parents: how to set boundaries, build routines, and truly reach your child.",
+    affCat3: "App & Tool",
+    affName3: "ADHD Diary App",
+    affDesc3: "Track symptoms, medication effects, and mood patterns easily – for productive doctor conversations.",
+    affCta: "Learn more →",
+    affNote: "Affiliate notice: TRHI may receive a commission on purchases via linked recommendations – at no extra cost to you. Selection is editorially independent.",
+
+    disclaimer: "⚠️ This article is for informational purposes and does not replace medical advice. ADHD diagnosis and medication require professional care. Please consult a child and adolescent psychiatrist or neuropediatrician.",
+    sourcesLabel: "Sources:",
+
+    quizTitle:    "🧠 Test Your Knowledge",
+    quizIntroText:"5 questions about ADHD and medication – you'll be surprised what you already know.",
+    quizStart:    "Start Quiz",
+    quizRestart:  "Try Again",
+    quizShare:    "Share Result",
+
+    footerText: "Evidence-based. Human-friendly.",
+
+    questions: [
+      {
+        q: "Which neurotransmitter is deficient in the ADHD brain?",
+        opts: ["Serotonin and melatonin","Dopamine and noradrenaline","Cortisol and adrenaline","Oxytocin and histamine"],
+        correct: 1,
+        ec: "✅ Correct! In ADHD, dopamine and noradrenaline signaling in the prefrontal cortex is impaired – the area responsible for planning and impulse control.",
+        ew: "❌ In ADHD, dopamine and noradrenaline are the key neurotransmitters affected – they help the brain set priorities and control impulses."
+      },
+      {
+        q: "What does the so-called 'paradox effect' of ADHD medication mean?",
+        opts: ["Children sleep better with stimulants","The medication has a calming effect on ADHD brains instead of stimulating","The effect reverses after a week","Children with ADHD don't respond to the medication at all"],
+        correct: 1,
+        ec: "✅ Exactly – because the ADHD brain has a dopamine deficit, upward regulation feels like calm. Not a paradox – just biology.",
+        ew: "❌ The paradox effect means stimulants tend to calm ADHD brains rather than excite them – because they compensate for an existing deficit, not overstimulate."
+      },
+      {
+        q: "What does research show about addiction risk in treated ADHD patients?",
+        opts: ["Addiction risk rises significantly with early medication","Treated patients have similar risk to untreated patients","Treated patients are less likely to develop substance use disorders","Medication only increases alcohol, not drug risk"],
+        correct: 2,
+        ec: "✅ Right – early stimulant therapy may actually lower later addiction risk, since the untreated brain often seeks other ways to regulate dopamine.",
+        ew: "❌ Studies (e.g. Wilens 2003) show: treated ADHD patients develop substance use disorders in adulthood less often than untreated patients."
+      },
+      {
+        q: "What does it mean if a child seems apathetic and emotionless after ADHD medication?",
+        opts: ["That is the normal, desired effect","The dose is probably too high – contact the doctor","The medication is starting to work – wait it out","The child needs additional sleep medication"],
+        correct: 1,
+        ec: "✅ Correct! Apathy and emotionlessness signal a dose that is too high. The medication itself is not the problem – the dosage needs to be adjusted.",
+        ew: "❌ Apathy is not a therapy goal – it's a warning sign of too high a dose. The doctor should review the prescription."
+      },
+      {
+        q: "What is Elvanse (lisdexamfetamine) and why is it considered safer than classic amphetamines?",
+        opts: ["A plant-based sedative","A prodrug – activated only inside the body, with a slower onset","A fast-acting emergency medication","An unlicensed dietary supplement"],
+        correct: 1,
+        ec: "✅ Correct! Elvanse is a prodrug – inactive until metabolized. This delay makes it more controlled and harder to misuse than directly-acting amphetamines.",
+        ew: "❌ Elvanse is a prodrug: only activated inside the body. This delay makes it more controlled and less prone to misuse than classic amphetamines."
+      }
+    ],
+
+    qOf: "Question",
+    qOfOf: "of",
+    pts: "pts",
+    resultTitles: ["Keep going! 💪","On the right track!","Well informed!","Great job!","ADHD Expert!"],
+    resultMsgs: [
+      "Read through the article again – especially the FAQ sections. This topic matters.",
+      "You have the basics. A second pass is worth it.",
+      "Solid knowledge! You can talk about this confidently with others.",
+      "You're really well-informed. Share this knowledge – other parents need it.",
+      "Perfect! You could explain all of this to other parents yourself."
+    ],
+    scoreOf: "You scored %s out of 5."
+  }
+};
+
+// ══════════════════════════════
+//  LANGUAGE ENGINE
+// ══════════════════════════════
+let lang = 'de';
+
+function setLang(l) {
+  lang = l;
+  document.documentElement.lang = l;
+  document.getElementById('btnDE').classList.toggle('active', l === 'de');
+  document.getElementById('btnEN').classList.toggle('active', l === 'en');
+  document.getElementById('btnDE').setAttribute('aria-pressed', l === 'de');
+  document.getElementById('btnEN').setAttribute('aria-pressed', l === 'en');
+
+  const t = T[l];
+  document.title = t.pageTitle;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+  // Reset quiz to match language
+  current = 0; score = 0; answered = false;
+  document.getElementById('quizPlay').style.display = 'none';
+  document.getElementById('resultScreen').classList.remove('show');
+  document.getElementById('quizIntro').style.display = 'block';
+}
+
+// ══════════════════════════════
+//  QUIZ ENGINE
+// ══════════════════════════════
+let current = 0, score = 0, answered = false;
+
+document.getElementById('startBtn').addEventListener('click', startQuiz);
+document.getElementById('nextBtn').addEventListener('click', nextQ);
+document.getElementById('restartBtn').addEventListener('click', restartQuiz);
+document.getElementById('shareBtn').addEventListener('click', shareResult);
+
+function startQuiz() {
+  document.getElementById('quizIntro').style.display = 'none';
+  document.getElementById('quizPlay').style.display = 'block';
+  renderQ();
+}
+
+function renderQ() {
+  answered = false;
+  const t = T[lang];
+  const q = t.questions[current];
+  const fill = (current / t.questions.length) * 100;
+
+  document.getElementById('qCounter').textContent =
+    `${t.qOf} ${current + 1} ${t.qOfOf} ${t.questions.length}`;
+  document.getElementById('progressFill').style.width = fill + '%';
+  document.getElementById('scorePill').textContent = `${score} ${t.pts}`;
+  document.getElementById('questionText').textContent = q.q;
+  document.getElementById('feedbackBox').className = 'feedback';
+  document.getElementById('feedbackBox').textContent = '';
+  document.getElementById('nextBtn').style.display = 'none';
+
+  const list = document.getElementById('optionsList');
+  list.innerHTML = '';
+  q.opts.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'option';
+    btn.textContent = opt;
+    btn.addEventListener('click', () => selectAnswer(i, btn));
+    list.appendChild(btn);
+  });
+}
+
+function selectAnswer(idx, btnEl) {
+  if (answered) return;
+  answered = true;
+  const t = T[lang];
+  const q = t.questions[current];
+  document.querySelectorAll('.option').forEach(b => b.disabled = true);
+  const fb = document.getElementById('feedbackBox');
+  if (idx === q.correct) {
+    btnEl.classList.add('correct');
+    score++;
+    fb.textContent = q.ec;
+    fb.className = 'feedback show';
+  } else {
+    btnEl.classList.add('incorrect');
+    document.querySelectorAll('.option')[q.correct].classList.add('correct');
+    fb.textContent = q.ew;
+    fb.className = 'feedback show wrong';
+  }
+  document.getElementById('scorePill').textContent = `${score} ${t.pts}`;
+  document.getElementById('progressFill').style.width =
+    ((current + 1) / t.questions.length * 100) + '%';
+  const nb = document.getElementById('nextBtn');
+  nb.style.display = 'inline-block';
+  nb.textContent = current + 1 < t.questions.length
+    ? (lang === 'de' ? 'Weiter →' : 'Next →')
+    : (lang === 'de' ? 'Ergebnis ansehen →' : 'See result →');
+}
+
+function nextQ() {
+  current++;
+  if (current < T[lang].questions.length) { renderQ(); }
+  else { showResult(); }
+}
+
+function showResult() {
+  document.getElementById('quizPlay').style.display = 'none';
+  const rs = document.getElementById('resultScreen');
+  rs.classList.add('show');
+  const t = T[lang];
+  const tier = Math.min(score, t.resultTitles.length - 1);
+  const emojis = ['😅','🌱','📚','💪','🏆'];
+  document.getElementById('resultEmoji').textContent = emojis[score] || '🏆';
+  document.getElementById('resultTitle').textContent = t.resultTitles[tier];
+  document.getElementById('resultScoreText').textContent =
+    t.scoreOf.replace('%s', score);
+  document.getElementById('resultMsg').textContent = t.resultMsgs[tier];
+  document.querySelector('[data-i18n="quizRestart"]').textContent = t.quizRestart;
+  document.querySelector('[data-i18n="quizShare"]').textContent = t.quizShare;
+}
+
+function restartQuiz() {
+  current = 0; score = 0; answered = false;
+  document.getElementById('resultScreen').classList.remove('show');
+  document.getElementById('quizIntro').style.display = 'block';
+}
+
+function shareResult() {
+  const t = T[lang];
+  const text = lang === 'de'
+    ? `Ich habe ${score} von 5 Punkten beim TRHI-Quiz "ADHS & Amphetamine" erreicht! 🧠`
+    : `I scored ${score} out of 5 on the TRHI quiz "ADHD & Amphetamines"! 🧠`;
+  if (navigator.share) navigator.share({ text }).catch(() => {});
+  else if (navigator.clipboard) {
+    navigator.clipboard.writeText(text).then(() => {
+      const btn = document.getElementById('shareBtn');
+      btn.textContent = lang === 'de' ? 'Kopiert ✓' : 'Copied ✓';
+      setTimeout(() => { btn.textContent = t.quizShare; }, 2200);
+    });
+  }
+}
+
+// ── Init ──
+setLang('de');
+</script>
+</body>
+</html>

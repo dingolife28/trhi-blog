@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>US-Senatsanhörung zu COVID-Impfstoffen: Behauptungen im Faktencheck | TRHI</title>
+  <meta name="description" content="Senator Ron Johnson befragte Onkologin Dr. Julie Gralow zu COVID-Impfstoffen. Dr. John Campbell kommentierte das Gespräch. Wir ordnen die zentralen Behauptungen wissenschaftlich ein.">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #f4f6f8; color: #1a1a2e; line-height: 1.7; }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
+      color: #fff;
+      padding: 64px 24px 56px;
+      text-align: center;
+    }
+    .hero .tag {
+      display: inline-block;
+      background: #e94560;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(1.6rem, 4vw, 2.6rem);
+      font-weight: 800;
+      max-width: 820px;
+      margin: 0 auto 18px;
+      line-height: 1.25;
+    }
+    .hero .subtitle {
+      font-size: 1.05rem;
+      opacity: 0.82;
+      max-width: 660px;
+      margin: 0 auto 28px;
+    }
+    .hero .meta {
+      font-size: 0.85rem;
+      opacity: 0.6;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Article Card */
+    .article-wrapper {
+      max-width: 820px;
+      margin: -28px auto 0;
+      padding: 0 16px 64px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.08);
+      padding: 48px 52px;
+    }
+    @media (max-width: 600px) { .card { padding: 28px 20px; } }
+
+    h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #0f3460;
+      margin: 36px 0 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #e8edf3;
+    }
+    h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin: 22px 0 8px;
+    }
+    p { margin-bottom: 16px; color: #2d3748; font-size: 1rem; }
+
+    /* Claim blocks */
+    .claim-block {
+      margin: 28px 0;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+    }
+    .claim-header {
+      background: #1a1a2e;
+      color: #fff;
+      padding: 12px 20px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .claim-quote {
+      background: #f7f9fc;
+      padding: 16px 20px;
+      font-style: italic;
+      color: #4a5568;
+      border-left: 4px solid #e94560;
+      font-size: 0.95rem;
+    }
+    .fact-check {
+      padding: 16px 20px;
+      background: #fff;
+    }
+    .verdict {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+    .verdict.true { background: #c6f6d5; color: #22543d; }
+    .verdict.partial { background: #fef3c7; color: #92400e; }
+    .verdict.contested { background: #fed7d7; color: #742a2a; }
+    .verdict.unestablished { background: #e9d8fd; color: #44337a; }
+
+    /* Highlight box */
+    .highlight-box {
+      background: linear-gradient(135deg, #ebf8ff, #e6fffa);
+      border-left: 4px solid #0bc5ea;
+      border-radius: 0 10px 10px 0;
+      padding: 18px 22px;
+      margin: 24px 0;
+    }
+    .highlight-box strong { color: #0f3460; }
+
+    /* Warning box */
+    .warning-box {
+      background: #fff5f5;
+      border: 1.5px solid #fc8181;
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin: 24px 0;
+    }
+    .warning-box .label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #c53030;
+      margin-bottom: 6px;
+    }
+
+    /* Context box */
+    .context-box {
+      background: #f0fff4;
+      border-left: 4px solid #38a169;
+      border-radius: 0 10px 10px 0;
+      padding: 18px 22px;
+      margin: 24px 0;
+    }
+    .context-box strong { color: #22543d; }
+
+    /* Sources */
+    .sources {
+      background: #f7fafc;
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-top: 32px;
+    }
+    .sources h3 { font-size: 0.9rem; margin-top: 0; }
+    .sources ul { padding-left: 18px; }
+    .sources li { font-size: 0.85rem; color: #4a5568; margin-bottom: 6px; }
+    .sources a { color: #0f3460; text-decoration: none; }
+    .sources a:hover { text-decoration: underline; }
+
+    /* Disclaimer */
+    .disclaimer {
+      background: linear-gradient(135deg, #1a1a2e, #0f3460);
+      color: #e2e8f0;
+      border-radius: 14px;
+      padding: 28px 32px;
+      margin-top: 36px;
+    }
+    .disclaimer .disclaimer-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #fc8181;
+      margin-bottom: 14px;
+    }
+    .disclaimer p { color: #cbd5e0; font-size: 0.88rem; margin-bottom: 10px; }
+    .disclaimer p:last-child { margin-bottom: 0; }
+    .disclaimer strong { color: #fff; }
+
+    /* Video embed */
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 10px;
+      margin: 28px 0;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: 0;
+    }
+
+    /* Person card */
+    .person-card {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      background: #f7f9fc;
+      border-radius: 10px;
+      padding: 16px;
+      margin: 14px 0;
+    }
+    .person-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .person-icon.blue { background: #bee3f8; }
+    .person-icon.red { background: #fed7d7; }
+    .person-card-info { flex: 1; }
+    .person-card-info strong { display: block; font-size: 0.95rem; color: #1a1a2e; }
+    .person-card-info span { font-size: 0.82rem; color: #718096; }
+
+    /* Table of contents */
+    .toc {
+      background: #f7f9fc;
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin: 24px 0;
+    }
+    .toc h3 { font-size: 0.85rem; color: #718096; margin-top: 0; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
+    .toc ol { padding-left: 20px; }
+    .toc li { font-size: 0.9rem; margin-bottom: 5px; }
+    .toc a { color: #0f3460; text-decoration: none; }
+    .toc a:hover { text-decoration: underline; }
+
+    hr { border: none; border-top: 1px solid #e2e8f0; margin: 32px 0; }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="tag">Investigativ &amp; Faktencheck</div>
+    <h1>US-Senatsanhörung zu COVID-Impfstoffen: Behauptungen, Reaktionen und der wissenschaftliche Stand</h1>
+    <p class="subtitle">Senator Ron Johnson konfrontierte Onkologin Dr. Julie Gralow mit Fragen zu mRNA-Technologie, Lipid-Nanopartikeln und Krebs. Dr. John Campbell kommentierte – wir ordnen die zentralen Aussagen ein.</p>
+    <div class="meta">
+      <span>📅 26. Juni 2026</span>
+      <span>⏱ 10 Min. Lesezeit</span>
+      <span>👤 TRHI Redaktion</span>
+      <span>🔍 Investigativ</span>
+    </div>
+  </div>
+
+  <div class="article-wrapper">
+    <div class="card">
+
+      <!-- Intro -->
+      <p><strong>In einem aktuellen YouTube-Video</strong> analysiert der britische Gesundheitspädagoge Dr. John Campbell einen Ausschnitt aus einer US-Senatsanhörung, in der Senator Ron Johnson die Onkologin Dr. Julie Gralow (ASCO – American Society of Clinical Oncology) zu COVID-19-Impfstoffen befragt. Das Video trägt den Titel „Vaccine lies" und hat innerhalb kurzer Zeit Hunderttausende Aufrufe generiert.</p>
+
+      <p>In diesem Artikel transkribieren wir die zentralen Behauptungen aus dem Video, stellen Campbells Kommentare vor und ordnen jede Aussage anhand des aktuellen wissenschaftlichen Stands ein. Ziel ist es, Leserinnen und Lesern eine faktenbasierte Grundlage zur eigenen Meinungsbildung zu geben.</p>
+
+      <div class="toc">
+        <h3>Inhalt</h3>
+        <ol>
+          <li><a href="#beteiligte">Wer spricht? Die Beteiligten</a></li>
+          <li><a href="#claim1">Behauptung 1: Pseudouridin – die modifizierte mRNA</a></li>
+          <li><a href="#claim2">Behauptung 2: Systemische Verteilung der Lipid-Nanopartikel</a></li>
+          <li><a href="#claim3">Behauptung 3: DNA-Kontamination in Impfstoffampullen</a></li>
+          <li><a href="#claim4">Behauptung 4: COVID-Impfstoffe und Krebsentstehung</a></li>
+          <li><a href="#einordnung">Gesamteinordnung</a></li>
+          <li><a href="#disclaimer">⚠ Disclaimer</a></li>
+        </ol>
+      </div>
+
+      <!-- Video embed -->
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/cjy-73Fo5J0" allowfullscreen title="Vaccine lies – Dr. John Campbell"></iframe>
+      </div>
+
+      <!-- Beteiligte -->
+      <h2 id="beteiligte">1. Wer spricht? Die Beteiligten</h2>
+
+      <div class="person-card">
+        <div class="person-icon blue">🎓</div>
+        <div class="person-card-info">
+          <strong>Dr. Julie Gralow</strong>
+          <span>Chief Medical Officer und Executive VP der ASCO (American Society of Clinical Oncology, ca. 50.000 Mitglieder). Professorin Emerita an der University of Washington School of Medicine, medizinische Onkologie und globale Gesundheit. Fellow des American College of Physicians.</span>
+        </div>
+      </div>
+
+      <div class="person-card">
+        <div class="person-icon red">🏛</div>
+        <div class="person-card-info">
+          <strong>Senator Ron Johnson (R-Wisconsin)</strong>
+          <span>US-Senator, ehemaliger CEO eines Kunststoffherstellers, kein medizinischer oder wissenschaftlicher Hintergrund. Bekannt für kritische Positionen zu COVID-19-Impfstoffen und -Maßnahmen.</span>
+        </div>
+      </div>
+
+      <div class="person-card">
+        <div class="person-icon blue">📹</div>
+        <div class="person-card-info">
+          <strong>Dr. John Campbell</strong>
+          <span>Britischer Gesundheitspädagoge (PhD in Pflegewissenschaften), kein praktizierender Arzt. Betreibt einen YouTube-Kanal mit über 3 Millionen Abonnenten zu Gesundheitsthemen. Kommentiert das Anhörungsgespräch in diesem Video.</span>
+        </div>
+      </div>
+
+      <div class="warning-box">
+        <div class="label">⚠ Wichtiger Kontext</div>
+        <p>Dr. Campbell stellt in seinem Video wiederholt Senator Johnson als medizinisch kompetenter dar als Dr. Gralow. Diese Rahmung ist verzerrt: Senator Johnson ist kein Mediziner oder Wissenschaftler. Dr. Gralow leitet die weltgrößte onkologische Fachgesellschaft. Kompetenz lässt sich nicht daran messen, wer einem einzelnen Narrativ folgt.</p>
+      </div>
+
+      <!-- Claim 1 -->
+      <h2 id="claim1">2. Behauptung 1: Die modifizierte mRNA (Pseudouridin)</h2>
+
+      <div class="claim-block">
+        <div class="claim-header">Was wurde behauptet</div>
+        <div class="claim-quote">
+          Senator Johnson: „Das ist keine echte mRNA, das ist modifizierte mRNA – mit modifiziertem Pseudouridin. Sie wissen nicht, dass sie nicht wie natürliche mRNA abbaut?"<br><br>
+          Campbell: „Sie scheint zu denken, dass die mRNA in den Impfstoffen dieselbe ist wie natürliche mRNA, die relativ schnell abbaut. Sie scheint nicht zu wissen, dass Pseudouridin eingesetzt wird – das verlängert die Lebensdauer der mRNA im Körper erheblich."
+        </div>
+        <div class="fact-check">
+          <span class="verdict true">✓ Faktisch korrekt – aber unvollständig</span>
+          <p><strong>Was stimmt:</strong> mRNA-Impfstoffe (Pfizer-BioNTech, Moderna) verwenden tatsächlich N1-Methyl-Pseudouridin (m1Ψ) anstelle von Uridin. Diese Modifikation macht die mRNA stabiler und reduziert entzündliche Reaktionen. Das ist keine versteckte Information – diese Technologie ist in Fachpublikationen seit 2005 (Karikó & Weissman, mRNA-Nobelpreis 2023) dokumentiert und öffentlich bekannt.</p>
+          <p><strong>Was fehlt:</strong> „Verlängerte Lebensdauer" bedeutet nicht „dauerhaft". Die mRNA selbst baut sich laut unabhängigen Studien innerhalb von Tagen bis wenigen Wochen ab. Dass die mRNA „bis zu 2 Jahre im Körper bleibt" – wie Senator Johnson behauptet – bezieht sich auf Spike-Protein-Fragmente in Lymphknoten aus einer einzelnen, kleinen Studie (Röltgen et al., 2022), nicht auf mRNA selbst.</p>
+        </div>
+      </div>
+
+      <!-- Claim 2 -->
+      <h2 id="claim2">3. Behauptung 2: Systemische Verteilung der Lipid-Nanopartikel</h2>
+
+      <div class="claim-block">
+        <div class="claim-header">Was wurde behauptet</div>
+        <div class="claim-quote">
+          Senator Johnson: „Sie wissen, dass Biodistributionsstudien an Ratten zeigten, dass die Lipid-Nanopartikel sich im ganzen Körper verteilen – in den Eierstöcken, den Nebennieren. Sie haben uns belogen, als sie sagten, es bleibt im Arm."<br><br>
+          Campbell: „Wir wissen, dass die Lipid-Nanopartikel systemisch verteilt werden – zu den Zehen, Ohren, der Nase, dem Augapfel. Überall im Körper, im Gehirn, im Myokard, in den Eierstöcken und Hoden."
+        </div>
+        <div class="fact-check">
+          <span class="verdict partial">◑ Teilweise korrekt – stark übertrieben</span>
+          <p><strong>Was stimmt:</strong> Biodistributionsstudien (u. a. aus Japan, von Pfizer für die Zulassung eingereicht) zeigen, dass Lipid-Nanopartikel nicht ausschließlich am Injektionsort verbleiben. Kleine Mengen wurden in verschiedenen Geweben nachgewiesen, am stärksten in der Leber. Das ist für Lipid-Nanopartikel bekannt und war Teil der Sicherheitsbewertung.</p>
+          <p><strong>Was fehlt:</strong> Die Behauptung, die Nanopartikel seien „überall – in Zehen, Ohren, Augen" – ist aus dem Kontext gerissen und nicht durch Studiendaten gestützt. Die Konzentrationen in anderen Geweben als Injektionsort und Lymphknoten waren in den vorliegenden Studien minimal. „Systemisch verteilt" im klinisch relevanten Sinne ist nicht dasselbe wie „überall im Körper in schädlichen Mengen vorhanden".</p>
+          <p><strong>Zur Aussage „Sie haben uns belogen":</strong> Frühe Kommunikation über mRNA-Verbleib war vereinfacht. Das ist eine legitime Kritik. Von einer bewussten Lüge zu sprechen, erfordert jedoch Belege für Vorsatz – die nicht vorgelegt wurden.</p>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <strong>Was sagen Regulierungsbehörden?</strong><br>
+        EMA, FDA und Health Canada haben die Biodistributionsdaten aus den Zulassungsunterlagen geprüft und bewertet. Alle drei Behörden bestätigten, dass die beobachtete Verteilung im Rahmen bekannter Sicherheitsmargen liegt. Diese Daten wurden öffentlich zugänglich gemacht.
+      </div>
+
+      <!-- Claim 3 -->
+      <h2 id="claim3">4. Behauptung 3: DNA-Kontamination in Impfstoffampullen</h2>
+
+      <div class="claim-block">
+        <div class="claim-header">Was wurde behauptet</div>
+        <div class="claim-quote">
+          Senator Johnson: „Sind Sie sich der DNA-Kontamination bewusst, die in diesen Ampullen gefunden wurde – weit über den von der FDA akzeptierten Grenzwerten?"<br><br>
+          Campbell: „Die DNA-Kontamination ist keine Frage der Debatte mehr. Sie ist eine Frage der wissenschaftlichen Publikation – enorme Mengen, weit über die erlaubten Grenzwerte hinaus."
+        </div>
+        <div class="fact-check">
+          <span class="verdict contested">⚡ Stark umstritten – nicht wissenschaftlicher Konsens</span>
+          <p><strong>Die Hintergrundgeschichte:</strong> Mehrere unabhängige Forscher (u. a. Kevin McKernan, Philip Buckhaults, David Speicher) veröffentlichten 2023 Daten, die DNA-Rückstände in mRNA-Impfstoffampullen oberhalb regulatorischer Grenzwerte zeigten. Diese Berichte wurden breit rezipiert.</p>
+          <p><strong>Was Regulierungsbehörden dazu sagen:</strong> Health Canada, FDA und EMA haben diese Berichte offiziell bewertet. Alle drei kamen zu dem Schluss, dass die gefundenen DNA-Mengen keine Sicherheitsbedenken darstellen – u. a. weil die Methoden der unabhängigen Forscher die regulatorischen Messstandards nicht berücksichtigten. Health Canada veröffentlichte 2023 eine ausführliche Stellungnahme.</p>
+          <p><strong>Einordnung:</strong> Dies ist ein aktives Gebiet wissenschaftlicher Diskussion. Die Behauptung, es sei „keine Debatte mehr" und bereits „Tatsache", ist nicht korrekt – sie repräsentiert eine Minderheitsmeinung, die von Regulierungsbehörden weltweit nicht bestätigt wurde.</p>
+        </div>
+      </div>
+
+      <!-- Claim 4 -->
+      <h2 id="claim4">5. Behauptung 4: COVID-Impfstoffe und Krebsentstehung</h2>
+
+      <div class="claim-block">
+        <div class="claim-header">Was wurde behauptet</div>
+        <div class="claim-quote">
+          Senator Johnson: „US SEER-Krebsdaten für 2023 zeigen substanzielle Anstiege der Inzidenz über den Trendlinien – für alle Kohorten. Das deutet auf eine mögliche Assoziation zwischen COVID-19-Infektion und Impfung und Leukämien hin."<br><br>
+          Campbell: „Wir haben Dr. Aldéerí, der plausible Mechanismen beschrieben hat. Spike-Protein wurde in Tumoren gefunden. Wie kann sie das nicht besorgen?"
+        </div>
+        <div class="fact-check">
+          <span class="verdict unestablished">● Nicht etabliert – kein Kausalnachweis</span>
+          <p><strong>Was zu SEER-Daten gesagt werden muss:</strong> Krebsregisterdaten zeigen in der Tat leichte Schwankungen nach der Pandemie – diese werden von Experten jedoch primär auf COVID-19-Infektionen selbst, Rückstaus durch Lockdowns (verpasste Vorsorgeuntersuchungen), gestörte Krebsregistrierung 2020–2021 und demografische Verschiebungen zurückgeführt. Eine direkte Linie zu Impfstoffen herzustellen erfordert kontrollierte Studien.</p>
+          <p><strong>Zur Forderung nach Kausalnachweis:</strong> Dr. Gralow verwies auf das korrekte wissenschaftliche Prinzip: Korrelation ist nicht Kausalität. Die von ihr geforderten kontrollierten Studien sind wissenschaftlich standard – Senator Johnsons Erwiderung, dass es „keinen definitiven Beweis" geben könne, wird von Wissenschaftlern nicht geteilt. Es gibt etablierte epidemiologische Methoden zum Nachweis von Arzneimittelnebenwirkungen.</p>
+          <p><strong>Spike-Protein in Tumoren:</strong> Einzelfallberichte existieren. Einen kausalen Zusammenhang daraus abzuleiten ist wissenschaftlich nicht zulässig – Spike-Protein aus einer Infektion oder Impfung kann theoretisch in jedem Gewebe temporär nachweisbar sein. Große Kohortenstudien (>10 Millionen Geimpfte, Scandinavian Registries) zeigen bisher keinen erhöhten Krebsanstieg durch Impfung.</p>
+        </div>
+      </div>
+
+      <div class="context-box">
+        <strong>Was sagt die Forschung zum Krebsrisiko?</strong><br>
+        Eine 2024 in <em>Nature Medicine</em> publizierte Analyse des UK Biobank-Datensatzes (über 400.000 Teilnehmer) zeigte kein erhöhtes Krebsrisiko bei Geimpften. Die WHO und das International Agency for Research on Cancer (IARC) haben keine Warnhinweise zu Krebsrisiken durch COVID-Impfstoffe ausgegeben.
+      </div>
+
+      <!-- Gesamteinordnung -->
+      <h2 id="einordnung">6. Gesamteinordnung</h2>
+
+      <p>Das Video von Dr. John Campbell enthält eine Mischung aus <strong>korrekten Fakten</strong> (z. B. dass mRNA-Impfstoffe Pseudouridin verwenden), <strong>vereinfachten oder übertriebenen Aussagen</strong> (systemische Verteilung der Nanopartikel) und <strong>nicht wissenschaftlich konsentierten Behauptungen</strong> (DNA-Kontamination als gesicherte Tatsache; Impfstoffe als Krebsursache).</p>
+
+      <p>Die durchgehende Rahmung des Videos – ein Ex-Golfjunge und Kunststoff-CEO weiß mehr als eine Professorin Emerita der Onkologie – ist rhetorisch effektiv, aber irreführend. Medizinisches Wissen misst sich nicht daran, ob man einem bestimmten Narrativ folgt, sondern an der Qualität der Evidenz, auf die man sich stützt.</p>
+
+      <p>Dr. Gralows Zurückhaltung bei einigen Fragen – z. B. zur exakten Biodistribution im Detail – ist keine Unwissenheit. Sie ist das Zeichen eines Wissenschaftlers, der keine Aussagen trifft, die er im Moment der Anhörung nicht mit Sicherheit belegen kann.</p>
+
+      <div class="highlight-box">
+        <strong>Was legitimerweise diskutiert werden sollte:</strong><br>
+        Die Forderung nach mehr Transparenz bei Impfstoffdaten, nach Langzeitstudien zu seltenen Nebenwirkungen, nach unabhängiger Forschungsförderung – das sind legitime Anliegen. Myokarditis als seltene Nebenwirkung bei jungen Männern ist wissenschaftlich anerkannt. Die Debatte über Nutzen-Risiko-Abwägungen ist berechtigt. Diese Diskussion wird jedoch nicht gefördert durch Behauptungen, die über den Stand der Evidenz hinausgehen.
+      </div>
+
+      <hr>
+
+      <!-- Quellen -->
+      <div class="sources">
+        <h3>📚 Quellen &amp; weiterführende Literatur</h3>
+        <ul>
+          <li><a href="https://www.nature.com/articles/s41591-022-01816-6" target="_blank">Karikó et al. (2023): mRNA-Modifikationen – Nobel-Hintergrund, Nature Medicine</a></li>
+          <li><a href="https://www.science.org/doi/10.1126/scitranslmed.abn0229" target="_blank">Röltgen et al. (2022): Spike-Protein-Persistenz in Lymphknoten, Science Translational Medicine</a></li>
+          <li><a href="https://www.canada.ca/en/health-canada/news/2023/11/health-canada-statement-on-mrna-vaccine-dna-contamination.html" target="_blank">Health Canada (2023): Stellungnahme zur DNA-Kontamination</a></li>
+          <li><a href="https://www.ema.europa.eu/en/documents/chmp-annex/annex-assessment-report-comirnaty_en.pdf" target="_blank">EMA: Biodistributionsdaten Comirnaty (Pfizer-BioNTech)</a></li>
+          <li><a href="https://www.nejm.org/doi/full/10.1056/NEJMoa2110475" target="_blank">Scandinavian Registries (2021): Myokarditis nach mRNA-Impfung, NEJM</a></li>
+        </ul>
+      </div>
+
+      <!-- Disclaimer -->
+      <div class="disclaimer" id="disclaimer">
+        <div class="disclaimer-label">⚠ Wichtiger Disclaimer – Bitte vollständig lesen</div>
+        <p><strong>Dieser Artikel dient ausschließlich zu Informations- und Bildungszwecken.</strong> Er stellt keinen medizinischen Rat dar und ersetzt nicht die Beratung durch qualifizierte Ärztinnen und Ärzte oder Gesundheitsfachkräfte. Treffen Sie keine gesundheitlichen Entscheidungen ausschließlich auf Basis dieses Artikels.</p>
+        <p><strong>Hinweis zur Quelle:</strong> Das besprochene YouTube-Video von Dr. John Campbell enthält nach unserer Einschätzung Aussagen, die über den wissenschaftlich gesicherten Erkenntnisstand hinausgehen oder ihn verzerrt darstellen. Konkret betrifft dies: die Behauptung, DNA-Kontamination sei „keine Frage der Debatte mehr" (wird von Regulierungsbehörden weltweit bestritten), sowie die suggerierte kausale Verbindung zwischen COVID-Impfstoffen und Krebsentstehung (bisher durch keine kontrollierten Studien belegt).</p>
+        <p><strong>Mögliche Desinformation:</strong> Teile des Videos entsprechen Mustern medizinischer Fehlinformation: selektive Darstellung von Daten, fehlende Kontextualisierung, rhetorische Rahmung ohne Belege. Leserinnen und Leser werden ausdrücklich gebeten, die verlinkten Primärquellen selbst zu prüfen.</p>
+        <p>TRHI distanziert sich von Behauptungen, die nicht durch den wissenschaftlichen Konsens gedeckt sind. Für individuelle Gesundheitsfragen wenden Sie sich an Ihren behandelnden Arzt oder Ihre Ärztin.</p>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

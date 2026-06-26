@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TRHI Blog – Gesundheit, Sport & Wissenschaft</title>
+  <meta name="description" content="Fundierte Gesundheits- und Sportartikel mit wissenschaftlichen Insights. Praktisch, vertrauenswürdig, evidenzbasiert.">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #f4f6f8; color: #1a1a2e; }
+
+    /* NAV */
+    nav {
+      background: #1a1a2e;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logo {
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.2rem;
+      letter-spacing: -0.5px;
+      text-decoration: none;
+    }
+    .nav-logo span { color: #52b788; }
+    .nav-links { display: flex; gap: 24px; }
+    .nav-links a {
+      color: #a0aec0;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: #fff; }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #1a1a2e 0%, #2d6a4f 100%);
+      color: #fff;
+      padding: 72px 24px 80px;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(82,183,136,0.2);
+      border: 1px solid #52b788;
+      color: #52b788;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 5px 16px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .hero h1 span { color: #52b788; }
+    .hero p {
+      font-size: 1.05rem;
+      opacity: 0.75;
+      max-width: 540px;
+      margin: 0 auto 32px;
+      line-height: 1.6;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .stat { text-align: center; }
+    .stat .num { font-size: 1.8rem; font-weight: 800; color: #52b788; }
+    .stat .label { font-size: 0.75rem; opacity: 0.6; text-transform: uppercase; letter-spacing: 1px; }
+
+    /* FILTER TAGS */
+    .filter-bar {
+      max-width: 1100px;
+      margin: -20px auto 0;
+      padding: 0 20px 24px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .filter-tag {
+      background: #fff;
+      border: 1.5px solid #e2e8f0;
+      color: #4a5568;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 6px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.2s;
+      user-select: none;
+    }
+    .filter-tag:hover, .filter-tag.active {
+      background: #2d6a4f;
+      border-color: #2d6a4f;
+      color: #fff;
+    }
+
+    /* ARTICLE GRID */
+    .articles {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 12px 20px 80px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    /* ARTICLE CARD */
+    .article-card {
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .article-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    }
+    .card-color-bar { height: 4px; }
+    .card-color-bar.green { background: linear-gradient(90deg, #2d6a4f, #52b788); }
+    .card-color-bar.blue { background: linear-gradient(90deg, #0f3460, #0bc5ea); }
+    .card-color-bar.orange { background: linear-gradient(90deg, #c05621, #f4a261); }
+    .card-color-bar.red { background: linear-gradient(90deg, #742a2a, #e94560); }
+    .card-color-bar.purple { background: linear-gradient(90deg, #44337a, #9f7aea); }
+
+    .card-body { padding: 22px 24px; flex: 1; display: flex; flex-direction: column; }
+
+    .card-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+    .tag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 10px;
+    }
+    .tag.green { background: #c6f6d5; color: #22543d; }
+    .tag.blue { background: #bee3f8; color: #2a4365; }
+    .tag.orange { background: #feebc8; color: #7b341e; }
+    .tag.red { background: #fed7d7; color: #742a2a; }
+    .tag.purple { background: #e9d8fd; color: #44337a; }
+    .tag.gray { background: #e2e8f0; color: #4a5568; }
+
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #1a1a2e;
+      line-height: 1.35;
+      margin-bottom: 10px;
+      flex: 1;
+    }
+    .card-excerpt {
+      font-size: 0.88rem;
+      color: #718096;
+      line-height: 1.55;
+      margin-bottom: 16px;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 14px;
+      border-top: 1px solid #f0f4f8;
+    }
+    .card-meta { font-size: 0.78rem; color: #a0aec0; }
+    .card-link {
+      background: #2d6a4f;
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 7px 16px;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+    .card-link:hover { background: #1a4731; }
+
+    /* FEATURED CARD */
+    .article-card.featured {
+      grid-column: 1 / -1;
+      flex-direction: row;
+      max-height: 220px;
+    }
+    .article-card.featured .card-color-bar {
+      width: 5px;
+      height: auto;
+    }
+    .article-card.featured .card-body {
+      flex-direction: row;
+      align-items: center;
+      gap: 24px;
+    }
+    .featured-content { flex: 1; }
+    .featured-badge {
+      display: inline-block;
+      background: #f4a261;
+      color: #7b341e;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 8px;
+      margin-bottom: 8px;
+    }
+    .featured-content .card-title { font-size: 1.25rem; }
+    @media (max-width: 600px) {
+      .article-card.featured { flex-direction: column; max-height: none; }
+      .article-card.featured .card-color-bar { width: 100%; height: 4px; }
+      .article-card.featured .card-body { flex-direction: column; }
+    }
+
+    /* FOOTER */
+    footer {
+      background: #1a1a2e;
+      color: #718096;
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 0.85rem;
+    }
+    footer a { color: #52b788; text-decoration: none; }
+
+    /* ADD NEW ARTICLE comment for Claude Code */
+    /* NEUE ARTIKEL HIER EINFÜGEN – Kopiere eine .article-card und passe Titel, Datum, Link, Tags an */
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="/" class="nav-logo">TRHI<span>.</span>Blog</a>
+    <div class="nav-links">
+      <a href="#artikel">Artikel</a>
+      <a href="mailto:dingolife28@gmail.com">Kontakt</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-badge">Evidenzbasiert · Praxisnah · Vertrauenswürdig</div>
+    <h1>Gesundheit &amp; Sport<br><span>wissenschaftlich erklärt</span></h1>
+    <p>Fundierte Artikel zu Training, Ernährung, Prävention und mentaler Gesundheit – basierend auf aktueller Forschung, ohne Hype.</p>
+    <div class="hero-stats">
+      <div class="stat"><div class="num">7</div><div class="label">Artikel</div></div>
+      <div class="stat"><div class="num">100%</div><div class="label">Quellenbasiert</div></div>
+      <div class="stat"><div class="num">0</div><div class="label">Werbung</div></div>
+    </div>
+  </div>
+
+  <!-- Filter -->
+  <div class="filter-bar" id="artikel">
+    <div class="filter-tag active">Alle</div>
+    <div class="filter-tag">Ernährung</div>
+    <div class="filter-tag">Sport & Bewegung</div>
+    <div class="filter-tag">Gehirn & Mental</div>
+    <div class="filter-tag">Faktencheck</div>
+    <div class="filter-tag">Immunsystem</div>
+  </div>
+
+  <!-- Articles -->
+  <div class="articles">
+
+    <!-- FEATURED: Neuester Artikel -->
+    <!-- NEU: 2026-06-26 COVID Faktencheck DE -->
+    <div class="article-card featured">
+      <div class="card-color-bar red"></div>
+      <div class="card-body">
+        <div class="featured-content">
+          <div class="featured-badge">⭐ Neuester Artikel</div>
+          <div class="card-tags">
+            <span class="tag red">Faktencheck</span>
+            <span class="tag gray">Investigativ</span>
+            <span class="tag gray">COVID-19</span>
+          </div>
+          <div class="card-title">US-Senatsanhörung zu COVID-Impfstoffen: Behauptungen, Reaktionen und der wissenschaftliche Stand</div>
+          <div class="card-excerpt">Senator Ron Johnson konfrontierte Onkologin Dr. Julie Gralow – Dr. John Campbell kommentierte. Wir ordnen alle 4 zentralen Behauptungen mit Quellen ein.</div>
+          <div class="card-footer">
+            <span class="card-meta">📅 26. Juni 2026 · 10 Min.</span>
+            <a href="2026-06-26_covid-impfstoffe-senat-faktencheck.html" class="card-link">Artikel lesen →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NEU: 2026-06-26 COVID Faktencheck EN -->
+    <div class="article-card">
+      <div class="card-color-bar red"></div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag red">Fact-Check</span>
+          <span class="tag gray">English</span>
+          <span class="tag gray">COVID-19</span>
+        </div>
+        <div class="card-title">US Senate Hearing on COVID Vaccines: Claims vs. Science</div>
+        <div class="card-excerpt">English version: Senator Johnson, Dr. Gralow, and Dr. Campbell — every major claim fact-checked with current evidence.</div>
+        <div class="card-footer">
+          <span class="card-meta">📅 June 26, 2026 · 10 min</span>
+          <a href="2026-06-26_covid-vaccines-senate-factcheck.html" class="card-link">Read →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2026-06-22 Omega-3 -->
+    <div class="article-card">
+      <div class="card-color-bar blue"></div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag blue">Gehirn & Mental</span>
+          <span class="tag green">Ernährung</span>
+        </div>
+        <div class="card-title">Omega-3 & Demenzprävention: Was die Forschung wirklich zeigt</div>
+        <div class="card-excerpt">EPA und DHA sind mehr als Nahrungsergänzung – aktuelle Meta-Analysen zeigen messbare Effekte auf kognitive Funktion und Herzgesundheit.</div>
+        <div class="card-footer">
+          <span class="card-meta">📅 22. Juni 2026 · 8 Min.</span>
+          <a href="2026-06-22_omega-3-gehirn-demenzpraevention.html" class="card-link">Artikel lesen →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2026-06-11 ADHS -->
+    <div class="article-card">
+      <div class="card-color-bar purple"></div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag purple">Gehirn & Mental</span>
+          <span class="tag gray">Pharmakologie</span>
+        </div>
+        <div class="card-title">ADHS & Amphetamine: Wie wirkt das eigentlich?</div>
+        <div class="card-excerpt">Warum ein Stimulans bei ADHS beruhigt – der Neurotransmitter-Mechanismus, Risiken und was die Forschung zu Langzeitnutzung sagt.</div>
+        <div class="card-footer">
+          <span class="card-meta">📅 11. Juni 2026 · 9 Min.</span>
+          <a href="2026-06-11_adhs-amphetamine-wie-wirkts.html" class="card-link">Artikel lesen →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2026-06-08 Darmgesundheit -->
+    <div class="article-card">
+      <div class="card-color-bar green"></div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag green">Ernährung</span>
+          <span class="tag orange">Sport & Bewegung</span>
+        </div>
+        <div class="card-title">Darmgesundheit & Sport: Was das Mikrobiom mit Leistung zu tun hat</div>
+        <div class="card-excerpt">Das Darmmikrobiom beeinflusst Ausdauer, Regeneration und Immunsystem. Was Sportler über die Darm-Muskel-Achse wissen sollten.</div>
+        <div class="card-footer">
+          <span class="card-meta">📅 8. Juni 2026 · 8 Min.</span>
+          <a href="2026-06-08_darmgesundheit-sport-mikrobiom.html" class="card-link">Artikel lesen →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2026-06-08 Vitamin D Quiz -->
+    <div class="article-card">
+      <div class="card-color-bar orange"></div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag orange">Immunsystem</span>
+          <span class="tag gray">Quiz</span>
+        </div>
+        <div class="card-title">Vitamin D & Immunsystem – mit interaktivem Quiz</div>
+        <div class="card-excerpt">Wie gut kennst du die Forschungslage zu Vitamin D? Artikel mit 5-Fragen-Quiz zum Testen deines Wissens.</div>
+        <div class="card-footer">
+          <span class="card-meta">📅 8. Juni 2026 · 7 Min. + Quiz</span>
+          <a href="2026-06-08_vitamin-d-immunsystem-quiz.html" class="card-link">Artikel lesen →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2026-06-01 Sportvielfalt -->
+    <div class="article-card">
+      <div class="card-color-bar green"></div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag orange">Sport & Bewegung</span>
+          <span class="tag green">Prävention</span>
+        </div>
+        <div class="card-title">Sportvielfalt & Sterblichkeit: Mehr als nur Ausdauer</div>
+        <div class="card-excerpt">Studien zeigen: Wer mehrere Sportarten kombiniert, lebt länger – und das unabhängig vom Gesamtumfang. Die Evidenz im Überblick.</div>
+        <div class="card-footer">
+          <span class="card-meta">📅 1. Juni 2026 · 6 Min.</span>
+          <a href="2026-06-01_sportvielfalt-sterblichkeit.md" class="card-link">Artikel lesen →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- NEUE ARTIKEL EINFÜGEN: Kopiere das Block-Template unten und füge es hier ein -->
+    <!--
+    <div class="article-card">
+      <div class="card-color-bar green"></div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag green">KATEGORIE</span>
+        </div>
+        <div class="card-title">TITEL DES ARTIKELS</div>
+        <div class="card-excerpt">KURZE BESCHREIBUNG (1-2 Sätze)</div>
+        <div class="card-footer">
+          <span class="card-meta">📅 DATUM · X Min.</span>
+          <a href="DATEINAME.html" class="card-link">Artikel lesen →</a>
+        </div>
+      </div>
+    </div>
+    -->
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 TRHI Blog · Alle Artikel dienen ausschließlich zu Informationszwecken und ersetzen keinen Arztbesuch.</p>
+    <p style="margin-top: 8px;"><a href="mailto:dingolife28@gmail.com">Kontakt</a> · Kein medizinischer Rat · Quellenbasiert</p>
+  </footer>
+
+</body>
+</html>

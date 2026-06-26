@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dein Darm trainiert mit: Wie Sport dein Mikrobiom umbaut | TRHI</title>
+<style>
+  :root {
+    --green-dark: #2d6a4f;
+    --green-light: #52b788;
+    --orange: #f4a261;
+    --bg: #f6f9f7;
+    --text: #1b2b22;
+    --muted: #5a6f64;
+    --card-radius: 16px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+  }
+  img, svg { max-width: 100%; }
+  a { color: var(--green-dark); }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, #1b3a2b 0%, var(--green-dark) 55%, var(--green-light) 130%);
+    color: #fff;
+    padding: 56px 20px 80px;
+    text-align: center;
+  }
+  .hero .tag {
+    display: inline-block;
+    background: rgba(244, 162, 97, 0.18);
+    border: 1px solid var(--orange);
+    color: var(--orange);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 999px;
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-size: clamp(1.7rem, 5vw, 2.6rem);
+    font-weight: 800;
+    max-width: 780px;
+    margin: 0 auto 16px;
+    line-height: 1.25;
+  }
+  .hero .meta {
+    color: rgba(255,255,255,0.78);
+    font-size: 0.95rem;
+  }
+  .hero .meta span:not(:last-child)::after {
+    content: "•";
+    margin: 0 10px;
+    color: rgba(255,255,255,0.4);
+  }
+
+  /* CONTAINER / CARD */
+  .wrap {
+    max-width: 760px;
+    margin: -48px auto 40px;
+    padding: 0 20px;
+  }
+  .card {
+    background: #fff;
+    border-radius: var(--card-radius);
+    box-shadow: 0 12px 40px rgba(27, 58, 43, 0.12);
+    padding: clamp(24px, 5vw, 48px);
+  }
+  .card p { margin-bottom: 18px; color: var(--text); }
+  .card h2 {
+    color: var(--green-dark);
+    font-size: clamp(1.3rem, 4vw, 1.6rem);
+    margin: 36px 0 16px;
+    font-weight: 800;
+  }
+  .lede {
+    font-size: 1.12rem;
+    color: var(--muted);
+    border-left: 4px solid var(--green-light);
+    padding-left: 16px;
+  }
+
+  .highlight {
+    background: #eef7f1;
+    border: 1px solid #d3ebde;
+    border-left: 5px solid var(--green-light);
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin: 22px 0;
+    font-size: 0.98rem;
+  }
+  .highlight strong { color: var(--green-dark); }
+
+  .tips {
+    background: #fff8f0;
+    border: 1px solid #fbe3c9;
+    border-radius: 12px;
+    padding: 22px 24px;
+    margin: 24px 0;
+  }
+  .tips h3 {
+    color: var(--orange);
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+  }
+  .tips ul { padding-left: 20px; }
+  .tips li { margin-bottom: 10px; }
+
+  /* AFFILIATE */
+  .affiliate-section { margin-top: 40px; }
+  .affiliate-section h2 { margin-top: 0; }
+  .affiliate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 16px;
+    margin-top: 18px;
+  }
+  .product-card {
+    border: 1px solid #e3ece6;
+    border-radius: 12px;
+    padding: 18px;
+    text-align: center;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    text-decoration: none;
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+  }
+  .product-card:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(45,106,79,0.14); }
+  .product-card .icon { font-size: 2rem; margin-bottom: 10px; }
+  .product-card .cat {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--green-light);
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .product-card .name { font-weight: 700; margin-bottom: 6px; }
+  .product-card .desc { font-size: 0.85rem; color: var(--muted); flex-grow: 1; margin-bottom: 14px; }
+  .product-card .cta {
+    display: inline-block;
+    background: var(--green-dark);
+    color: #fff;
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 9px 14px;
+    border-radius: 8px;
+  }
+  .affiliate-note {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-top: 14px;
+    font-style: italic;
+  }
+
+  .disclaimer {
+    margin-top: 30px;
+    font-size: 0.84rem;
+    color: var(--muted);
+    background: #f3f6f4;
+    border-radius: 10px;
+    padding: 16px 18px;
+  }
+  .sources { font-size: 0.84rem; color: var(--muted); margin-top: 14px; }
+  .sources a { word-break: break-word; }
+
+  /* QUIZ */
+  .quiz-section {
+    background: linear-gradient(160deg, var(--green-dark), var(--green-light));
+    padding: 50px 20px 64px;
+    margin-top: 16px;
+  }
+  .quiz-card {
+    max-width: 640px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: var(--card-radius);
+    box-shadow: 0 16px 50px rgba(0,0,0,0.18);
+    padding: clamp(22px, 5vw, 40px);
+  }
+  .quiz-intro h2 {
+    color: var(--green-dark);
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
+  .quiz-intro p { color: var(--muted); margin-bottom: 20px; }
+  .btn {
+    display: inline-block;
+    background: var(--orange);
+    color: #fff;
+    border: none;
+    font-weight: 700;
+    font-size: 0.98rem;
+    padding: 13px 28px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.1s ease;
+  }
+  .btn:hover { background: #e6904a; transform: translateY(-1px); }
+  .btn.secondary {
+    background: transparent;
+    color: var(--green-dark);
+    border: 2px solid var(--green-light);
+  }
+  .btn.secondary:hover { background: #eef7f1; }
+
+  .progress-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+  .progress-track {
+    flex-grow: 1;
+    height: 10px;
+    background: #e7f0ea;
+    border-radius: 999px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--green-light), var(--green-dark));
+    border-radius: 999px;
+    transition: width 0.35s ease;
+  }
+  .score-pill {
+    background: var(--green-dark);
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .question-text {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+    color: var(--text);
+  }
+  .options { display: flex; flex-direction: column; gap: 10px; }
+  .option {
+    text-align: left;
+    border: 2px solid #e3ece6;
+    background: #fbfdfc;
+    border-radius: 10px;
+    padding: 13px 16px;
+    font-size: 0.97rem;
+    cursor: pointer;
+    transition: border-color 0.15s ease, background 0.15s ease;
+    color: var(--text);
+  }
+  .option:hover:not(:disabled) { border-color: var(--green-light); background: #f1f8f3; }
+  .option:disabled { cursor: default; }
+  .option.correct { border-color: var(--green-dark); background: #e3f3e9; font-weight: 700; }
+  .option.incorrect { border-color: #e07a5f; background: #fbe9e5; }
+  .feedback {
+    margin-top: 16px;
+    padding: 14px 16px;
+    border-radius: 10px;
+    font-size: 0.92rem;
+    background: #eef7f1;
+    border-left: 4px solid var(--green-light);
+    display: none;
+  }
+  .feedback.show { display: block; }
+  .feedback.wrong { background: #fbe9e5; border-left-color: #e07a5f; }
+  .quiz-actions { margin-top: 22px; text-align: right; }
+
+  .result-screen { text-align: center; display: none; }
+  .result-screen.show { display: block; }
+  .result-emoji { font-size: 3rem; margin-bottom: 6px; }
+  .result-screen h2 { color: var(--green-dark); margin-bottom: 6px; }
+  .result-score { font-size: 1.05rem; color: var(--muted); margin-bottom: 6px; }
+  .result-msg { margin-bottom: 22px; color: var(--text); }
+  .result-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+
+  /* ── NAVBAR ── */
+  .navbar {
+    background: #fff;
+    border-bottom: 1px solid #e3ece6;
+    padding: 0 24px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(45,106,79,0.07);
+  }
+  .logo-wrap { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .logo-tagline { font-size: 0.68rem; color: var(--muted); font-weight: 500; letter-spacing: 0.03em; display: none; }
+  @media(min-width: 480px) { .logo-tagline { display: block; } }
+  .lang-toggle {
+    display: flex; align-items: center;
+    background: #f0f5f2; border-radius: 999px;
+    padding: 3px; border: 1px solid #d6e8dc;
+  }
+  .lang-btn {
+    padding: 6px 14px; border-radius: 999px; border: none;
+    background: transparent; font-size: 0.82rem; font-weight: 700;
+    cursor: pointer; color: var(--muted); transition: all 0.18s ease; letter-spacing: 0.03em;
+  }
+  .lang-btn.active {
+    background: var(--green-dark); color: #fff;
+    box-shadow: 0 2px 8px rgba(45,106,79,0.25);
+  }
+
+  footer.site-footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.82rem;
+    padding: 28px 20px 40px;
+  }
+
+  @media (max-width: 480px) {
+    .wrap { margin-top: -36px; }
+    .progress-row { flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ NAVBAR ══ -->
+<nav class="navbar">
+  <a class="logo-wrap" href="#">
+    <svg width="108" height="34" viewBox="0 0 108 34" xmlns="http://www.w3.org/2000/svg" aria-label="TRHI Logo">
+      <ellipse cx="17" cy="17" rx="12" ry="14" fill="#52b788" opacity="0.15" transform="rotate(-12 17 17)"/>
+      <polyline points="7,17 11,17 13,10.5 16,23.5 18.5,17 22,17" fill="none" stroke="#2d6a4f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="32" y="22.5" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="19" font-weight="800" fill="#2d6a4f" letter-spacing="-0.4">TRHI</text>
+      <circle cx="101" cy="8" r="3.5" fill="#f4a261"/>
+    </svg>
+    <span class="logo-tagline">The Real Health Institute</span>
+  </a>
+  <div class="lang-toggle" role="group" aria-label="Sprachauswahl / Language">
+    <button class="lang-btn active" id="btnDE" onclick="setLang('de')" aria-pressed="true">DE</button>
+    <button class="lang-btn" id="btnEN" onclick="setLang('en')" aria-pressed="false">EN</button>
+  </div>
+</nav>
+
+<!-- DE content (default) -->
+<div id="content-de">
+<header class="hero">
+  <span class="tag">Darmgesundheit &amp; Sport</span>
+  <h1>Dein Darm trainiert mit: Wie Sport dein Mikrobiom umbaut</h1>
+  <p class="meta">
+    <span>8. Juni 2026</span>
+    <span>7 Min. Lesezeit</span>
+    <span>Wissenschaft &amp; Praxis</span>
+  </p>
+</header>
+
+<div class="wrap">
+  <article class="card">
+
+    <p class="lede">Ruder-Athletinnen und -Athleten, die ihr Trainingspensum hochfahren, verändern messbar die Zusammensetzung ihrer Darmbakterien – innerhalb weniger Wochen. Das zeigt eine 2025 im <em>Journal of the International Society of Sports Nutrition</em> veröffentlichte Studie der Edith Cowan University. Dein Verdauungstrakt ist offenbar kein stiller Zuschauer deines Trainingsplans, sondern ein aktiver Mitspieler.</p>
+
+    <p>Lange galt der Darm in der Sportwissenschaft als Nebenschauplatz – zuständig für Verdauung, fertig. Inzwischen zeichnet sich ein anderes Bild ab: Die Billionen Mikroorganismen in deinem Darm reagieren auf Trainingsreize, beeinflussen, wie du Energie bereitstellst, wie schnell du regenerierst und sogar, wie belastbar dein Immunsystem ist. Wer versteht, wie dieses Zusammenspiel funktioniert, kann es gezielt für sich nutzen – ganz ohne Wundermittel.</p>
+
+    <h2>Was Forschende 2025 bei Spitzen-Ruderern beobachtet haben</h2>
+    <p>PhD-Kandidatin Bronwen Charlesson und ihr Team von der Edith Cowan University (Australien) begleiteten hochtrainierte Ruder-Athleten über Phasen mit unterschiedlicher Trainingsbelastung – von intensiven Blöcken bis zu bewussten Erholungsphasen. Das Ergebnis: Je nach Trainingslast verschoben sich sowohl die Konzentration kurzkettiger Fettsäuren (SCFA) im Darm als auch das Vorkommen bestimmter Bakterienarten messbar.</p>
+
+    <div class="highlight">
+      <strong>Schon bekannt:</strong> Athletinnen und Athleten weisen im Vergleich zur Allgemeinbevölkerung generell eine höhere bakterielle Vielfalt (Alpha-Diversität) und höhere Konzentrationen kurzkettiger Fettsäuren auf – Stoffwechselprodukte, die unter anderem die Darmschleimhaut versorgen und Entzündungsprozesse regulieren.
+    </div>
+
+    <p>Kurzkettige Fettsäuren wie Butyrat, Propionat und Acetat entstehen, wenn Darmbakterien Ballaststoffe fermentieren. Sie gelten als eine Art Treibstoff für die Darmwand und als Kommunikationssignal an das Immunsystem. Dass intensiv trainierende Menschen davon mehr produzieren, ist ein Hinweis darauf, dass Training und Mikrobiom sich gegenseitig formen – nicht nur die Ernährung allein.</p>
+
+    <h2>Der Laktat-Trick: Wie harte Einheiten dem Darm einen Schub geben</h2>
+    <p>Eine vielzitierte Arbeit aus dem Jahr 2019 (veröffentlicht in <em>Nature Medicine</em>, Scheiman et al.) lieferte einen möglichen Mechanismus dafür, warum intensives Training das Mikrobiom verändert: Bei harter Belastung steigt Laktat im Blut an. Ein Teil davon gelangt in den Darm, wo es von bestimmten Bakterien – etwa <em>Veillonella atypica</em> – aufgenommen und in Propionat umgewandelt werden kann. In Tierversuchen verlängerte die gezielte Gabe dieses Bakteriums die Laufzeit bis zur Erschöpfung spürbar.</p>
+
+    <div class="highlight">
+      <strong>Mechanismus in Kürze:</strong> Intensives Training → Laktat im Blut steigt → ein Teil wandert in den Darm → bestimmte Bakterien verstoffwechseln es zu Propionat → das wiederum kann Energiebereitstellung und Erholung beeinflussen. Die Edith-Cowan-Forschenden vermuten genau diesen Weg als einen Treiber der beobachteten Veränderungen – auch wenn er in ihrer Studie nicht direkt gemessen wurde.
+    </div>
+
+    <p>Damit bekommt das Konzept „hartes Training" eine zusätzliche Dimension: Es geht nicht nur um Muskeln, Herz-Kreislauf-System und Nervensystem, sondern auch um eine Art Stoffwechsel-Dialog zwischen Muskulatur und Darmflora – die sogenannte Darm-Muskel-Achse, die in der aktuellen Forschung zunehmend Beachtung findet.</p>
+
+    <h2>Die unterschätzte Gefahr liegt in der Pause</h2>
+    <p>Der vielleicht überraschendste Befund der australischen Studie betrifft nicht die intensiven Phasen, sondern die ruhigeren: Wenn das Trainingspensum sank, blieb die Gesamtmenge an Kohlenhydraten und Ballaststoffen zwar stabil – die Qualität der Lebensmittelauswahl jedoch nicht. Die Forschenden beobachteten mehr verarbeitete Fertigprodukte, weniger frisches Obst und Gemüse und einen moderaten Anstieg beim Alkoholkonsum. Gleichzeitig verlangsamte sich die Darmtransitzeit deutlich – die Verdauung „bummelte" regelrecht.</p>
+
+    <div class="highlight">
+      <strong>Doppel-Effekt in Ruhephasen:</strong> Schlechtere Ernährungsqualität <em>und</em> langsamere Verdauung trafen in der Studie zeitlich zusammen – beides Faktoren, die das mikrobielle Gleichgewicht in eine andere Richtung schieben können als intensive Trainingsphasen.
+    </div>
+
+    <p>Das ist eine wichtige Erkenntnis für jeden, der seinen Trainingsplan periodisiert – also bewusst zwischen Belastung und Erholung wechselt: Tapering-Wochen, Urlaub oder verletzungsbedingte Pausen sind nicht nur eine Frage der Trainingssteuerung, sondern offenbar auch ein Moment, in dem der Darm besondere Aufmerksamkeit verdient.</p>
+
+    <h2>Was das für deinen Trainingsalltag bedeutet</h2>
+    <p>Wie genau sich diese mikrobiellen Verschiebungen auf Leistung, Wohlbefinden oder Verletzungsanfälligkeit auswirken, ist noch nicht abschließend geklärt – die Forschenden selbst betonen, dass weitere Studien nötig sind. Doch ein 2025 durchgeführter randomisiert-kontrollierter Versuch liefert bereits einen interessanten Ausblick: Probandinnen und Probanden, deren Trainingsprogramm anhand ihres individuellen Mikrobiom-Profils zugeschnitten wurde, zeigten nach zwölf Wochen deutlich stärkere Verbesserungen bei BMI, Insulinsensitivität und Blutfettwerten als eine Vergleichsgruppe mit Standardprogramm.</p>
+
+    <p>Die Richtung ist erkennbar: Der Darm ist kein passiver Zuschauer deines Trainings, sondern reagiert aktiv darauf – und liefert möglicherweise wertvolle Hinweise darauf, wie gut dein Körper mit der aktuellen Belastung zurechtkommt.</p>
+
+    <div class="tips">
+      <h3>🎯 So unterstützt du dein Mikrobiom im Trainingsalltag</h3>
+      <ul>
+        <li><strong>Ballaststoffe konstant halten – auch in ruhigeren Wochen:</strong> Etwa 30 g pro Tag aus Vollkorn, Hülsenfrüchten, Gemüse und Obst liefern den Bakterien das Ausgangsmaterial für kurzkettige Fettsäuren.</li>
+        <li><strong>Fermentiertes regelmäßig einbauen:</strong> Naturjoghurt, Kefir, Sauerkraut oder Kimchi enthalten lebende Kulturen, die die Vielfalt im Darm unterstützen können.</li>
+        <li><strong>Polyphenole nicht vergessen:</strong> Beeren, grüner Tee, Olivenöl und dunkle Schokolade (ab 70 % Kakao) gelten als „Futter" für nützliche Bakterien wie Akkermansia.</li>
+        <li><strong>In Ruhephasen bewusst gegensteuern:</strong> Gerade dann, wenn der Trainingsreiz fehlt, lohnt es sich, Ernährungsqualität und Alkoholkonsum aktiv im Blick zu behalten – die Studie zeigt, dass genau hier die Weichen oft unbemerkt anders gestellt werden.</li>
+        <li><strong>Belastung schrittweise steigern:</strong> Ein zu abrupter Sprung in sehr lange, sehr intensive Einheiten kann die Darmbarriere reizen („Leaky Gut"). Progression statt Schockbelastung schont Darm und Gelenke gleichermaßen.</li>
+        <li><strong>Auf Wasser und Esstempo achten:</strong> Ausreichend Flüssigkeit und ein ruhiges Esstempo unterstützen eine gleichmäßige Darmtransitzeit – ein Faktor, der laut der Studie direkt mit der Mikrobiom-Zusammensetzung zusammenhängt.</li>
+      </ul>
+    </div>
+
+    <p>Keine dieser Maßnahmen ist spektakulär – und genau das macht sie alltagstauglich. Die Forschung deutet darauf hin, dass es weniger um einzelne „Superfoods" geht als um Konstanz: ein Darm, der über Trainings- <em>und</em> Erholungsphasen hinweg verlässlich versorgt wird, hat bessere Voraussetzungen, dich zu unterstützen – egal ob beim nächsten harten Intervalltraining oder beim entspannten Sonntagslauf.</p>
+
+    <section class="affiliate-section">
+      <h2>Passende Begleiter für deinen Darm</h2>
+      <p>Eine ausgewogene Ernährung bleibt die Basis. Diese drei Empfehlungen können eine sinnvolle Ergänzung sein, wenn du dein Mikrobiom gezielt im Blick behalten möchtest:</p>
+      <div class="affiliate-grid">
+        <a class="product-card" href="#" rel="sponsored noopener" target="_blank">
+          <div class="icon">🧬</div>
+          <div class="cat">Nahrungsergänzung</div>
+          <div class="name">Multi-Stamm-Probiotikum (magensaftresistent)</div>
+          <div class="desc">Kapseln mit mehreren dokumentierten Bakterienstämmen – praktisch für Trainings- und Reisephasen mit unregelmäßiger Ernährung.</div>
+          <span class="cta">Produkt ansehen →</span>
+        </a>
+        <a class="product-card" href="#" rel="sponsored noopener" target="_blank">
+          <div class="icon">📚</div>
+          <div class="cat">Buch &amp; Wissen</div>
+          <div class="name">„Darm-Power für Athleten" – Sporternährung verständlich erklärt</div>
+          <div class="desc">Ein praxisnaher Ratgeber, der aktuelle Mikrobiom-Forschung in konkrete Ernährungsstrategien für Trainierende übersetzt.</div>
+          <span class="cta">Mehr erfahren →</span>
+        </a>
+        <a class="product-card" href="#" rel="sponsored noopener" target="_blank">
+          <div class="icon">🥗</div>
+          <div class="cat">Natürliche Lebensmittel</div>
+          <div class="name">Bio-Ballaststoff- &amp; Fermentations-Set</div>
+          <div class="desc">Eine Auswahl aus fermentiertem Gemüse, Vollkorn-Mischungen und polyphenolreichen Snacks für den täglichen Mikrobiom-Boost.</div>
+          <span class="cta">Set entdecken →</span>
+        </a>
+      </div>
+      <p class="affiliate-note">Affiliate-Hinweis: Bei Käufen über die oben verlinkten Platzhalter-Links erhält TRHI ggf. eine kleine Provision – ohne Mehrkosten für dich. Die Auswahl erfolgt unabhängig von der Provisionshöhe.</p>
+    </section>
+
+    <div class="disclaimer">
+      <strong>Wichtiger Hinweis:</strong> Dieser Artikel dient der allgemeinen Information und ersetzt keine medizinische Beratung. Bei anhaltenden Verdauungsbeschwerden, geplanten Nahrungsergänzungen oder grundlegenden Änderungen deines Trainings- bzw. Ernährungsplans sprich bitte mit einer Ärztin, einem Arzt oder einer qualifizierten Ernährungsfachkraft.
+    </div>
+
+    <div class="sources">
+      <strong>Quellen:</strong><br>
+      Charlesson, B. et al. (2025): „Training load influences gut microbiome of highly trained rowing athletes", <em>Journal of the International Society of Sports Nutrition</em>, 22(1). DOI: <a href="https://doi.org/10.1080/15502783.2025.2507952" target="_blank" rel="noopener">10.1080/15502783.2025.2507952</a><br>
+      Edith Cowan University via ScienceDaily (Feb. 2026): <a href="https://www.sciencedaily.com/releases/2026/02/260222092317.htm" target="_blank" rel="noopener">„Training harder could be rewiring your gut bacteria"</a><br>
+      Scheiman, J. et al. (2019): „Meta-omics analysis of elite athletes identifies a performance-enhancing microbe that functions via lactate metabolism", <em>Nature Medicine</em>, 25.
+    </div>
+  </article>
+</div>
+
+<section class="quiz-section">
+  <div class="quiz-card" id="quizCard">
+
+    <div id="quizIntro" class="quiz-intro">
+      <h2>🧠 Teste dein Wissen: Darm &amp; Sport</h2>
+      <p>Fünf Fragen direkt aus dem Artikel – finde heraus, wie viel bei dir hängengeblieben ist.</p>
+      <button class="btn" id="startBtn">Quiz starten</button>
+    </div>
+
+    <div id="quizPlay" style="display:none;">
+      <div class="progress-row">
+        <span id="qCounter" style="font-size:0.85rem; color:var(--muted); white-space:nowrap;">Frage 1 / 5</span>
+        <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+        <span class="score-pill" id="scorePill">0 Punkte</span>
+      </div>
+      <div class="question-text" id="questionText"></div>
+      <div class="options" id="optionsList"></div>
+      <div class="feedback" id="feedbackBox"></div>
+      <div class="quiz-actions">
+        <button class="btn" id="nextBtn" style="display:none;">Weiter →</button>
+      </div>
+    </div>
+
+    <div id="resultScreen" class="result-screen">
+      <div class="result-emoji" id="resultEmoji">🏆</div>
+      <h2 id="resultTitle">Stark!</h2>
+      <p class="result-score" id="resultScoreText">Du hast 0 von 5 Punkten erreicht.</p>
+      <p class="result-msg" id="resultMsg"></p>
+      <div class="result-actions">
+        <button class="btn secondary" id="restartBtn">Nochmal versuchen</button>
+        <button class="btn" id="shareBtn">Ergebnis teilen</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  © 2026 TRHI — The Real Health Insider · Wissenschaftlich fundiert, alltagsnah erklärt
+</footer>
+
+<script>
+  const QUESTIONS = [
+    {
+      q: "Welches Bakterium kann laut einer Studie von 2019 Laktat in das leistungsrelevante Propionat umwandeln?",
+      options: ["Akkermansia muciniphila", "Veillonella atypica", "Lactobacillus rhamnosus", "Bifidobacterium longum"],
+      correct: 1,
+      explainCorrect: "Richtig! Veillonella atypica wurde in der Nature-Medicine-Studie von 2019 als möglicher Leistungs-Booster identifiziert, weil es Laktat zu Propionat verstoffwechselt.",
+      explainWrong: "Nicht ganz – gemeint ist Veillonella atypica. Es nimmt Laktat auf, das bei intensiver Belastung im Blut ansteigt, und wandelt es in Propionat um."
+    },
+    {
+      q: "Was beobachteten die Forschenden der Edith-Cowan-Studie bei Athleten in Ruhephasen hinsichtlich ihrer Ernährung?",
+      options: [
+        "Die Ernährungsqualität blieb völlig unverändert",
+        "Sie aßen automatisch mehr Obst und Gemüse",
+        "Die Ernährungsqualität sank: mehr verarbeitete Lebensmittel, weniger Frischware, etwas mehr Alkohol",
+        "Sie reduzierten ihre Kalorienzufuhr stark"
+      ],
+      correct: 2,
+      explainCorrect: "Genau – Kohlenhydrate und Ballaststoffe blieben zwar konstant, aber die Lebensmittelqualität sank: mehr Fertigprodukte, weniger Frisches, moderat mehr Alkohol.",
+      explainWrong: "Tatsächlich sank die Ernährungsqualität in Ruhephasen: mehr verarbeitete Lebensmittel, weniger frisches Obst und Gemüse, etwas mehr Alkohol – bei gleichbleibender Kohlenhydrat- und Ballaststoffmenge."
+    },
+    {
+      q: "Welcher Stoff steigt bei intensiver Belastung im Blut an und spielt laut Forschung eine Rolle für das Darmmikrobiom?",
+      options: ["Cortisol", "Adrenalin", "Laktat", "Insulin"],
+      correct: 2,
+      explainCorrect: "Richtig! Laktat steigt bei harter Belastung im Blut an, gelangt teilweise in den Darm und kann dort von bestimmten Bakterien verstoffwechselt werden.",
+      explainWrong: "Die Antwort ist Laktat. Es entsteht bei intensiver Muskelarbeit, gelangt teils in den Darm und wird dort von bestimmten Bakterien aufgenommen."
+    },
+    {
+      q: "Was verlangsamte sich laut der Studie bei den Athleten zusätzlich während Phasen mit geringerer Trainingsbelastung?",
+      options: ["Die Herzfrequenz in Ruhe", "Die Darmtransitzeit (Verdauungsgeschwindigkeit)", "Die Reaktionszeit", "Die Schlafdauer"],
+      correct: 1,
+      explainCorrect: "Genau – die Darmtransitzeit verlangsamte sich in Ruhephasen deutlich, was zusätzlich zur veränderten Ernährung das Mikrobiom beeinflusste.",
+      explainWrong: "Gemeint ist die Darmtransitzeit: Die Verdauung verlief in Ruhephasen spürbar langsamer – ein weiterer Faktor, der die Mikrobiom-Zusammensetzung mitprägte."
+    },
+    {
+      q: "Welche Bakteriengattungen werden in der Forschung häufig mit Ausdauertraining und positiven Mikrobiom-Veränderungen in Verbindung gebracht?",
+      options: [
+        "Salmonella und Helicobacter",
+        "Akkermansia, Prevotella und Faecalibacterium",
+        "Streptococcus und Staphylococcus",
+        "Clostridium difficile und E. coli"
+      ],
+      correct: 1,
+      explainCorrect: "Richtig! Diese drei Gattungen tauchen in Studien zu Ausdauertraining besonders häufig als „begünstigt“ auf – sie hängen unter anderem mit der Bildung kurzkettiger Fettsäuren zusammen.",
+      explainWrong: "Die Antwort lautet Akkermansia, Prevotella und Faecalibacterium – sie werden in der Forschung wiederholt mit den positiven Effekten von Ausdauertraining auf das Mikrobiom assoziiert."
+    }
+  ];
+
+  let current = 0;
+  let score = 0;
+  let answered = false;
+
+  const introEl = document.getElementById('quizIntro');
+  const playEl = document.getElementById('quizPlay');
+  const resultEl = document.getElementById('resultScreen');
+  const startBtn = document.getElementById('startBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const restartBtn = document.getElementById('restartBtn');
+  const shareBtn = document.getElementById('shareBtn');
+  const qCounter = document.getElementById('qCounter');
+  const progressFill = document.getElementById('progressFill');
+  const scorePill = document.getElementById('scorePill');
+  const questionText = document.getElementById('questionText');
+  const optionsList = document.getElementById('optionsList');
+  const feedbackBox = document.getElementById('feedbackBox');
+
+  startBtn.addEventListener('click', () => {
+    introEl.style.display = 'none';
+    playEl.style.display = 'block';
+    renderQuestion();
+  });
+
+  nextBtn.addEventListener('click', () => {
+    current++;
+    if (current < QUESTIONS.length) {
+      renderQuestion();
+    } else {
+      showResult();
+    }
+  });
+
+  restartBtn.addEventListener('click', () => {
+    current = 0;
+    score = 0;
+    resultEl.classList.remove('show');
+    introEl.style.display = 'block';
+    playEl.style.display = 'none';
+  });
+
+  shareBtn.addEventListener('click', () => {
+    const text = `Ich habe ${score} von ${QUESTIONS.length} Punkten beim TRHI-Quiz "Darm & Sport" erreicht! 🦠💪`;
+    if (navigator.share) {
+      navigator.share({ text: text }).catch(() => {});
+    } else if (navigator.clipboard) {
+      navigator.clipboard.writeText(text).then(() => {
+        shareBtn.textContent = 'In Zwischenablage kopiert ✓';
+        setTimeout(() => { shareBtn.textContent = 'Ergebnis teilen'; }, 2200);
+      });
+    }
+  });
+
+  function renderQuestion() {
+    answered = false;
+    feedbackBox.classList.remove('show', 'wrong');
+    feedbackBox.textContent = '';
+    nextBtn.style.display = 'none';
+
+    const item = QUESTIONS[current];
+    qCounter.textContent = `Frage ${current + 1} / ${QUESTIONS.length}`;
+    progressFill.style.width = `${(current / QUESTIONS.length) * 100}%`;
+    scorePill.textContent = `${score} Punkte`;
+    questionText.textContent = item.q;
+
+    optionsList.innerHTML = '';
+    item.options.forEach((opt, idx) => {
+      const btn = document.createElement('button');
+      btn.className = 'option';
+      btn.textContent = opt;
+      btn.addEventListener('click', () => selectAnswer(idx, btn));
+      optionsList.appendChild(btn);
+    });
+  }
+
+  function selectAnswer(idx, btnEl) {
+    if (answered) return;
+    answered = true;
+    const item = QUESTIONS[current];
+    const allBtns = optionsList.querySelectorAll('.option');
+    allBtns.forEach(b => b.disabled = true);
+
+    if (idx === item.correct) {
+      btnEl.classList.add('correct');
+      score++;
+      feedbackBox.textContent = '✅ ' + item.explainCorrect;
+      feedbackBox.classList.add('show');
+    } else {
+      btnEl.classList.add('incorrect');
+      allBtns[item.correct].classList.add('correct');
+      feedbackBox.textContent = '❌ ' + item.explainWrong;
+      feedbackBox.classList.add('show', 'wrong');
+    }
+    scorePill.textContent = `${score} Punkte`;
+    progressFill.style.width = `${((current + 1) / QUESTIONS.length) * 100}%`;
+    nextBtn.style.display = 'inline-block';
+    nextBtn.textContent = (current + 1 < QUESTIONS.length) ? 'Weiter →' : 'Ergebnis ansehen →';
+  }
+
+  function showResult() {
+    playEl.style.display = 'none';
+    resultEl.classList.add('show');
+
+    document.getElementById('resultScoreText').textContent = `Du hast ${score} von ${QUESTIONS.length} Punkten erreicht.`;
+
+    let emoji, title, msg;
+    if (score === 5) {
+      emoji = '🏆'; title = 'Mikrobiom-Profi!';
+      msg = 'Perfektes Ergebnis – du hast die wichtigsten Erkenntnisse rund um Training und Darmgesundheit voll verinnerlicht.';
+    } else if (score >= 3) {
+      emoji = '💪'; title = 'Stark unterwegs!';
+      msg = 'Solide Quote – die Kernaussagen des Artikels sitzen. Ein Blick zurück auf die Highlight-Boxen schadet trotzdem nicht.';
+    } else if (score >= 1) {
+      emoji = '🌱'; title = 'Guter Start!';
+      msg = 'Ein paar Punkte hast du schon mitgenommen. Lies den Artikel noch einmal in Ruhe – vor allem den Abschnitt zum Laktat-Mechanismus.';
+    } else {
+      emoji = '🔄'; title = 'Nochmal von vorn?';
+      msg = 'Kein Problem – das Thema ist komplex. Wirf einen zweiten Blick auf den Artikel und probiere es erneut.';
+    }
+    document.getElementById('resultEmoji').textContent = emoji;
+    document.getElementById('resultTitle').textContent = title;
+    document.getElementById('resultMsg').textContent = msg;
+  }
+</script>
+
+</div><!-- /content-de -->
+
+<!-- ══ ENGLISH CONTENT ══ -->
+<div id="content-en" style="display:none;">
+<header class="hero">
+  <span class="tag">Gut Health &amp; Sport</span>
+  <h1>Your Gut Trains With You: How Exercise Reshapes Your Microbiome</h1>
+  <p class="meta">
+    <span>June 8, 2026</span>
+    <span>7 min read</span>
+    <span>Science &amp; Practice</span>
+  </p>
+</header>
+
+<div class="wrap">
+  <article class="card">
+    <p class="lede">Elite rowers who increase their training load measurably change the composition of their gut bacteria – within a matter of weeks. That's the finding of a 2025 study from Edith Cowan University. Your digestive tract is not a passive bystander of your training plan – it's an active participant.</p>
+
+    <h2>What researchers found in elite rowers (2025)</h2>
+    <p>PhD candidate Bronwen Charlesson and her team at Edith Cowan University (Australia) followed highly trained rowers through phases of varying training load. Result: both short-chain fatty acid (SCFA) concentrations and specific bacterial populations shifted measurably depending on training intensity.</p>
+    <div class="highlight"><strong>Already known:</strong> Athletes generally show higher bacterial diversity (alpha-diversity) and higher SCFA concentrations than the general population. SCFAs like butyrate, propionate, and acetate are produced when gut bacteria ferment fiber – they nourish the gut lining and regulate inflammation.</div>
+
+    <h2>The lactate mechanism: how hard sessions boost gut health</h2>
+    <p>A widely cited 2019 study (<em>Nature Medicine</em>, Scheiman et al.) proposed a mechanism: intense exercise raises blood lactate, some of which enters the gut, where bacteria like <em>Veillonella atypica</em> convert it to propionate. In animal experiments, targeted supplementation with this bacterium meaningfully extended time to exhaustion.</p>
+    <div class="highlight"><strong>The chain:</strong> Hard training → blood lactate rises → some reaches the gut → specific bacteria convert it to propionate → influences energy supply and recovery. The Edith Cowan researchers suspect this same pathway, though it was not directly measured in their study.</div>
+
+    <h2>The underrated risk: rest periods</h2>
+    <p>Perhaps the most surprising finding concerns not the intense phases, but the quieter ones. When training load dropped, total carbohydrate and fiber intake remained stable – but food quality didn't. Researchers observed more processed foods, less fresh produce, and a moderate rise in alcohol consumption. At the same time, gut transit time slowed noticeably.</p>
+    <div class="highlight"><strong>Double effect during rest:</strong> Lower food quality <em>and</em> slower digestion coincided – both factors that can push microbial balance in a different direction than intensive training phases.</div>
+
+    <h2>What this means for your training</h2>
+    <p>The exact impact of these microbial shifts on performance, wellbeing, or injury risk is not yet fully established. But a 2025 RCT offers a promising preview: participants whose training programs were tailored to their individual microbiome profile showed significantly greater improvements in BMI, insulin sensitivity, and blood lipids after twelve weeks compared to a standard program group.</p>
+
+    <div class="tips">
+      <h3>🎯 How to support your microbiome during training</h3>
+      <ul>
+        <li><strong>Keep fiber intake steady – even in quieter weeks:</strong> ~30g/day from wholegrains, legumes, vegetables, and fruit gives bacteria the substrate to produce SCFAs.</li>
+        <li><strong>Include fermented foods regularly:</strong> Natural yogurt, kefir, sauerkraut, or kimchi contain live cultures that support microbial diversity.</li>
+        <li><strong>Don't forget polyphenols:</strong> Berries, green tea, olive oil, and dark chocolate (70%+) act as food for beneficial bacteria like <em>Akkermansia</em>.</li>
+        <li><strong>Be intentional during rest phases:</strong> This is when the Edith Cowan study saw food quality quietly drop – and when the gut needs the most attention.</li>
+        <li><strong>Increase load gradually:</strong> Sudden jumps to very long, very intense sessions can irritate the gut barrier ("leaky gut"). Progressive overload protects gut and joints alike.</li>
+        <li><strong>Hydration and meal pacing matter:</strong> Adequate fluids and relaxed mealtimes support consistent gut transit time – directly linked to microbiome composition in the study.</li>
+      </ul>
+    </div>
+
+    <div class="disclaimer" style="margin-top:28px;font-size:.83rem;color:var(--muted);background:#f3f6f4;border-radius:10px;padding:14px 16px;">⚠️ This article is for informational purposes and does not constitute medical advice. Always consult a qualified professional before changing your diet or supplementation.</div>
+
+    <div class="sources" style="font-size:.82rem;color:var(--muted);margin-top:12px;">
+      <strong>Sources:</strong><br>
+      Charlesson, B. et al. (2025): Training load and gut microbiome in elite rowers. <em>J. Int. Soc. Sports Nutr.</em><br>
+      Scheiman, J. et al. (2019): Meta-omics analysis of elite athletes. <em>Nature Medicine</em>, 25, 1104–1109.
+    </div>
+  </article>
+</div>
+
+<footer class="site-footer">
+  © 2026 TRHI — The Real Health Institute · Evidence-based. Human-friendly.
+</footer>
+</div><!-- /content-en -->
+
+<script>
+function setLang(l) {
+  document.getElementById('content-de').style.display = l === 'de' ? 'block' : 'none';
+  document.getElementById('content-en').style.display = l === 'en' ? 'block' : 'none';
+  document.getElementById('btnDE').classList.toggle('active', l === 'de');
+  document.getElementById('btnEN').classList.toggle('active', l === 'en');
+  document.getElementById('btnDE').setAttribute('aria-pressed', l === 'de');
+  document.getElementById('btnEN').setAttribute('aria-pressed', l === 'en');
+  document.documentElement.lang = l;
+}
+</script>
+
+</body>
+</html>

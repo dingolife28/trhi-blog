@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Omega-3 & Demenzprävention: Was 217.000 Studienteilnehmer zeigen | TRHI</title>
+  <meta name="description" content="Eine neue Großstudie mit 217.000 Teilnehmern zeigt: Wer ausreichend Omega-3 aufnimmt, senkt sein Risiko für frühzeitige Demenz um bis zu 40%. Was du jetzt tun kannst." />
+  <meta name="keywords" content="Omega-3, DHA, EPA, Demenz, Gehirn, Neuroprotektion, Fischöl, kognitive Gesundheit, Altenvorsorge, UK Biobank" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green-dark: #2d6a4f;
+      --green-mid: #40916c;
+      --green-light: #52b788;
+      --green-pale: #d8f3dc;
+      --orange: #f4a261;
+      --orange-dark: #e76f51;
+      --text: #1a1a2e;
+      --text-light: #555;
+      --bg: #f8fdf9;
+      --white: #ffffff;
+      --card-shadow: 0 4px 24px rgba(45,106,79,0.10);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── NAVIGATION ── */
+    nav {
+      background: var(--white);
+      border-bottom: 2px solid var(--green-pale);
+      padding: 0 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+    .nav-logo {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--green-dark);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+    .nav-logo span { color: var(--orange); }
+    .nav-tag {
+      background: var(--green-pale);
+      color: var(--green-dark);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, #0d3b27 0%, #1b5e40 50%, #2d6a4f 100%);
+      color: var(--white);
+      padding: 4rem 1.5rem 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 320px; height: 320px;
+      background: radial-gradient(circle, rgba(82,183,136,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -40px; left: -40px;
+      width: 240px; height: 240px;
+      background: radial-gradient(circle, rgba(244,162,97,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-category {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--white);
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1.2rem;
+    }
+    .hero h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--green-light);
+    }
+    .hero-sub {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.85);
+      max-width: 600px;
+      margin-bottom: 1.8rem;
+    }
+    .hero-meta {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.65);
+    }
+    .hero-meta span { display: flex; align-items: center; gap: 5px; }
+
+    /* ── STAT BAR ── */
+    .stat-bar {
+      background: var(--white);
+      border-bottom: 1px solid var(--green-pale);
+      padding: 1.5rem;
+    }
+    .stat-bar-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .stat-item {
+      text-align: center;
+    }
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--green-dark);
+      line-height: 1;
+    }
+    .stat-number span { color: var(--orange); }
+    .stat-label {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      margin-top: 3px;
+    }
+
+    /* ── ARTICLE ── */
+    .article-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 2.5rem;
+      align-items: start;
+    }
+    @media (max-width: 720px) {
+      .article-wrap { grid-template-columns: 1fr; }
+      .sidebar { order: -1; }
+    }
+
+    .article-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 2.5rem;
+      box-shadow: var(--card-shadow);
+    }
+
+    .article-card p {
+      margin-bottom: 1.2rem;
+      color: var(--text);
+      font-size: 1rem;
+    }
+    .article-card h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin: 2rem 0 0.8rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid var(--green-pale);
+    }
+    .article-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--green-mid);
+      margin: 1.2rem 0 0.5rem;
+    }
+
+    /* Highlight Box */
+    .highlight {
+      background: linear-gradient(135deg, #d8f3dc, #b7e4c7);
+      border-left: 4px solid var(--green-dark);
+      border-radius: 0 12px 12px 0;
+      padding: 1.1rem 1.3rem;
+      margin: 1.5rem 0;
+    }
+    .highlight strong {
+      display: block;
+      color: var(--green-dark);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.4rem;
+    }
+    .highlight p {
+      margin: 0;
+      font-size: 0.97rem;
+      color: var(--green-dark);
+    }
+
+    .highlight-orange {
+      background: linear-gradient(135deg, #fdebd0, #fad7a0);
+      border-left-color: var(--orange-dark);
+    }
+    .highlight-orange strong { color: var(--orange-dark); }
+    .highlight-orange p { color: #7d4900; }
+
+    /* Praxistipps */
+    .praxis-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.8rem 0 1.2rem;
+    }
+    .praxis-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+      padding: 0.7rem 0;
+      border-bottom: 1px solid var(--green-pale);
+      font-size: 0.97rem;
+    }
+    .praxis-list li:last-child { border-bottom: none; }
+    .praxis-icon {
+      flex-shrink: 0;
+      width: 28px; height: 28px;
+      background: var(--green-dark);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 1px;
+    }
+
+    /* Food Table */
+    .food-table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+    .food-table th {
+      background: var(--green-dark);
+      color: white;
+      padding: 0.6rem 0.8rem;
+      text-align: left;
+      font-weight: 600;
+    }
+    .food-table td { padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--green-pale); }
+    .food-table tr:nth-child(even) td { background: #f0faf4; }
+    .food-table .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+    .badge-high { background: #d8f3dc; color: var(--green-dark); }
+    .badge-mid { background: #fff3cd; color: #7d6200; }
+    .badge-low { background: #ffe5d9; color: #9d2c00; }
+
+    /* Affiliate */
+    .affiliate-disclaimer {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+    .affiliate-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem; }
+    .affiliate-card {
+      border: 2px solid var(--green-pale);
+      border-radius: 14px;
+      padding: 1.2rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .affiliate-card:hover { border-color: var(--green-light); box-shadow: 0 4px 16px rgba(82,183,136,0.2); }
+    .affiliate-emoji { font-size: 2rem; margin-bottom: 0.5rem; }
+    .affiliate-category { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: var(--orange); font-weight: 700; }
+    .affiliate-name { font-size: 0.97rem; font-weight: 700; color: var(--green-dark); margin: 0.3rem 0; }
+    .affiliate-desc { font-size: 0.82rem; color: var(--text-light); }
+    .affiliate-cta {
+      display: inline-block;
+      margin-top: 0.8rem;
+      background: var(--green-dark);
+      color: white;
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    /* Sources */
+    .sources { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--green-pale); }
+    .sources h4 { font-size: 0.9rem; color: var(--green-dark); margin-bottom: 0.6rem; }
+    .sources ol { padding-left: 1.2rem; font-size: 0.8rem; color: var(--text-light); }
+    .sources li { margin-bottom: 0.3rem; }
+    .sources a { color: var(--green-mid); text-decoration: none; }
+    .sources a:hover { text-decoration: underline; }
+
+    .disclaimer {
+      background: #f1f3f4;
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      font-size: 0.8rem;
+      color: var(--text-light);
+      margin-top: 1.5rem;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar { display: flex; flex-direction: column; gap: 1.2rem; }
+    .sidebar-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 1.4rem;
+      box-shadow: var(--card-shadow);
+    }
+    .sidebar-card h4 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--green-dark);
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--green-pale);
+    }
+    .key-fact {
+      display: flex;
+      gap: 0.7rem;
+      align-items: flex-start;
+      margin-bottom: 0.8rem;
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+    .key-fact-dot {
+      flex-shrink: 0;
+      width: 8px; height: 8px;
+      background: var(--green-light);
+      border-radius: 50%;
+      margin-top: 7px;
+    }
+    .omega-index {
+      background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
+      color: white;
+      border-radius: 12px;
+      padding: 1rem;
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+    .omega-index-val { font-size: 2.2rem; font-weight: 800; }
+    .omega-index-label { font-size: 0.78rem; opacity: 0.85; margin-top: 2px; }
+
+    /* ── QUIZ ── */
+    .quiz-section {
+      background: linear-gradient(135deg, #0d3b27 0%, #1b5e40 100%);
+      padding: 4rem 1.5rem;
+      color: white;
+    }
+    .quiz-inner { max-width: 720px; margin: 0 auto; }
+    .quiz-section h2 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+    .quiz-subtitle { text-align: center; color: rgba(255,255,255,0.75); margin-bottom: 2rem; font-size: 0.95rem; }
+
+    .quiz-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 20px;
+      padding: 2rem;
+      backdrop-filter: blur(8px);
+    }
+
+    /* Progress */
+    .quiz-progress-bar-wrap {
+      background: rgba(255,255,255,0.15);
+      border-radius: 10px;
+      height: 6px;
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+    }
+    .quiz-progress-bar {
+      background: var(--orange);
+      height: 100%;
+      border-radius: 10px;
+      transition: width 0.4s ease;
+    }
+    .quiz-progress-text {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 0.4rem;
+    }
+
+    .quiz-question-num {
+      font-size: 0.8rem;
+      color: var(--orange);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+    }
+    .quiz-question-text {
+      font-size: 1.1rem;
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 1.5rem;
+    }
+
+    .quiz-options { display: flex; flex-direction: column; gap: 0.7rem; }
+    .quiz-option {
+      background: rgba(255,255,255,0.1);
+      border: 2px solid rgba(255,255,255,0.2);
+      border-radius: 12px;
+      padding: 0.9rem 1.1rem;
+      cursor: pointer;
+      font-size: 0.95rem;
+      color: white;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      text-align: left;
+      width: 100%;
+    }
+    .quiz-option:hover:not(:disabled) {
+      background: rgba(82,183,136,0.25);
+      border-color: var(--green-light);
+      transform: translateY(-1px);
+    }
+    .quiz-option.correct {
+      background: rgba(82,183,136,0.35);
+      border-color: var(--green-light);
+    }
+    .quiz-option.wrong {
+      background: rgba(231,111,81,0.3);
+      border-color: var(--orange-dark);
+    }
+    .quiz-option:disabled { cursor: default; }
+    .option-letter {
+      flex-shrink: 0;
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .quiz-feedback {
+      margin-top: 1.2rem;
+      padding: 1rem;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      display: none;
+    }
+    .quiz-feedback.correct { background: rgba(82,183,136,0.2); border: 1px solid rgba(82,183,136,0.4); }
+    .quiz-feedback.wrong { background: rgba(231,111,81,0.2); border: 1px solid rgba(231,111,81,0.4); }
+    .quiz-feedback .feedback-title { font-weight: 700; margin-bottom: 0.3rem; }
+
+    .quiz-next-btn {
+      margin-top: 1.2rem;
+      background: var(--orange);
+      color: white;
+      border: none;
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .quiz-next-btn:hover { background: var(--orange-dark); transform: translateY(-2px); }
+
+    /* Score screen */
+    .quiz-result {
+      display: none;
+      text-align: center;
+      padding: 1rem 0;
+    }
+    .result-circle {
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      border: 5px solid var(--green-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-size: 2.5rem;
+      font-weight: 800;
+    }
+    .result-title { font-size: 1.4rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .result-subtitle { color: rgba(255,255,255,0.75); font-size: 0.95rem; margin-bottom: 1.5rem; }
+    .result-badges { display: flex; justify-content: center; gap: 0.8rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .result-badge {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 0.83rem;
+    }
+    .result-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-share, .btn-retry {
+      padding: 0.75rem 1.8rem;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+    .btn-share { background: var(--orange); color: white; }
+    .btn-share:hover { background: var(--orange-dark); }
+    .btn-retry { background: rgba(255,255,255,0.15); color: white; border: 2px solid rgba(255,255,255,0.3); }
+    .btn-retry:hover { background: rgba(255,255,255,0.25); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #0d1f17;
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.8rem;
+    }
+    footer a { color: var(--green-light); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">TRH<span>I</span></a>
+    <span class="nav-tag">🧠 Gehirngesundheit</span>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero">
+  <div class="hero-inner">
+    <span class="hero-category">Neuroscience &amp; Ernährung</span>
+    <h1>Omega-3 &amp; Demenz:<br>Was <em>217.000 Menschen</em><br>uns beweisen</h1>
+    <p class="hero-sub">Eine Großstudie aus dem UK Biobank-Projekt zeigt: Wer ausreichend marine Omega-3-Fettsäuren im Blut hat, reduziert sein Risiko für frühe Demenz um bis zu 40&nbsp;% – unabhängig von genetischer Vorbelastung.</p>
+    <div class="hero-meta">
+      <span>📅 22. Juni 2026</span>
+      <span>🕑 ca. 7 Min. Lesezeit</span>
+      <span>🔬 Evidenzbasiert</span>
+    </div>
+  </div>
+</header>
+
+<!-- Stat Bar -->
+<div class="stat-bar">
+  <div class="stat-bar-inner">
+    <div class="stat-item">
+      <div class="stat-number">217<span>.000</span></div>
+      <div class="stat-label">Studienteilnehmer</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number"><span>–</span>40<span>%</span></div>
+      <div class="stat-label">Demenzrisiko bei hohem Omega-3</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">8<span>,3</span></div>
+      <div class="stat-label">Jahre Beobachtungszeitraum</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">60<span>%</span></div>
+      <div class="stat-label">Gehirn-Fettanteil (Omega-3 inklusive)</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article + Sidebar -->
+<div class="article-wrap">
+
+  <!-- Main Article -->
+  <article class="article-card">
+
+    <p>Stell dir vor, eine einzige Ernährungsgewohnheit könnte das Risiko, mit 58 Jahren eine Demenzdiagnose zu erhalten, um fast die Hälfte senken. Klingt nach Werbung? Ist Wissenschaft. Im Dezember 2025 veröffentlichte ein internationales Forscherteam im Fachjournal <em>Clinical Nutrition</em> eine der größten Studien ihrer Art – und die Ergebnisse haben selbst erfahrene Neurologen aufhorchen lassen.</p>
+
+    <h2>Die Studie: 217.000 Menschen, 8 Jahre, eine klare Aussage</h2>
+
+    <p>Das UK Biobank-Projekt ist eines der ambitioniertesten medizinischen Langzeitprojekte weltweit. Forscher verfolgten über 8,3 Jahre hinweg die Gesundheit von 217.000 Erwachsenen im Alter zwischen 40 und 64 Jahren. In dieser Zeit entwickelten 325 Teilnehmer eine <em>frühzeitige Demenz</em> – also eine Diagnose vor dem 65. Lebensjahr.</p>
+
+    <p>Das entscheidende Ergebnis: Teilnehmer mit den höchsten Omega-3-Werten im Blut hatten im Vergleich zur Gruppe mit den niedrigsten Werten ein um <strong>35 bis 40 Prozent</strong> geringeres Risiko, an frühzeitiger Demenz zu erkranken. Und das, obwohl die Forscher für genetische Risikofaktoren, Lebensstil, Rauchen, körperliche Aktivität und kardiometabolische Erkrankungen kontrolliert hatten.</p>
+
+    <div class="highlight">
+      <strong>🔬 Studienfakt</strong>
+      <p>Die Schutzwirkung war nicht nur bei DHA (der bekanntesten Omega-3-Fettsäure im Gehirn) nachweisbar – überraschenderweise war der Effekt bei den <em>Nicht-DHA-Omega-3-Fettsäuren</em> (vor allem EPA) sogar noch stärker. Das deutet auf einen synergetischen Mechanismus hin, bei dem das gesamte marine Omega-3-Profil zählt.</p>
+    </div>
+
+    <h2>Warum braucht das Gehirn so dringend Omega-3?</h2>
+
+    <p>Das menschliche Gehirn ist zu etwa 60 Prozent aus Fett aufgebaut – und Fett ist in diesem Kontext keine Beleidigung, sondern eine strukturelle Notwendigkeit. Der größte Anteil entfällt auf mehrfach ungesättigte Fettsäuren, allen voran DHA (Docosahexaensäure).</p>
+
+    <h3>DHA: Der Architekt neuronaler Netzwerke</h3>
+    <p>DHA ist ein zentraler Baustein der Zellmembranen im Gehirn. Es sorgt dafür, dass diese Membranen flexibel und durchlässig bleiben – eine Voraussetzung für schnelle, effiziente Signalübertragung zwischen Neuronen. Ohne ausreichend DHA werden Zellmembranen starrer, die synaptische Kommunikation verlangsamt sich, und neuronale Netzwerke – die Grundlage von Gedächtnis, Sprache und Denken – arbeiten weniger präzise.</p>
+
+    <h3>EPA: Der stille Feuerwehrmann</h3>
+    <p>EPA (Eicosapentaensäure) wirkt vor allem entzündungsregulierend. Chronische Neuroinflammation – also niedriggradige Dauerentzündung im Gehirn – gilt heute als einer der entscheidenden Treiber neurodegenerativer Erkrankungen wie Alzheimer. EPA hemmt entzündungsfördernde Botenstoffe (Prostaglandine, Leukotriene) und fördert die Bildung entzündungslösender Resolvine und Protectine. Im Klartext: EPA hält die Feuerwehr aktiv, bevor der Brand außer Kontrolle gerät.</p>
+
+    <div class="highlight highlight-orange">
+      <strong>⚡ Kernmechanismus</strong>
+      <p>Omega-3 wirkt im Gehirn auf zwei Ebenen gleichzeitig: DHA sichert die strukturelle Integrität neuronaler Membranen, EPA bremst die chronische Entzündung, die Nervenzellen über Jahre schleichend zerstört. Beides ist nötig – beides hängt von deiner Ernährung ab.</p>
+    </div>
+
+    <h2>Wie viel Omega-3 braucht dein Gehirn?</h2>
+
+    <p>Die Deutsche Gesellschaft für Ernährung (DGE) empfiehlt eine tägliche Aufnahme von mindestens 250 mg DHA und EPA kombiniert. Für gezielte neuroprotekcive Effekte, wie sie in klinischen Studien untersucht werden, bewegen sich die Dosierungen häufig zwischen 1.000 und 2.000 mg EPA+DHA täglich.</p>
+
+    <p>Ein hilfreiches Konzept für die Praxis ist der sogenannte <em>Omega-3-Index</em> – ein Bluttest, der den prozentualen Anteil von EPA und DHA in den roten Blutkörperchen misst. Werte unter 4 % gelten als Risikobereich; Werte über 8 % stehen mit dem besten Schutzprofil für Herz und Gehirn in Verbindung. Studien zeigen, dass der durchschnittliche Deutsche einen Omega-3-Index von etwa 5 bis 6 % hat – knapp über dem Risikobereich, aber weit von optimalem Schutz entfernt.</p>
+
+    <h2>Top-Quellen für Omega-3: Marine und pflanzliche Optionen</h2>
+
+    <table class="food-table">
+      <thead>
+        <tr>
+          <th>Lebensmittel</th>
+          <th>Menge</th>
+          <th>EPA+DHA / ALA</th>
+          <th>Bioverfügbarkeit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>🐟 Hering (frisch)</td>
+          <td>100 g</td>
+          <td>~2.400 mg EPA+DHA</td>
+          <td><span class="badge badge-high">hoch</span></td>
+        </tr>
+        <tr>
+          <td>🐟 Makrele</td>
+          <td>100 g</td>
+          <td>~2.200 mg EPA+DHA</td>
+          <td><span class="badge badge-high">hoch</span></td>
+        </tr>
+        <tr>
+          <td>🐟 Lachs (Wildlachs)</td>
+          <td>100 g</td>
+          <td>~1.800 mg EPA+DHA</td>
+          <td><span class="badge badge-high">hoch</span></td>
+        </tr>
+        <tr>
+          <td>🌿 Algenöl (vegan)</td>
+          <td>5 ml</td>
+          <td>~500–1.000 mg DHA</td>
+          <td><span class="badge badge-high">hoch</span></td>
+        </tr>
+        <tr>
+          <td>🥜 Walnüsse</td>
+          <td>30 g</td>
+          <td>~2.500 mg ALA*</td>
+          <td><span class="badge badge-low">niedrig</span></td>
+        </tr>
+        <tr>
+          <td>🌾 Leinöl</td>
+          <td>1 EL (10 g)</td>
+          <td>~5.400 mg ALA*</td>
+          <td><span class="badge badge-low">niedrig</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:0.78rem;color:var(--text-light);margin-top:-0.5rem;">*ALA (Alpha-Linolensäure) ist pflanzliches Omega-3, das der Körper nur zu ca. 5–8 % in EPA und weniger als 4 % in DHA umwandeln kann. Pflanzliche Quellen sind wertvoll, ersetzen marine Quellen aber nicht vollständig.</p>
+
+    <div class="highlight">
+      <strong>💡 Vegane Alternative</strong>
+      <p>Wer keinen Fisch isst: Algenöl liefert direkt DHA (und je nach Produkt auch EPA) – ohne den Umweg über die schlechte Umwandlungsrate. Mikroalgen sind schließlich die Originalquelle, aus der Fische ihr Omega-3 beziehen. Die Umweltbilanz ist zudem deutlich besser als bei Fischöl.</p>
+    </div>
+
+    <h2>7 Praxistipps: So optimierst du deine Omega-3-Versorgung</h2>
+
+    <ul class="praxis-list">
+      <li>
+        <span class="praxis-icon">1</span>
+        <span><strong>Zweimal pro Woche fetten Seefisch essen.</strong> Hering, Makrele oder Wildlachs – schon eine 120-g-Portion zweimal wöchentlich deckt den Grundbedarf laut DGE. Billig, einfach, effektiv.</span>
+      </li>
+      <li>
+        <span class="praxis-icon">2</span>
+        <span><strong>Omega-3-Index messen lassen.</strong> Ein einfacher Bluttest beim Arzt oder über Direktbestellung zeigt, wo du wirklich stehst. Ziel: über 8 %. Wer unter 4 % liegt, sollte aktiv supplementieren.</span>
+      </li>
+      <li>
+        <span class="praxis-icon">3</span>
+        <span><strong>Omega-6 reduzieren.</strong> Sonnenblumeöl, Maisöl und viele Fertigprodukte sind reich an Omega-6. Ein hohes Omega-6-zu-Omega-3-Verhältnis (im Westen oft 15:1 statt idealem 4:1) blockiert die Verwertung von Omega-3.</span>
+      </li>
+      <li>
+        <span class="praxis-icon">4</span>
+        <span><strong>Fischöl mit dem Abendessen einnehmen.</strong> Omega-3 ist fettlöslich – die Aufnahme verbessert sich deutlich, wenn Kapseln oder Öl zusammen mit einer fetthaltigen Mahlzeit eingenommen werden.</span>
+      </li>
+      <li>
+        <span class="praxis-icon">5</span>
+        <span><strong>Auf Qualität bei Supplementen achten.</strong> Fischöl kann ranzig werden. Achte auf Reinheit (IFOS-Zertifikat), niedrige Schwermetallwerte, hohen EPA+DHA-Gehalt pro Kapsel und dunkle Flasche als Oxidationsschutz.</span>
+      </li>
+      <li>
+        <span class="praxis-icon">6</span>
+        <span><strong>Leinöl in kalte Gerichte integrieren.</strong> Ein Esslöffel Leinöl ins Salatdressing oder über Quark – nie erhitzen! Hitzesensitiv und nur als Ergänzung, nicht als Ersatz für marine Quellen.</span>
+      </li>
+      <li>
+        <span class="praxis-icon">7</span>
+        <span><strong>Regelmäßige Bewegung kombinieren.</strong> Sport erhöht die Durchblutung des Gehirns und fördert die BDNF-Ausschüttung (Brain-Derived Neurotrophic Factor). Zusammen mit Omega-3 zeigt die DO-HEALTH-Studie (2025) synergistische Effekte auf das biologische Altern.</span>
+      </li>
+    </ul>
+
+    <!-- Affiliate Section -->
+    <h2>Empfohlene Produkte</h2>
+    <p class="affiliate-disclaimer">*Affiliate-Hinweis: Einige Links auf dieser Seite sind Partnerlinks. Bei einem Kauf erhalten wir eine kleine Provision – für dich entstehen keine Mehrkosten. Wir empfehlen nur Produkte, die wir selbst für sinnvoll halten.</p>
+
+    <div class="affiliate-grid">
+      <a href="#" class="affiliate-card">
+        <div class="affiliate-emoji">🐟</div>
+        <div class="affiliate-category">Nahrungsergänzung</div>
+        <div class="affiliate-name">Premium Fischöl EPA+DHA</div>
+        <div class="affiliate-desc">Hochdosiert, IFOS-zertifiziert, molekular destilliert. Ideal für einen Omega-3-Index über 8 %.</div>
+        <span class="affiliate-cta">Jetzt ansehen →</span>
+      </a>
+      <a href="#" class="affiliate-card">
+        <div class="affiliate-emoji">🌿</div>
+        <div class="affiliate-category">Vegan / Pflanzlich</div>
+        <div class="affiliate-name">Algenöl DHA + EPA</div>
+        <div class="affiliate-desc">Vegane Alternative mit direkt verfügbarem DHA aus Mikroalgen. Nachhaltig und schadstoffarm.</div>
+        <span class="affiliate-cta">Jetzt ansehen →</span>
+      </a>
+      <a href="#" class="affiliate-card">
+        <div class="affiliate-emoji">📖</div>
+        <div class="affiliate-category">Wissen</div>
+        <div class="affiliate-name">„Das Ende des Alzheimers" – Dale Bredesen</div>
+        <div class="affiliate-desc">Wissenschaftlich fundiertes Buch über Demenzprävention, Ernährung und Lebensstil. Pflichtlektüre für alle ab 40.</div>
+        <span class="affiliate-cta">Jetzt ansehen →</span>
+      </a>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="disclaimer">
+      ⚠️ <strong>Medizinischer Hinweis:</strong> Alle Inhalte dieses Artikels dienen ausschließlich der allgemeinen Information und ersetzen keine individuelle medizinische Beratung. Bei gesundheitlichen Beschwerden oder vor Beginn einer Supplementation wende dich an einen Arzt oder Ärztin. Nahrungsergänzungsmittel sind kein Ersatz für eine ausgewogene, abwechslungsreiche Ernährung.
+    </div>
+
+    <!-- Sources -->
+    <div class="sources">
+      <h4>📚 Quellen &amp; weiterführende Literatur</h4>
+      <ol>
+        <li><a href="https://www.clinicalnutritionjournal.com/article/S0261-5614(25)00338-3/abstract" target="_blank">Gu et al. (2025): „Blood omega-3 is inversely related to risk of early-onset dementia". Clinical Nutrition.</a></li>
+        <li><a href="https://www.nutraingredients.com/Article/2026/01/21/higher-blood-omega-3-levels-linked-to-lower-risk-of-early-onset-dementia-study/" target="_blank">NutraIngredients (Jan 2026): Higher omega-3 blood levels linked to lower risk of early-onset dementia.</a></li>
+        <li><a href="https://www.aerzteblatt.de/nachrichten/137930/Studie-Omega-3-Fettsaeuren-koennten-Nervenwachstum-foerdern-und-kognitive-Leistungen-verbessern" target="_blank">Deutsches Ärzteblatt: Omega-3-Fettsäuren könnten Nervenwachstum fördern und kognitive Leistungen verbessern.</a></li>
+        <li><a href="https://ak-omega-3.de/omega-3-fettsaeuren/welche-wirkung-haben-omega-3-fettsaeuren/" target="_blank">Arbeitskreis Omega-3 e.V.: Wirkung von Omega-3-Fettsäuren.</a></li>
+        <li><a href="https://www.aok.de/pk/magazin/ernaehrung/vitamine/wie-gesund-sind-omega-3-fettsaeuren/" target="_blank">AOK: Wie gesund sind Omega-3-Fettsäuren?</a></li>
+      </ol>
+    </div>
+  </article>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+
+    <div class="sidebar-card">
+      <h4>⚡ Schnell-Fakten</h4>
+      <div class="key-fact">
+        <div class="key-fact-dot"></div>
+        <div>DHA macht ca. 30–40 % der Gehirn-Fettsäuren in der Großhirnrinde aus</div>
+      </div>
+      <div class="key-fact">
+        <div class="key-fact-dot"></div>
+        <div>UK Biobank-Studie: 217.000 Teilnehmer, 8,3 Jahre, 325 Demenz-Fälle</div>
+      </div>
+      <div class="key-fact">
+        <div class="key-fact-dot"></div>
+        <div>Schutzeffekt gilt auch bei APOE-ε4-Trägern (genetischem Alzheimer-Risikofaktor)</div>
+      </div>
+      <div class="key-fact">
+        <div class="key-fact-dot"></div>
+        <div>Ø Omega-3-Index Deutschen: ~5–6 % – Ziel: ≥ 8 %</div>
+      </div>
+      <div class="key-fact">
+        <div class="key-fact-dot"></div>
+        <div>Empfehlung: 2× pro Woche fetter Seefisch oder 1–2 g EPA+DHA täglich</div>
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>📊 Dein Omega-3-Ziel</h4>
+      <p style="font-size:0.85rem;color:var(--text-light);margin-bottom:0.8rem;">Der Omega-3-Index misst EPA+DHA in roten Blutkörperchen:</p>
+      <div style="display:flex;flex-direction:column;gap:0.5rem;">
+        <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.83rem;">
+          <div style="width:12px;height:12px;border-radius:50%;background:#e63946;flex-shrink:0;"></div>
+          <span><strong>&lt; 4 %</strong> — Risikobereich</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.83rem;">
+          <div style="width:12px;height:12px;border-radius:50%;background:#f4a261;flex-shrink:0;"></div>
+          <span><strong>4–8 %</strong> — Verbesserungsbedarf</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.83rem;">
+          <div style="width:12px;height:12px;border-radius:50%;background:#52b788;flex-shrink:0;"></div>
+          <span><strong>&gt; 8 %</strong> — Optimal</span>
+        </div>
+      </div>
+      <div class="omega-index" style="margin-top:1rem;">
+        <div class="omega-index-val">≥ 8 %</div>
+        <div class="omega-index-label">Dein Zielwert</div>
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>🧪 Quiz starten</h4>
+      <p style="font-size:0.85rem;color:var(--text-light);margin-bottom:0.8rem;">Teste dein Wissen über Omega-3 und Gehirngesundheit in 5 kurzen Fragen.</p>
+      <a href="#quiz" style="display:block;background:var(--green-dark);color:white;text-align:center;padding:0.8rem;border-radius:12px;font-weight:700;font-size:0.9rem;text-decoration:none;transition:background 0.2s;"
+         onmouseover="this.style.background='#40916c'" onmouseout="this.style.background='#2d6a4f'">
+        Jetzt Quiz starten →
+      </a>
+    </div>
+
+  </aside>
+</div>
+
+<!-- Quiz Section -->
+<section class="quiz-section" id="quiz">
+  <div class="quiz-inner">
+    <h2>🧠 Teste dein Wissen</h2>
+    <p class="quiz-subtitle">5 Fragen rund um Omega-3, Gehirn und die neue Studie</p>
+
+    <div class="quiz-card">
+      <!-- Progress -->
+      <div class="quiz-progress-text">
+        <span id="quiz-q-label">Frage 1 von 5</span>
+        <span id="quiz-score-live">0 Punkte</span>
+      </div>
+      <div class="quiz-progress-bar-wrap">
+        <div class="quiz-progress-bar" id="quiz-bar" style="width:0%"></div>
+      </div>
+
+      <!-- Question Container -->
+      <div id="quiz-content">
+        <div class="quiz-question-num" id="q-num">FRAGE 1</div>
+        <div class="quiz-question-text" id="q-text"></div>
+        <div class="quiz-options" id="q-options"></div>
+        <div class="quiz-feedback" id="q-feedback">
+          <div class="feedback-title" id="q-feedback-title"></div>
+          <div id="q-feedback-body"></div>
+        </div>
+        <button class="quiz-next-btn" id="quiz-next">Weiter →</button>
+      </div>
+
+      <!-- Result Screen -->
+      <div class="quiz-result" id="quiz-result">
+        <div class="result-circle" id="result-circle"></div>
+        <div class="result-title" id="result-title"></div>
+        <div class="result-subtitle" id="result-subtitle"></div>
+        <div class="result-badges" id="result-badges"></div>
+        <div class="result-actions">
+          <button class="btn-share" onclick="shareResult()">📤 Ergebnis teilen</button>
+          <button class="btn-retry" onclick="restartQuiz()">🔄 Nochmal</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>© 2026 TRHI – The Real Health Institute | <a href="#">Datenschutz</a> | <a href="#">Impressum</a></p>
+  <p style="margin-top:0.5rem;">Dieser Artikel enthält Affiliate-Links. Alle Empfehlungen basieren auf redaktioneller Unabhängigkeit.</p>
+</footer>
+
+<script>
+  // ─── QUIZ DATA ───────────────────────────────────────────────────
+  const questions = [
+    {
+      q: "Wie viel Prozent seines Gewichts besteht das Gehirn ungefähr aus Fett – und welcher Anteil davon ist mehrfach ungesättigt?",
+      options: [
+        "~20 % Fett, kaum mehrfach ungesättigt",
+        "~40 % Fett, hauptsächlich gesättigt",
+        "~60 % Fett, großteils mehrfach ungesättigt",
+        "~80 % Fett, hauptsächlich DHA"
+      ],
+      correct: 2,
+      feedback: {
+        correct: "✅ Richtig!",
+        wrong: "❌ Nicht ganz.",
+        body: "Das Gehirn besteht zu ca. 60 % seines Trockengewichts aus Fett – und davon ist ein Großteil mehrfach ungesättigt, vor allem DHA. Kein anderes Organ ist so fettreich."
+      }
+    },
+    {
+      q: "Um wie viel Prozent sank das Risiko für frühzeitige Demenz bei Teilnehmern mit den höchsten Omega-3-Blutspiegeln in der UK Biobank-Studie (2025)?",
+      options: [
+        "Etwa 10–15 %",
+        "Etwa 20–25 %",
+        "Etwa 35–40 %",
+        "Über 60 %"
+      ],
+      correct: 2,
+      feedback: {
+        correct: "✅ Richtig!",
+        wrong: "❌ Fast.",
+        body: "Die UK Biobank-Studie (Clinical Nutrition, Dez. 2025) zeigte eine Risikoreduktion von 35–40 % bei den Teilnehmern mit den höchsten Omega-3-Werten – verglichen mit denjenigen mit den niedrigsten Werten."
+      }
+    },
+    {
+      q: "Welche Hauptfunktion hat EPA (Eicosapentaensäure) im Gehirn – im Unterschied zu DHA?",
+      options: [
+        "EPA bildet die Zellmembranstruktur, DHA hemmt Entzündungen",
+        "EPA reguliert vor allem Entzündungsprozesse, DHA ist ein Strukturbaustein der Zellmembranen",
+        "Beide haben identische Funktionen im Gehirn",
+        "EPA fördert die Insulinproduktion im Pankreas"
+      ],
+      correct: 1,
+      feedback: {
+        correct: "✅ Korrekt!",
+        wrong: "❌ Verwechslung!",
+        body: "DHA ist der Strukturbaustein – es sorgt für flexible, kommunikationsfähige Zellmembranen. EPA hingegen wirkt primär entzündungsregulierend und bildet entzündungslösende Moleküle (Resolvine, Protectine)."
+      }
+    },
+    {
+      q: "Warum können pflanzliche Omega-3-Quellen wie Leinöl oder Walnüsse Fischöl für die Gehirngesundheit nicht vollständig ersetzen?",
+      options: [
+        "Pflanzliche Quellen enthalten kein Omega-3",
+        "Ihr ALA-Anteil wird nur zu ca. 5–8 % in EPA und unter 4 % in DHA umgewandelt",
+        "Sie sind zu teuer und unzugänglich",
+        "ALA schadet dem Gehirn bei hohen Mengen"
+      ],
+      correct: 1,
+      feedback: {
+        correct: "✅ Genau richtig!",
+        wrong: "❌ Das stimmt nicht.",
+        body: "Pflanzliches Omega-3 (ALA aus Leinöl, Walnüssen etc.) kann der Körper nur schlecht in EPA (<8 %) und DHA (<4 %) umwandeln. Wer kein Fisch isst, sollte auf Algenöl setzen – die Originalquelle, aus der Fische ihr Omega-3 beziehen."
+      }
+    },
+    {
+      q: "Was beschreibt der ‚Omega-3-Index' – und welcher Wert gilt als optimal für Herz- und Gehirnschutz?",
+      options: [
+        "Tägliche Einnahme in mg; optimal sind 500 mg",
+        "Anteil von Omega-6 in der Nahrung; optimal unter 10 %",
+        "Prozentualer EPA+DHA-Anteil in roten Blutkörperchen; optimal ≥ 8 %",
+        "Verhältnis ALA zu DHA im Blutplasma; optimal 1:1"
+      ],
+      correct: 2,
+      feedback: {
+        correct: "✅ Top!",
+        wrong: "❌ Knapp daneben.",
+        body: "Der Omega-3-Index misst, wie viel Prozent der Fettsäuren in den roten Blutkörperchen aus EPA und DHA bestehen. Werte ≥ 8 % gelten als optimaler Schutzbereich. Der durchschnittliche Deutsche liegt leider nur bei 5–6 %."
+      }
+    }
+  ];
+
+  // ─── QUIZ STATE ────────────────────────────────────────────────
+  let currentQ = 0;
+  let score = 0;
+  let answered = false;
+
+  function renderQuestion() {
+    const q = questions[currentQ];
+    document.getElementById('q-num').textContent = `FRAGE ${currentQ + 1}`;
+    document.getElementById('q-text').textContent = q.q;
+    document.getElementById('quiz-q-label').textContent = `Frage ${currentQ + 1} von ${questions.length}`;
+    document.getElementById('quiz-bar').style.width = `${(currentQ / questions.length) * 100}%`;
+
+    const optEl = document.getElementById('q-options');
+    optEl.innerHTML = '';
+    const letters = ['A', 'B', 'C', 'D'];
+    q.options.forEach((opt, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'quiz-option';
+      btn.innerHTML = `<span class="option-letter">${letters[i]}</span><span>${opt}</span>`;
+      btn.addEventListener('click', () => selectAnswer(i));
+      optEl.appendChild(btn);
+    });
+
+    document.getElementById('q-feedback').style.display = 'none';
+    document.getElementById('q-feedback').className = 'quiz-feedback';
+    document.getElementById('quiz-next').style.display = 'none';
+    answered = false;
+  }
+
+  function selectAnswer(idx) {
+    if (answered) return;
+    answered = true;
+    const q = questions[currentQ];
+    const btns = document.querySelectorAll('.quiz-option');
+
+    btns.forEach(b => b.disabled = true);
+
+    const isCorrect = idx === q.correct;
+    if (isCorrect) score++;
+
+    btns[idx].classList.add(isCorrect ? 'correct' : 'wrong');
+    if (!isCorrect) btns[q.correct].classList.add('correct');
+
+    const fb = document.getElementById('q-feedback');
+    const fbTitle = document.getElementById('q-feedback-title');
+    const fbBody = document.getElementById('q-feedback-body');
+
+    fb.style.display = 'block';
+    fb.className = `quiz-feedback ${isCorrect ? 'correct' : 'wrong'}`;
+    fbTitle.textContent = isCorrect ? q.feedback.correct : q.feedback.wrong;
+    fbBody.textContent = q.feedback.body;
+
+    document.getElementById('quiz-score-live').textContent = `${score} Punkt${score !== 1 ? 'e' : ''}`;
+    document.getElementById('quiz-next').style.display = 'block';
+    document.getElementById('quiz-next').textContent = currentQ < questions.length - 1 ? 'Weiter →' : 'Ergebnis ansehen 🎯';
+  }
+
+  document.getElementById('quiz-next').addEventListener('click', () => {
+    currentQ++;
+    if (currentQ < questions.length) {
+      renderQuestion();
+    } else {
+      showResult();
+    }
+  });
+
+  function showResult() {
+    document.getElementById('quiz-progress-text') && null;
+    document.getElementById('quiz-content').style.display = 'none';
+    document.getElementById('quiz-bar').style.width = '100%';
+    document.getElementById('quiz-q-label').textContent = 'Quiz abgeschlossen';
+    document.getElementById('quiz-score-live').textContent = `${score}/${questions.length} Punkte`;
+
+    const resultEl = document.getElementById('quiz-result');
+    resultEl.style.display = 'block';
+
+    const circle = document.getElementById('result-circle');
+    circle.textContent = `${score}/${questions.length}`;
+
+    let title, subtitle, badges;
+    if (score === 5) {
+      title = '🏆 Omega-3-Experte!';
+      subtitle = 'Perfektes Ergebnis! Du weißt, wie du dein Gehirn schützt. Teile dieses Wissen!';
+      badges = ['🎯 100 % korrekt', '🧬 Neuroprofi', '🐟 Fischkenner'];
+      circle.style.borderColor = '#52b788';
+    } else if (score >= 3) {
+      title = '💪 Solides Wissen!';
+      subtitle = 'Gut gemacht! Mit ein wenig mehr Praxis erreichst du die volle Punktzahl.';
+      badges = ['✅ Gut informiert', `📊 ${score}/5 Punkte`];
+      circle.style.borderColor = '#f4a261';
+    } else {
+      title = '📚 Noch Lernpotenzial!';
+      subtitle = 'Kein Problem – lies den Artikel nochmals und starte das Quiz neu!';
+      badges = ['🔄 Nochmal versuchen', '📖 Artikel lesen'];
+      circle.style.borderColor = '#e76f51';
+    }
+
+    document.getElementById('result-title').textContent = title;
+    document.getElementById('result-subtitle').textContent = subtitle;
+    document.getElementById('result-badges').innerHTML = badges.map(b =>
+      `<span class="result-badge">${b}</span>`
+    ).join('');
+  }
+
+  function restartQuiz() {
+    currentQ = 0;
+    score = 0;
+    answered = false;
+    document.getElementById('quiz-content').style.display = 'block';
+    document.getElementById('quiz-result').style.display = 'none';
+    document.getElementById('quiz-score-live').textContent = '0 Punkte';
+    renderQuestion();
+  }
+
+  function shareResult() {
+    const text = `Ich habe ${score}/5 Punkte im TRHI Omega-3-Quiz erreicht! 🧠🐟 Wusstest du, dass ausreichend Omega-3 das Demenzrisiko um bis zu 40 % senken kann? Teste auch dein Wissen:`;
+    if (navigator.share) {
+      navigator.share({ title: 'Omega-3 Quiz – TRHI', text, url: window.location.href });
+    } else {
+      navigator.clipboard.writeText(text + ' ' + window.location.href).then(() => {
+        alert('Link in die Zwischenablage kopiert! 📋');
+      });
+    }
+  }
+
+  // Initialize
+  renderQuestion();
+</script>
+</body>
+</html>
