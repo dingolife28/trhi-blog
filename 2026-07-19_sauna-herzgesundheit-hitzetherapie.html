@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sauna und Herzgesundheit: Wie 20 Minuten Hitze dein Sterberisiko halbieren können | TRHI</title>
+  <meta name="description" content="Eine 20-Jahres-Studie aus Finnland mit über 2.300 Männern zeigt: Regelmäßiges Saunieren senkt das kardiovaskuläre Sterberisiko um bis zu 50 % und das Demenzrisiko um 66 %. Was hinter dem Hitzereiz steckt – und wie du ihn richtig nutzt." />
+  <meta name="keywords" content="Sauna, Herzgesundheit, Hitzetherapie, Hitzeschockproteine, KIHD-Studie, Demenzprävention, Blutdruck, Kardiovaskuläre Gesundheit, Wärmetherapie, Longevity" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green-dark: #2d6a4f;
+      --green-mid: #40916c;
+      --green-light: #52b788;
+      --green-pale: #d8f3dc;
+      --orange: #f4a261;
+      --orange-dark: #e76f51;
+      --text: #1a1a2e;
+      --text-light: #555;
+      --bg: #f8fdf9;
+      --white: #ffffff;
+      --card-shadow: 0 4px 24px rgba(45,106,79,0.10);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── NAVIGATION ── */
+    nav {
+      background: var(--white);
+      border-bottom: 2px solid var(--green-pale);
+      padding: 0 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+    .nav-logo {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--green-dark);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+    .nav-logo span { color: var(--orange); }
+    .nav-tag {
+      background: var(--green-pale);
+      color: var(--green-dark);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, #0d3b27 0%, #1b5e40 50%, #2d6a4f 100%);
+      color: var(--white);
+      padding: 4rem 1.5rem 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 320px; height: 320px;
+      background: radial-gradient(circle, rgba(82,183,136,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -40px; left: -40px;
+      width: 240px; height: 240px;
+      background: radial-gradient(circle, rgba(244,162,97,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-category {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--white);
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1.2rem;
+    }
+    .hero h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--green-light);
+    }
+    .hero-sub {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.85);
+      max-width: 600px;
+      margin-bottom: 1.8rem;
+    }
+    .hero-meta {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.65);
+    }
+    .hero-meta span { display: flex; align-items: center; gap: 5px; }
+
+    /* ── STAT BAR ── */
+    .stat-bar {
+      background: var(--white);
+      border-bottom: 1px solid var(--green-pale);
+      padding: 1.5rem;
+    }
+    .stat-bar-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .stat-item {
+      text-align: center;
+    }
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--green-dark);
+      line-height: 1;
+    }
+    .stat-number span { color: var(--orange); }
+    .stat-label {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      margin-top: 3px;
+    }
+
+    /* ── ARTICLE ── */
+    .article-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 2.5rem;
+      align-items: start;
+    }
+    @media (max-width: 720px) {
+      .article-wrap { grid-template-columns: 1fr; }
+      .sidebar { order: -1; }
+    }
+
+    .article-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 2.5rem;
+      box-shadow: var(--card-shadow);
+    }
+
+    .article-card p {
+      margin-bottom: 1.2rem;
+      color: var(--text);
+      font-size: 1rem;
+    }
+    .article-card h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin: 2rem 0 0.8rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid var(--green-pale);
+    }
+    .article-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--green-mid);
+      margin: 1.2rem 0 0.5rem;
+    }
+
+    /* Highlight Box */
+    .highlight {
+      background: linear-gradient(135deg, #d8f3dc, #b7e4c7);
+      border-left: 4px solid var(--green-dark);
+      border-radius: 0 12px 12px 0;
+      padding: 1.1rem 1.3rem;
+      margin: 1.5rem 0;
+    }
+    .highlight strong {
+      display: block;
+      color: var(--green-dark);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.4rem;
+    }
+    .highlight p {
+      margin: 0;
+      font-size: 0.97rem;
+      color: var(--green-dark);
+    }
+
+    .highlight-orange {
+      background: linear-gradient(135deg, #fdebd0, #fad7a0);
+      border-left-color: var(--orange-dark);
+    }
+    .highlight-orange strong { color: var(--orange-dark); }
+    .highlight-orange p { color: #7d4900; }
+
+    /* Praxistipps */
+    .praxis-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.8rem 0 1.2rem;
+    }
+    .praxis-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+      padding: 0.7rem 0;
+      border-bottom: 1px solid var(--green-pale);
+      font-size: 0.97rem;
+    }
+    .praxis-list li:last-child { border-bottom: none; }
+    .praxis-icon {
+      flex-shrink: 0;
+      width: 28px; height: 28px;
+      background: var(--green-dark);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 1px;
+    }
+
+    /* Comparison Table */
+    .food-table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+    .food-table th {
+      background: var(--green-dark);
+      color: white;
+      padding: 0.6rem 0.8rem;
+      text-align: left;
+      font-weight: 600;
+    }
+    .food-table td { padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--green-pale); }
+    .food-table tr:nth-child(even) td { background: #f0faf4; }
+    .food-table .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+    .badge-high { background: #d8f3dc; color: var(--green-dark); }
+    .badge-mid { background: #fff3cd; color: #7d6200; }
+    .badge-low { background: #ffe5d9; color: #9d2c00; }
+
+    /* Affiliate */
+    .affiliate-disclaimer {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+    .affiliate-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem; }
+    .affiliate-card {
+      border: 2px solid var(--green-pale);
+      border-radius: 14px;
+      padding: 1.2rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .affiliate-card:hover { border-color: var(--green-light); box-shadow: 0 4px 16px rgba(82,183,136,0.2); }
+    .affiliate-emoji { font-size: 2rem; margin-bottom: 0.5rem; }
+    .affiliate-category { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: var(--orange); font-weight: 700; }
+    .affiliate-name { font-size: 0.97rem; font-weight: 700; color: var(--green-dark); margin: 0.3rem 0; }
+    .affiliate-desc { font-size: 0.82rem; color: var(--text-light); }
+    .affiliate-cta {
+      display: inline-block;
+      margin-top: 0.8rem;
+      background: var(--green-dark);
+      color: white;
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    /* Sources */
+    .sources { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--green-pale); }
+    .sources h4 { font-size: 0.9rem; color: var(--green-dark); margin-bottom: 0.6rem; }
+    .sources ol { padding-left: 1.2rem; font-size: 0.8rem; color: var(--text-light); }
+    .sources li { margin-bottom: 0.3rem; }
+    .sources a { color: var(--green-mid); text-decoration: none; }
+    .sources a:hover { text-decoration: underline; }
+
+    .disclaimer {
+      background: #f1f3f4;
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      font-size: 0.8rem;
+      color: var(--text-light);
+      margin-top: 1.5rem;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar { display: flex; flex-direction: column; gap: 1.2rem; }
+    .sidebar-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 1.4rem;
+      box-shadow: var(--card-shadow);
+    }
+    .sidebar-card h4 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--green-dark);
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--green-pale);
+    }
+    .key-fact {
+      display: flex;
+      gap: 0.7rem;
+      align-items: flex-start;
+      margin-bottom: 0.8rem;
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+    .key-fact-dot {
+      flex-shrink: 0;
+      width: 8px; height: 8px;
+      background: var(--green-light);
+      border-radius: 50%;
+      margin-top: 7px;
+    }
+    .form-index {
+      background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
+      color: white;
+      border-radius: 12px;
+      padding: 1rem;
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+    .form-index-val { font-size: 1.6rem; font-weight: 800; }
+    .form-index-label { font-size: 0.78rem; opacity: 0.85; margin-top: 2px; }
+
+    /* ── QUIZ ── */
+    .quiz-section {
+      background: linear-gradient(135deg, #0d3b27 0%, #1b5e40 100%);
+      padding: 4rem 1.5rem;
+      color: white;
+    }
+    .quiz-inner { max-width: 720px; margin: 0 auto; }
+    .quiz-section h2 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+    .quiz-subtitle { text-align: center; color: rgba(255,255,255,0.75); margin-bottom: 2rem; font-size: 0.95rem; }
+
+    .quiz-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 20px;
+      padding: 2rem;
+      backdrop-filter: blur(8px);
+    }
+
+    /* Progress */
+    .quiz-progress-bar-wrap {
+      background: rgba(255,255,255,0.15);
+      border-radius: 10px;
+      height: 6px;
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+    }
+    .quiz-progress-bar {
+      background: var(--orange);
+      height: 100%;
+      border-radius: 10px;
+      transition: width 0.4s ease;
+    }
+    .quiz-progress-text {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 0.4rem;
+    }
+
+    .quiz-question-num {
+      font-size: 0.8rem;
+      color: var(--orange);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+    }
+    .quiz-question-text {
+      font-size: 1.1rem;
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 1.5rem;
+    }
+
+    .quiz-options { display: flex; flex-direction: column; gap: 0.7rem; }
+    .quiz-option {
+      background: rgba(255,255,255,0.1);
+      border: 2px solid rgba(255,255,255,0.2);
+      border-radius: 12px;
+      padding: 0.9rem 1.1rem;
+      cursor: pointer;
+      font-size: 0.95rem;
+      color: white;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      text-align: left;
+      width: 100%;
+    }
+    .quiz-option:hover:not(:disabled) {
+      background: rgba(82,183,136,0.25);
+      border-color: var(--green-light);
+      transform: translateY(-1px);
+    }
+    .quiz-option.correct {
+      background: rgba(82,183,136,0.35);
+      border-color: var(--green-light);
+    }
+    .quiz-option.wrong {
+      background: rgba(231,111,81,0.3);
+      border-color: var(--orange-dark);
+    }
+    .quiz-option:disabled { cursor: default; }
+    .option-letter {
+      flex-shrink: 0;
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .quiz-feedback {
+      margin-top: 1.2rem;
+      padding: 1rem;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      display: none;
+    }
+    .quiz-feedback.correct { background: rgba(82,183,136,0.2); border: 1px solid rgba(82,183,136,0.4); }
+    .quiz-feedback.wrong { background: rgba(231,111,81,0.2); border: 1px solid rgba(231,111,81,0.4); }
+    .quiz-feedback .feedback-title { font-weight: 700; margin-bottom: 0.3rem; }
+
+    .quiz-next-btn {
+      margin-top: 1.2rem;
+      background: var(--orange);
+      color: white;
+      border: none;
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .quiz-next-btn:hover { background: var(--orange-dark); transform: translateY(-2px); }
+
+    /* Score screen */
+    .quiz-result {
+      display: none;
+      text-align: center;
+      padding: 1rem 0;
+    }
+    .result-circle {
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      border: 5px solid var(--green-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-size: 2.5rem;
+      font-weight: 800;
+    }
+    .result-title { font-size: 1.4rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .result-subtitle { color: rgba(255,255,255,0.75); font-size: 0.95rem; margin-bottom: 1.5rem; }
+    .result-badges { display: flex; justify-content: center; gap: 0.8rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .result-badge {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 0.83rem;
+    }
+    .result-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-share, .btn-retry {
+      padding: 0.75rem 1.8rem;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+    .btn-share { background: var(--orange); color: white; }
+    .btn-share:hover { background: var(--orange-dark); }
+    .btn-retry { background: rgba(255,255,255,0.15); color: white; border: 2px solid rgba(255,255,255,0.3); }
+    .btn-retry:hover { background: rgba(255,255,255,0.25); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #0d1f17;
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.8rem;
+    }
+    footer a { color: var(--green-light); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">TRH<span>I</span></a>
+    <span class="nav-tag">🔥 Erholung &amp; Herzgesundheit</span>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero">
+  <div class="hero-inner">
+    <span class="hero-category">Erholung &amp; Herzgesundheit</span>
+    <h1>Saunieren wie ein Finne: Wie 20 Minuten Hitze dein <em>Sterberisiko</em> halbieren können</h1>
+    <p class="hero-sub">Eine 20-Jahre-Kohortenstudie aus Finnland mit über 2.300 Männern zeigt: Wer 4- bis 7-mal pro Woche saunt, hat ein um 50 % niedrigeres kardiovaskuläres Sterberisiko und ein um 66 % geringeres Demenzrisiko – verglichen mit einmal wöchentlichem Saunieren. Was hinter dem Hitzereiz steckt und wie du ihn für dich nutzt.</p>
+    <div class="hero-meta">
+      <span>📅 19. Juli 2026</span>
+      <span>🕑 ca. 7 Min. Lesezeit</span>
+      <span>🔬 Evidenzbasiert</span>
+    </div>
+  </div>
+</header>
+
+<!-- Stat Bar -->
+<div class="stat-bar">
+  <div class="stat-bar-inner">
+    <div class="stat-item">
+      <div class="stat-number">2.315</div>
+      <div class="stat-label">Männer in der finnischen KIHD-Kohortenstudie</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">50<span>%</span></div>
+      <div class="stat-label">weniger kardiovaskuläre Sterblichkeit bei 4–7x/Woche</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">66<span>%</span></div>
+      <div class="stat-label">geringeres Demenzrisiko bei häufigem Saunieren</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">+50<span>%</span></div>
+      <div class="stat-label">Hitzeschockprotein-Anstieg nach nur einer Sitzung</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article + Sidebar -->
+<div class="article-wrap">
+
+  <!-- Main Article -->
+  <article class="article-card">
+
+    <p>Ein Holzraum, trockene Hitze, 15 bis 20 Minuten Schwitzen – für Millionen Finninnen und Finnen ist das schlicht Alltag, mehrmals pro Woche, oft über Jahrzehnte. Was lange nach reiner Entspannungsroutine aussah, entpuppt sich in der Wissenschaft zunehmend als einer der am besten belegten Lifestyle-Faktoren für Herz-Kreislauf-Gesundheit überhaupt. Die Kuopio Ischaemic Heart Disease (KIHD) Studie, eine prospektive Kohortenstudie mit 2.315 gesunden Männern im Alter von 42 bis 60 Jahren, verfolgte die Teilnehmer über mehr als 20 Jahre – und fand einen klaren, dosisabhängigen Zusammenhang zwischen Saunahäufigkeit und Sterberisiko.</p>
+
+    <h2>Was die 20-Jahres-Studie aus Finnland zeigt</h2>
+
+    <p>Die Ergebnisse folgen einem klaren Muster: Männer, die zwei- bis dreimal pro Woche saunten, hatten ein um 24 Prozent niedrigeres Gesamtsterberisiko als Männer, die nur einmal wöchentlich saunten. Bei vier bis sieben Sitzungen pro Woche stieg der Effekt auf 40 Prozent niedrigere Gesamtmortalität – und beim kardiovaskulären Sterberisiko im Speziellen sogar auf 50 Prozent. Eine zweite Auswertung derselben Kohorte fand zusätzlich: Sitzungen von 19 Minuten oder länger bei rund 79 Grad Celsius zeigten die stärksten Zusammenhänge mit reduzierter Sterblichkeit – deutlich stärker als kurze, kühlere Sitzungen.</p>
+
+    <p>Das ist kein Zufallsbefund einer einzelnen Studie. Nachfolgende Kohorten und Übersichtsarbeiten aus Skandinavien, Japan und den USA bestätigen den Trend: regelmäßige Sauna-Nutzung geht konsistent mit niedrigerem Blutdruck, verbesserter Gefäßfunktion und selteneren kardiovaskulären Ereignissen einher – Effekte, die in ihrer Größenordnung an moderates Ausdauertraining erinnern.</p>
+
+    <div class="highlight">
+      <strong>🔬 Studienfakt</strong>
+      <p>In der KIHD-Kohorte sank das kardiovaskuläre Sterberisiko bei Männern mit 4–7 Saunabesuchen pro Woche um 50 % gegenüber Männern mit nur einem Besuch pro Woche – ein klar dosisabhängiger Effekt.</p>
+    </div>
+
+    <h2>Der Mechanismus: Hitzestress als Trainingsreiz fürs Herz</h2>
+
+    <p>Warum wirkt reine Hitze so stark? Eine Saunasitzung treibt die Herzfrequenz auf 100 bis 150 Schläge pro Minute – vergleichbar mit moderater körperlicher Belastung. Die Blutgefäße erweitern sich, die Hautdurchblutung kann sich verfünffachen, und das Herz-Kreislauf-System wird auf ähnliche Weise beansprucht wie bei leichtem bis moderatem Ausdauertraining. Über wiederholte Sitzungen hinweg passt sich das Gefäßsystem an: Die Endothelfunktion – also wie gut die Innenwand der Blutgefäße auf Reize reagiert – verbessert sich, die Arteriensteifigkeit nimmt ab, und die Baroreflex-Empfindlichkeit, die an der Blutdruckregulation beteiligt ist, steigt.</p>
+
+    <p>Auf zellulärer Ebene spielt ein weiterer Mechanismus eine zentrale Rolle: Hitzeschockproteine (HSP), insbesondere HSP70 und HSP90. Diese molekularen Chaperone reparieren fehlgefaltete Proteine und schützen Zellen vor oxidativem Stress. Bereits eine einzelne 30-minütige Saunasitzung bei typisch finnischer Temperatur kann den HSP70-Spiegel um rund 50 Prozent über den Ausgangswert anheben. Wiederholt ausgelöst, unterstützt dieser milde Hitzestress – ähnlich wie Training selbst – die zelluläre Reparatur und die langfristige Gefäßgesundheit.</p>
+
+    <div class="highlight highlight-orange">
+      <strong>⚡ Wichtig zu wissen</strong>
+      <p>Sauna ist eine Belastung fürs Herz-Kreislauf-System, kein risikofreies Wellness-Ritual. Bei instabiler Angina, kürzlich erlittenem Herzinfarkt, schwerer Aortenklappenstenose oder anderen ernsten Herz-Kreislauf-Erkrankungen sollte vor Sauna-Nutzung unbedingt ärztlicher Rat eingeholt werden.</p>
+    </div>
+
+    <h2>Nicht nur fürs Herz: der Zusammenhang mit dem Gehirn</h2>
+
+    <p>Die KIHD-Kohorte lieferte noch einen zweiten, oft zitierten Befund: Männer mit vier bis sieben Saunabesuchen pro Woche hatten ein um 66 Prozent niedrigeres Demenzrisiko und ein um 65 Prozent niedrigeres Alzheimer-Risiko im Vergleich zu Männern mit nur einem Besuch pro Woche. Die genauen Mechanismen dahinter sind noch Gegenstand aktiver Forschung, doch mehrere Erklärungsansätze überschneiden sich mit den kardiovaskulären Effekten: bessere Durchblutung des Gehirns, reduzierte systemische Entzündung, und möglicherweise auch die neuroprotektiven Effekte der Hitzeschockproteine selbst.</p>
+
+    <p>Auch hier gilt: Assoziation ist nicht gleich Kausalität. Menschen, die regelmäßig saunieren, unterscheiden sich womöglich in anderen Lebensstilfaktoren – etwa sozialer Einbindung oder allgemeiner Gesundheitsvorsorge – von seltenen Sauna-Nutzern. Doch die Konsistenz der Ergebnisse über mehrere unabhängige Endpunkte hinweg (Herz-Kreislauf-Tod, Gesamtmortalität, Demenz) macht einen rein zufälligen Zusammenhang unwahrscheinlich.</p>
+
+    <h2>Dosis-Wirkungs-Übersicht: Wie oft ist genug?</h2>
+
+    <p>Die Studienlage lässt sich grob in drei Dosisstufen zusammenfassen. Wichtig: Die Ausgangswerte stammen aus einer finnischen Population mit traditionellen Holzsaunen bei hoher Trockenhitze – die Übertragbarkeit auf Infrarotkabinen oder andere Saunaformen ist plausibel, aber nicht in gleichem Umfang direkt untersucht.</p>
+
+    <table class="food-table">
+      <thead>
+        <tr>
+          <th>Häufigkeit</th>
+          <th>Gesamtmortalität</th>
+          <th>Kardiovaskuläre Mortalität</th>
+          <th>Einordnung</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1x pro Woche (Referenz)</td>
+          <td>Basislinie</td>
+          <td>Basislinie</td>
+          <td><span class="badge badge-mid">Ausgangswert</span></td>
+        </tr>
+        <tr>
+          <td>2–3x pro Woche</td>
+          <td>–24 %</td>
+          <td>niedriger</td>
+          <td><span class="badge badge-high">deutlich besser</span></td>
+        </tr>
+        <tr>
+          <td>4–7x pro Woche</td>
+          <td>–40 %</td>
+          <td>–50 %</td>
+          <td><span class="badge badge-high">stärkster Effekt</span></td>
+        </tr>
+        <tr>
+          <td>Sitzungsdauer &lt; 11 Min.</td>
+          <td>schwächerer Effekt</td>
+          <td>schwächerer Effekt</td>
+          <td><span class="badge badge-mid">weniger wirksam</span></td>
+        </tr>
+        <tr>
+          <td>Sitzungsdauer ≥ 19 Min. bei ~79 °C</td>
+          <td>stärkster Effekt</td>
+          <td>stärkster Effekt</td>
+          <td><span class="badge badge-high">optimal laut Studie</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Sauna richtig nutzen: praktische Tipps</h2>
+
+    <ul class="praxis-list">
+      <li>
+        <span class="praxis-icon">1</span>
+        <span><strong>Frequenz vor Dauer priorisieren.</strong> Die Datenlage spricht für regelmäßige, kürzere bis mittellange Sitzungen (4x+ pro Woche) statt seltener, extra langer Einzelsitzungen.</span>
+      </li>
+      <li>
+        <span class="praxis-icon">2</span>
+        <span><strong>15–20 Minuten pro Sitzung anstreben.</strong> Bei 80–100 °C Trockenhitze zeigten längere Sitzungen (≥19 Min.) in der KIHD-Studie die stärksten Effekte – als Einstieg reichen aber auch 10–12 Minuten.</span>
+      </li>
+      <li>
+        <span class="praxis-icon">3</span>
+        <span><strong>Ausreichend trinken.</strong> Eine Sitzung kann durch Schwitzen deutlich Flüssigkeit und Elektrolyte kosten. Vor und nach dem Saunieren Wasser oder eine elektrolythaltige Flüssigkeit zu dir nehmen.</span>
+      </li>
+      <li>
+        <span class="praxis-icon">4</span>
+        <span><strong>Mit Training kombinieren, nicht ersetzen.</strong> Sauna ergänzt Ausdauer- und Krafttraining sinnvoll, ist aber kein Ersatz dafür – die stärkste Evidenz existiert für die Kombination beider Reize.</span>
+      </li>
+      <li>
+        <span class="praxis-icon">5</span>
+        <span><strong>Langsam abkühlen lassen.</strong> Nach der Sitzung dem Kreislauf Zeit geben, sich zu stabilisieren, bevor du abrupt aufstehst oder kaltes Wasser nutzt – besonders bei ungewohnter Hitzeexposition.</span>
+      </li>
+      <li>
+        <span class="praxis-icon">6</span>
+        <span><strong>Bei Vorerkrankungen: erst ärztlich abklären.</strong> Wer Herz-Kreislauf-Erkrankungen, sehr niedrigen Blutdruck oder Kreislaufprobleme hat, sollte die Sauna-Nutzung vorab mit einer ärztlichen Fachperson besprechen.</span>
+      </li>
+      <li>
+        <span class="praxis-icon">7</span>
+        <span><strong>Konsistenz schlägt Intensität.</strong> Wie beim Training gilt: Der langfristige, wiederholte Reiz über Monate und Jahre ist entscheidend – eine einzelne besonders heiße Sitzung bringt keine Abkürzung.</span>
+      </li>
+    </ul>
+
+    <!-- Affiliate Section -->
+    <h2>Empfohlene Produkte</h2>
+    <p class="affiliate-disclaimer">*Affiliate-Hinweis: Einige Links auf dieser Seite sind Partnerlinks. Bei einem Kauf erhalten wir eine kleine Provision – für dich entstehen keine Mehrkosten. Wir empfehlen nur Produkte, die wir selbst für sinnvoll halten.</p>
+
+    <div class="affiliate-grid">
+      <a href="#" class="affiliate-card">
+        <div class="affiliate-emoji">💧</div>
+        <div class="affiliate-category">Nahrungsergänzung</div>
+        <div class="affiliate-name">Elektrolyt-Pulver ohne Zuckerzusatz</div>
+        <div class="affiliate-desc">Gleicht Natrium, Magnesium und Kalium aus, die beim Schwitzen in der Sauna verloren gehen – für stabile Kreislaufwerte nach der Sitzung.</div>
+        <span class="affiliate-cta">Jetzt ansehen →</span>
+      </a>
+      <a href="#" class="affiliate-card">
+        <div class="affiliate-emoji">🧖</div>
+        <div class="affiliate-category">Zuhause &amp; Ausrüstung</div>
+        <div class="affiliate-name">Tragbare Infrarot-Saunadecke</div>
+        <div class="affiliate-desc">Ermöglicht regelmäßige Hitzesitzungen zuhause, wenn keine Saunakabine verfügbar ist – ideal für die 4–7x/Woche-Frequenz aus der Studie.</div>
+        <span class="affiliate-cta">Jetzt ansehen →</span>
+      </a>
+      <a href="#" class="affiliate-card">
+        <div class="affiliate-emoji">📖</div>
+        <div class="affiliate-category">Wissen</div>
+        <div class="affiliate-name">Online-Kurs: Wärmetherapie für Herz &amp; Gehirn</div>
+        <div class="affiliate-desc">Vertiefender Kurs zu Hitzeschockproteinen, Sauna-Protokollen und der Studienlage rund um Herz-Kreislauf- und Kognitionsgesundheit.</div>
+        <span class="affiliate-cta">Jetzt ansehen →</span>
+      </a>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="disclaimer">
+      ⚠️ <strong>Medizinischer Hinweis:</strong> Alle Inhalte dieses Artikels dienen ausschließlich der allgemeinen Information und ersetzen keine individuelle medizinische Beratung. Personen mit Herz-Kreislauf-Erkrankungen, niedrigem Blutdruck, Schwangere oder Menschen mit anderen relevanten Vorerkrankungen sollten vor regelmäßiger Sauna-Nutzung ärztlichen Rat einholen.
+    </div>
+
+    <!-- Sources -->
+    <div class="sources">
+      <h4>📚 Quellen &amp; weiterführende Literatur</h4>
+      <ol>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/25705824/" target="_blank">JAMA Internal Medicine / PubMed: Association between sauna bathing and fatal cardiovascular and all-cause mortality events – KIHD-Kohortenstudie.</a></li>
+        <li><a href="https://academic.oup.com/ageing/article/46/2/245/2654230" target="_blank">Age and Ageing (Oxford Academic): Sauna bathing is inversely associated with dementia and Alzheimer's disease in middle-aged Finnish men.</a></li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/30486813/" target="_blank">PubMed: Sauna bathing is associated with reduced cardiovascular mortality and improves risk prediction in men and women – prospective cohort study.</a></li>
+        <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6267405/" target="_blank">PMC: Short-term effects of Finnish sauna bathing on blood-based markers of cardiovascular function in non-naive sauna users.</a></li>
+        <li><a href="https://www.sciencedirect.com/science/article/pii/S0531556521002916" target="_blank">Experimental Gerontology (ScienceDirect): Sauna use as a lifestyle practice to extend healthspan.</a></li>
+        <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11933885/" target="_blank">PMC: Sauna use as a novel management approach for cardiovascular health and peripheral arterial disease.</a></li>
+        <li><a href="https://www.npr.org/2026/03/06/nx-s1-5719268/sauna-heat-health-benefits-science" target="_blank">NPR: Sauna may benefit your cardiovascular health and more.</a></li>
+      </ol>
+    </div>
+  </article>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+
+    <div class="sidebar-card">
+      <h4>⚡ Schnell-Fakten</h4>
+      <div class="key-fact">
+        <div class="key-fact-dot"></div>
+        <div>KIHD-Studie: 2.315 Männer, über 20 Jahre begleitet, Kuopio/Finnland</div>
+      </div>
+      <div class="key-fact">
+        <div class="key-fact-dot"></div>
+        <div>4–7x/Woche Sauna: –50 % kardiovaskuläre Mortalität, –40 % Gesamtmortalität</div>
+      </div>
+      <div class="key-fact">
+        <div class="key-fact-dot"></div>
+        <div>Gleiche Häufigkeit: –66 % Demenzrisiko, –65 % Alzheimer-Risiko</div>
+      </div>
+      <div class="key-fact">
+        <div class="key-fact-dot"></div>
+        <div>Sitzungen ≥19 Min. bei ~79 °C zeigten die stärksten Effekte</div>
+      </div>
+      <div class="key-fact">
+        <div class="key-fact-dot"></div>
+        <div>HSP70 steigt nach einer 30-Min.-Sitzung um rund 50 %</div>
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>🧭 Protokoll-Guide</h4>
+      <p style="font-size:0.85rem;color:var(--text-light);margin-bottom:0.8rem;">Kernelemente eines wirksamen Sauna-Protokolls:</p>
+      <div style="display:flex;flex-direction:column;gap:0.5rem;">
+        <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.83rem;">
+          <div style="width:12px;height:12px;border-radius:50%;background:#52b788;flex-shrink:0;"></div>
+          <span><strong>Frequenz</strong> — 4–7x pro Woche</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.83rem;">
+          <div style="width:12px;height:12px;border-radius:50%;background:#f4a261;flex-shrink:0;"></div>
+          <span><strong>Dauer</strong> — 15–20 Minuten</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.83rem;">
+          <div style="width:12px;height:12px;border-radius:50%;background:#40916c;flex-shrink:0;"></div>
+          <span><strong>Temperatur</strong> — ca. 80–100 °C</span>
+        </div>
+      </div>
+      <div class="form-index" style="margin-top:1rem;">
+        <div class="form-index-val">4–7x</div>
+        <div class="form-index-label">Pro Woche, laut KIHD-Studie</div>
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>🧪 Quiz starten</h4>
+      <p style="font-size:0.85rem;color:var(--text-light);margin-bottom:0.8rem;">Teste dein Wissen über Sauna, Herzgesundheit und Hitzetherapie in 5 kurzen Fragen.</p>
+      <a href="#quiz" style="display:block;background:var(--green-dark);color:white;text-align:center;padding:0.8rem;border-radius:12px;font-weight:700;font-size:0.9rem;text-decoration:none;transition:background 0.2s;"
+         onmouseover="this.style.background='#40916c'" onmouseout="this.style.background='#2d6a4f'">
+        Jetzt Quiz starten →
+      </a>
+    </div>
+
+  </aside>
+</div>
+
+<!-- Quiz Section -->
+<section class="quiz-section" id="quiz">
+  <div class="quiz-inner">
+    <h2>🔥 Teste dein Wissen</h2>
+    <p class="quiz-subtitle">5 Fragen rund um Sauna, Herzgesundheit und Hitzetherapie</p>
+
+    <div class="quiz-card">
+      <!-- Progress -->
+      <div class="quiz-progress-text">
+        <span id="quiz-q-label">Frage 1 von 5</span>
+        <span id="quiz-score-live">0 Punkte</span>
+      </div>
+      <div class="quiz-progress-bar-wrap">
+        <div class="quiz-progress-bar" id="quiz-bar" style="width:0%"></div>
+      </div>
+
+      <!-- Question Container -->
+      <div id="quiz-content">
+        <div class="quiz-question-num" id="q-num">FRAGE 1</div>
+        <div class="quiz-question-text" id="q-text"></div>
+        <div class="quiz-options" id="q-options"></div>
+        <div class="quiz-feedback" id="q-feedback">
+          <div class="feedback-title" id="q-feedback-title"></div>
+          <div id="q-feedback-body"></div>
+        </div>
+        <button class="quiz-next-btn" id="quiz-next">Weiter →</button>
+      </div>
+
+      <!-- Result Screen -->
+      <div class="quiz-result" id="quiz-result">
+        <div class="result-circle" id="result-circle"></div>
+        <div class="result-title" id="result-title"></div>
+        <div class="result-subtitle" id="result-subtitle"></div>
+        <div class="result-badges" id="result-badges"></div>
+        <div class="result-actions">
+          <button class="btn-share" onclick="shareResult()">📤 Ergebnis teilen</button>
+          <button class="btn-retry" onclick="restartQuiz()">🔄 Nochmal</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>© 2026 TRHI – The Real Health Institute | <a href="#">Datenschutz</a> | <a href="#">Impressum</a></p>
+  <p style="margin-top:0.5rem;">Dieser Artikel enthält Affiliate-Links. Alle Empfehlungen basieren auf redaktioneller Unabhängigkeit.</p>
+</footer>
+
+<script>
+  // ─── QUIZ DATA ───────────────────────────────────────────────────
+  const questions = [
+    {
+      q: "Wie viele Männer wurden in der finnischen KIHD-Studie über mehr als 20 Jahre zum Zusammenhang von Sauna und Sterblichkeit begleitet?",
+      options: [
+        "Etwa 500",
+        "2.315",
+        "Etwa 25.000",
+        "Über 1 Million"
+      ],
+      correct: 1,
+      feedback: {
+        correct: "✅ Richtig!",
+        wrong: "❌ Nicht ganz.",
+        body: "Die Kuopio Ischaemic Heart Disease (KIHD) Studie begleitete 2.315 gesunde Männer im Alter von 42–60 Jahren über mehr als zwei Jahrzehnte."
+      }
+    },
+    {
+      q: "Um wie viel Prozent war das kardiovaskuläre Sterberisiko bei Männern mit 4–7 Saunabesuchen pro Woche niedriger, verglichen mit nur einem Besuch pro Woche?",
+      options: [
+        "Etwa 10 %",
+        "Etwa 25 %",
+        "Etwa 50 %",
+        "Etwa 90 %"
+      ],
+      correct: 2,
+      feedback: {
+        correct: "✅ Korrekt!",
+        wrong: "❌ Fast.",
+        body: "Männer mit 4–7 Saunabesuchen pro Woche hatten ein um 50 % niedrigeres kardiovaskuläres Sterberisiko als Männer mit nur einem Besuch pro Woche."
+      }
+    },
+    {
+      q: "Um wie viel Prozent war das Demenzrisiko bei häufigem Saunieren (4–7x/Woche) niedriger als bei nur einem Besuch pro Woche?",
+      options: [
+        "Etwa 15 %",
+        "Etwa 35 %",
+        "Etwa 66 %",
+        "Sauna hat keinen Einfluss auf Demenzrisiko"
+      ],
+      correct: 2,
+      feedback: {
+        correct: "✅ Stimmt!",
+        wrong: "❌ Nicht ganz.",
+        body: "Männer mit 4–7 Saunabesuchen pro Woche hatten ein um 66 % niedrigeres Demenzrisiko und ein um 65 % niedrigeres Alzheimer-Risiko als seltene Sauna-Nutzer."
+      }
+    },
+    {
+      q: "Welche Proteinklasse steigt nach einer einzelnen 30-minütigen Saunasitzung um rund 50 % an und unterstützt die Zellreparatur?",
+      options: [
+        "Kollagen",
+        "Hitzeschockproteine (z. B. HSP70)",
+        "Myoglobin",
+        "Ferritin"
+      ],
+      correct: 1,
+      feedback: {
+        correct: "✅ Genau richtig!",
+        wrong: "❌ Verwechslung!",
+        body: "Hitzeschockproteine wie HSP70 und HSP90 wirken als molekulare Chaperone, reparieren fehlgefaltete Proteine und schützen Zellen vor oxidativem Stress."
+      }
+    },
+    {
+      q: "Welche Sitzungsdauer und Temperatur zeigten in der KIHD-Studie den stärksten Zusammenhang mit reduzierter Sterblichkeit?",
+      options: [
+        "5 Minuten bei 60 °C",
+        "19+ Minuten bei rund 79 °C",
+        "60 Minuten bei 40 °C",
+        "Dauer und Temperatur spielten keine Rolle"
+      ],
+      correct: 1,
+      feedback: {
+        correct: "✅ Perfekt!",
+        wrong: "❌ Das stimmt nicht.",
+        body: "Sitzungen von 19 Minuten oder länger bei rund 79 °C zeigten die stärksten Zusammenhänge mit reduzierter Sterblichkeit – deutlich stärker als kürzere, kühlere Sitzungen."
+      }
+    }
+  ];
+
+  // ─── QUIZ STATE ────────────────────────────────────────────────
+  let currentQ = 0;
+  let score = 0;
+  let answered = false;
+
+  function renderQuestion() {
+    const q = questions[currentQ];
+    document.getElementById('q-num').textContent = `FRAGE ${currentQ + 1}`;
+    document.getElementById('q-text').textContent = q.q;
+    document.getElementById('quiz-q-label').textContent = `Frage ${currentQ + 1} von ${questions.length}`;
+    document.getElementById('quiz-bar').style.width = `${(currentQ / questions.length) * 100}%`;
+
+    const optEl = document.getElementById('q-options');
+    optEl.innerHTML = '';
+    const letters = ['A', 'B', 'C', 'D'];
+    q.options.forEach((opt, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'quiz-option';
+      btn.innerHTML = `<span class="option-letter">${letters[i]}</span><span>${opt}</span>`;
+      btn.addEventListener('click', () => selectAnswer(i));
+      optEl.appendChild(btn);
+    });
+
+    document.getElementById('q-feedback').style.display = 'none';
+    document.getElementById('q-feedback').className = 'quiz-feedback';
+    document.getElementById('quiz-next').style.display = 'none';
+    answered = false;
+  }
+
+  function selectAnswer(idx) {
+    if (answered) return;
+    answered = true;
+    const q = questions[currentQ];
+    const btns = document.querySelectorAll('.quiz-option');
+
+    btns.forEach(b => b.disabled = true);
+
+    const isCorrect = idx === q.correct;
+    if (isCorrect) score++;
+
+    btns[idx].classList.add(isCorrect ? 'correct' : 'wrong');
+    if (!isCorrect) btns[q.correct].classList.add('correct');
+
+    const fb = document.getElementById('q-feedback');
+    const fbTitle = document.getElementById('q-feedback-title');
+    const fbBody = document.getElementById('q-feedback-body');
+
+    fb.style.display = 'block';
+    fb.className = `quiz-feedback ${isCorrect ? 'correct' : 'wrong'}`;
+    fbTitle.textContent = isCorrect ? q.feedback.correct : q.feedback.wrong;
+    fbBody.textContent = q.feedback.body;
+
+    document.getElementById('quiz-score-live').textContent = `${score} Punkt${score !== 1 ? 'e' : ''}`;
+    document.getElementById('quiz-next').style.display = 'block';
+    document.getElementById('quiz-next').textContent = currentQ < questions.length - 1 ? 'Weiter →' : 'Ergebnis ansehen 🎯';
+  }
+
+  document.getElementById('quiz-next').addEventListener('click', () => {
+    currentQ++;
+    if (currentQ < questions.length) {
+      renderQuestion();
+    } else {
+      showResult();
+    }
+  });
+
+  function showResult() {
+    document.getElementById('quiz-content').style.display = 'none';
+    document.getElementById('quiz-bar').style.width = '100%';
+    document.getElementById('quiz-q-label').textContent = 'Quiz abgeschlossen';
+    document.getElementById('quiz-score-live').textContent = `${score}/${questions.length} Punkte`;
+
+    const resultEl = document.getElementById('quiz-result');
+    resultEl.style.display = 'block';
+
+    const circle = document.getElementById('result-circle');
+    circle.textContent = `${score}/${questions.length}`;
+
+    let title, subtitle, badges;
+    if (score === 5) {
+      title = '🏆 Sauna-Experte!';
+      subtitle = 'Perfektes Ergebnis! Du weißt genau, warum regelmäßige Hitze mehr ist als Wellness. Teile dieses Wissen!';
+      badges = ['🎯 100 % korrekt', '🔥 Hitze-Kenner', '🧠 Longevity-Profi'];
+      circle.style.borderColor = '#52b788';
+    } else if (score >= 3) {
+      title = '💪 Solides Wissen!';
+      subtitle = 'Gut gemacht! Mit etwas mehr Lesestoff erreichst du die volle Punktzahl.';
+      badges = ['✅ Gut informiert', `📊 ${score}/5 Punkte`];
+      circle.style.borderColor = '#f4a261';
+    } else {
+      title = '📚 Noch Lernpotenzial!';
+      subtitle = 'Kein Problem – lies den Artikel nochmals und starte das Quiz neu!';
+      badges = ['🔄 Nochmal versuchen', '📖 Artikel lesen'];
+      circle.style.borderColor = '#e76f51';
+    }
+
+    document.getElementById('result-title').textContent = title;
+    document.getElementById('result-subtitle').textContent = subtitle;
+    document.getElementById('result-badges').innerHTML = badges.map(b =>
+      `<span class="result-badge">${b}</span>`
+    ).join('');
+  }
+
+  function restartQuiz() {
+    currentQ = 0;
+    score = 0;
+    answered = false;
+    document.getElementById('quiz-content').style.display = 'block';
+    document.getElementById('quiz-result').style.display = 'none';
+    document.getElementById('quiz-score-live').textContent = '0 Punkte';
+    renderQuestion();
+  }
+
+  function shareResult() {
+    const text = `Ich habe ${score}/5 Punkte im TRHI Sauna-Quiz erreicht! 🔥🫀 Wusstest du, dass regelmäßiges Saunieren das kardiovaskuläre Sterberisiko um 50 % senken kann? Teste auch dein Wissen:`;
+    if (navigator.share) {
+      navigator.share({ title: 'Sauna-Quiz – TRHI', text, url: window.location.href });
+    } else {
+      navigator.clipboard.writeText(text + ' ' + window.location.href).then(() => {
+        alert('Link in die Zwischenablage kopiert! 📋');
+      });
+    }
+  }
+
+  // Initialize
+  renderQuestion();
+</script>
+</body>
+</html>

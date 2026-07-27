@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Griffkraft: Der simple Handtest, der mehr verrät als dein Blutdruck | TRHI</title>
+  <meta name="description" content="Eine Studie mit über 140.000 Teilnehmern aus 17 Ländern zeigt: Griffkraft sagt Sterblichkeit besser voraus als der systolische Blutdruck. Was Griffkraft über deine Gesundheit verrät – und wie du sie in wenigen Minuten pro Woche trainierst." />
+  <meta name="keywords" content="Griffkraft, Handkraft, Sarkopenie, Langlebigkeit, Dead Hangs, Farmer's Carry, Krafttraining, Biomarker, Muskelalterung, Grip Strength" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green-dark: #2d6a4f;
+      --green-mid: #40916c;
+      --green-light: #52b788;
+      --green-pale: #d8f3dc;
+      --orange: #f4a261;
+      --orange-dark: #e76f51;
+      --text: #1a1a2e;
+      --text-light: #555;
+      --bg: #f8fdf9;
+      --white: #ffffff;
+      --card-shadow: 0 4px 24px rgba(45,106,79,0.10);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── NAVIGATION ── */
+    nav {
+      background: var(--white);
+      border-bottom: 2px solid var(--green-pale);
+      padding: 0 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+    .nav-logo {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--green-dark);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+    .nav-logo span { color: var(--orange); }
+    .nav-tag {
+      background: var(--green-pale);
+      color: var(--green-dark);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, #0d3b27 0%, #1b5e40 50%, #2d6a4f 100%);
+      color: var(--white);
+      padding: 4rem 1.5rem 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 320px; height: 320px;
+      background: radial-gradient(circle, rgba(82,183,136,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -40px; left: -40px;
+      width: 240px; height: 240px;
+      background: radial-gradient(circle, rgba(244,162,97,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-category {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--white);
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1.2rem;
+    }
+    .hero h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--green-light);
+    }
+    .hero-sub {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.85);
+      max-width: 600px;
+      margin-bottom: 1.8rem;
+    }
+    .hero-meta {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.65);
+    }
+    .hero-meta span { display: flex; align-items: center; gap: 5px; }
+
+    /* ── STAT BAR ── */
+    .stat-bar {
+      background: var(--white);
+      border-bottom: 1px solid var(--green-pale);
+      padding: 1.5rem;
+    }
+    .stat-bar-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .stat-item {
+      text-align: center;
+    }
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--green-dark);
+      line-height: 1;
+    }
+    .stat-number span { color: var(--orange); }
+    .stat-label {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      margin-top: 3px;
+    }
+
+    /* ── ARTICLE ── */
+    .article-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 2.5rem;
+      align-items: start;
+    }
+    @media (max-width: 720px) {
+      .article-wrap { grid-template-columns: 1fr; }
+      .sidebar { order: -1; }
+    }
+
+    .article-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 2.5rem;
+      box-shadow: var(--card-shadow);
+    }
+
+    .article-card p {
+      margin-bottom: 1.2rem;
+      color: var(--text);
+      font-size: 1rem;
+    }
+    .article-card h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin: 2rem 0 0.8rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid var(--green-pale);
+    }
+    .article-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--green-mid);
+      margin: 1.2rem 0 0.5rem;
+    }
+
+    /* Highlight Box */
+    .highlight {
+      background: linear-gradient(135deg, #d8f3dc, #b7e4c7);
+      border-left: 4px solid var(--green-dark);
+      border-radius: 0 12px 12px 0;
+      padding: 1.1rem 1.3rem;
+      margin: 1.5rem 0;
+    }
+    .highlight strong {
+      display: block;
+      color: var(--green-dark);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.4rem;
+    }
+    .highlight p {
+      margin: 0;
+      font-size: 0.97rem;
+      color: var(--green-dark);
+    }
+
+    .highlight-orange {
+      background: linear-gradient(135deg, #fdebd0, #fad7a0);
+      border-left-color: var(--orange-dark);
+    }
+    .highlight-orange strong { color: var(--orange-dark); }
+    .highlight-orange p { color: #7d4900; }
+
+    /* Praxistipps */
+    .praxis-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.8rem 0 1.2rem;
+    }
+    .praxis-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+      padding: 0.7rem 0;
+      border-bottom: 1px solid var(--green-pale);
+      font-size: 0.97rem;
+    }
+    .praxis-list li:last-child { border-bottom: none; }
+    .praxis-icon {
+      flex-shrink: 0;
+      width: 28px; height: 28px;
+      background: var(--green-dark);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 1px;
+    }
+
+    /* Food / Comparison Table */
+    .food-table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+    .food-table th {
+      background: var(--green-dark);
+      color: white;
+      padding: 0.6rem 0.8rem;
+      text-align: left;
+      font-weight: 600;
+    }
+    .food-table td { padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--green-pale); }
+    .food-table tr:nth-child(even) td { background: #f0faf4; }
+    .food-table .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+    .badge-high { background: #d8f3dc; color: var(--green-dark); }
+    .badge-mid { background: #fff3cd; color: #7d6200; }
+    .badge-low { background: #ffe5d9; color: #9d2c00; }
+
+    /* Affiliate */
+    .affiliate-disclaimer {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+    .affiliate-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem; }
+    .affiliate-card {
+      border: 2px solid var(--green-pale);
+      border-radius: 14px;
+      padding: 1.2rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .affiliate-card:hover { border-color: var(--green-light); box-shadow: 0 4px 16px rgba(82,183,136,0.2); }
+    .affiliate-emoji { font-size: 2rem; margin-bottom: 0.5rem; }
+    .affiliate-category { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: var(--orange); font-weight: 700; }
+    .affiliate-name { font-size: 0.97rem; font-weight: 700; color: var(--green-dark); margin: 0.3rem 0; }
+    .affiliate-desc { font-size: 0.82rem; color: var(--text-light); }
+    .affiliate-cta {
+      display: inline-block;
+      margin-top: 0.8rem;
+      background: var(--green-dark);
+      color: white;
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    /* Sources */
+    .sources { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--green-pale); }
+    .sources h4 { font-size: 0.9rem; color: var(--green-dark); margin-bottom: 0.6rem; }
+    .sources ol { padding-left: 1.2rem; font-size: 0.8rem; color: var(--text-light); }
+    .sources li { margin-bottom: 0.3rem; }
+    .sources a { color: var(--green-mid); text-decoration: none; }
+    .sources a:hover { text-decoration: underline; }
+
+    .disclaimer {
+      background: #f1f3f4;
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      font-size: 0.8rem;
+      color: var(--text-light);
+      margin-top: 1.5rem;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar { display: flex; flex-direction: column; gap: 1.2rem; }
+    .sidebar-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 1.4rem;
+      box-shadow: var(--card-shadow);
+    }
+    .sidebar-card h4 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--green-dark);
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--green-pale);
+    }
+    .key-fact {
+      display: flex;
+      gap: 0.7rem;
+      align-items: flex-start;
+      margin-bottom: 0.8rem;
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+    .key-fact-dot {
+      flex-shrink: 0;
+      width: 8px; height: 8px;
+      background: var(--green-light);
+      border-radius: 50%;
+      margin-top: 7px;
+    }
+    .form-index {
+      background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
+      color: white;
+      border-radius: 12px;
+      padding: 1rem;
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+    .form-index-val { font-size: 1.6rem; font-weight: 800; }
+    .form-index-label { font-size: 0.78rem; opacity: 0.85; margin-top: 2px; }
+
+    /* ── QUIZ ── */
+    .quiz-section {
+      background: linear-gradient(135deg, #0d3b27 0%, #1b5e40 100%);
+      padding: 4rem 1.5rem;
+      color: white;
+    }
+    .quiz-inner { max-width: 720px; margin: 0 auto; }
+    .quiz-section h2 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+    .quiz-subtitle { text-align: center; color: rgba(255,255,255,0.75); margin-bottom: 2rem; font-size: 0.95rem; }
+
+    .quiz-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 20px;
+      padding: 2rem;
+      backdrop-filter: blur(8px);
+    }
+
+    /* Progress */
+    .quiz-progress-bar-wrap {
+      background: rgba(255,255,255,0.15);
+      border-radius: 10px;
+      height: 6px;
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+    }
+    .quiz-progress-bar {
+      background: var(--orange);
+      height: 100%;
+      border-radius: 10px;
+      transition: width 0.4s ease;
+    }
+    .quiz-progress-text {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 0.4rem;
+    }
+
+    .quiz-question-num {
+      font-size: 0.8rem;
+      color: var(--orange);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+    }
+    .quiz-question-text {
+      font-size: 1.1rem;
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 1.5rem;
+    }
+
+    .quiz-options { display: flex; flex-direction: column; gap: 0.7rem; }
+    .quiz-option {
+      background: rgba(255,255,255,0.1);
+      border: 2px solid rgba(255,255,255,0.2);
+      border-radius: 12px;
+      padding: 0.9rem 1.1rem;
+      cursor: pointer;
+      font-size: 0.95rem;
+      color: white;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      text-align: left;
+      width: 100%;
+    }
+    .quiz-option:hover:not(:disabled) {
+      background: rgba(82,183,136,0.25);
+      border-color: var(--green-light);
+      transform: translateY(-1px);
+    }
+    .quiz-option.correct {
+      background: rgba(82,183,136,0.35);
+      border-color: var(--green-light);
+    }
+    .quiz-option.wrong {
+      background: rgba(231,111,81,0.3);
+      border-color: var(--orange-dark);
+    }
+    .quiz-option:disabled { cursor: default; }
+    .option-letter {
+      flex-shrink: 0;
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .quiz-feedback {
+      margin-top: 1.2rem;
+      padding: 1rem;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      display: none;
+    }
+    .quiz-feedback.correct { background: rgba(82,183,136,0.2); border: 1px solid rgba(82,183,136,0.4); }
+    .quiz-feedback.wrong { background: rgba(231,111,81,0.2); border: 1px solid rgba(231,111,81,0.4); }
+    .quiz-feedback .feedback-title { font-weight: 700; margin-bottom: 0.3rem; }
+
+    .quiz-next-btn {
+      margin-top: 1.2rem;
+      background: var(--orange);
+      color: white;
+      border: none;
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .quiz-next-btn:hover { background: var(--orange-dark); transform: translateY(-2px); }
+
+    /* Score screen */
+    .quiz-result {
+      display: none;
+      text-align: center;
+      padding: 1rem 0;
+    }
+    .result-circle {
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      border: 5px solid var(--green-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-size: 2.5rem;
+      font-weight: 800;
+    }
+    .result-title { font-size: 1.4rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .result-subtitle { color: rgba(255,255,255,0.75); font-size: 0.95rem; margin-bottom: 1.5rem; }
+    .result-badges { display: flex; justify-content: center; gap: 0.8rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .result-badge {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 0.83rem;
+    }
+    .result-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-share, .btn-retry {
+      padding: 0.75rem 1.8rem;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+    .btn-share { background: var(--orange); color: white; }
+    .btn-share:hover { background: var(--orange-dark); }
+    .btn-retry { background: rgba(255,255,255,0.15); color: white; border: 2px solid rgba(255,255,255,0.3); }
+    .btn-retry:hover { background: rgba(255,255,255,0.25); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #0d1f17;
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.8rem;
+    }
+    footer a { color: var(--green-light); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">TRH<span>I</span></a>
+    <span class="nav-tag">💪 Kraft &amp; Langlebigkeit</span>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero">
+  <div class="hero-inner">
+    <span class="hero-category">Kraft &amp; Langlebigkeit</span>
+    <h1>Griffkraft: Der simple Handtest, der mehr über dein Leben verrät als dein <em>Blutdruck</em></h1>
+    <p class="hero-sub">Eine Studie mit über 140.000 Erwachsenen aus 17 Ländern zeigt: Griffkraft sagt Sterblichkeit und Herz-Kreislauf-Risiko zuverlässiger voraus als der systolische Blutdruck. Was ein simpler Handdruck über deine Gesundheit verrät – und wie du ihn in 10 Minuten pro Woche verbesserst.</p>
+    <div class="hero-meta">
+      <span>📅 13. Juli 2026</span>
+      <span>🕑 ca. 7 Min. Lesezeit</span>
+      <span>🔬 Evidenzbasiert</span>
+    </div>
+  </div>
+</header>
+
+<!-- Stat Bar -->
+<div class="stat-bar">
+  <div class="stat-bar-inner">
+    <div class="stat-item">
+      <div class="stat-number">140<span>.000+</span></div>
+      <div class="stat-label">Teilnehmer der PURE-Studie in 17 Ländern</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">16<span>%</span></div>
+      <div class="stat-label">höheres Sterberisiko je 5 kg weniger Griffkraft</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">67<span>%</span></div>
+      <div class="stat-label">höheres Sterberisiko bei niedriger Griffkraft (Meta-Analyse)</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">2–3<span>x</span></div>
+      <div class="stat-label">10–15 Min. Grifftraining pro Woche genügen</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article + Sidebar -->
+<div class="article-wrap">
+
+  <!-- Main Article -->
+  <article class="article-card">
+
+    <p>Ein Händedruck von wenigen Sekunden – mehr braucht es nicht, um einen der aussagekräftigsten Gesundheitswerte zu messen, die die Wissenschaft kennt. Die PURE-Studie (Prospective Urban Rural Epidemiology), eine der größten Kohortenstudien weltweit, verfolgte über 140.000 Erwachsene in 17 Ländern und kam zu einem Ergebnis, das selbst Fachleute überraschte: Griffkraft sagte Gesamtsterblichkeit und kardiovaskuläre Ereignisse zuverlässiger voraus als der systolische Blutdruck – jener Wert, den Ärzte und Ärztinnen bei praktisch jedem Check-up messen.</p>
+
+    <h2>Was ein Handdruck über dein Sterberisiko verrät</h2>
+
+    <p>Der Zusammenhang ist erstaunlich linear und dosisabhängig: Für jede Abnahme der Griffkraft um 5 Kilogramm steigt laut den PURE-Daten das Risiko für Gesamtmortalität um 16 Prozent, das Risiko für kardiovaskulären Tod um 17 Prozent und das Schlaganfallrisiko um 9 Prozent. Eine Meta-Analyse von 42 Studien bestätigte den Trend aus einer anderen Richtung: Menschen mit niedriger Griffkraft hatten ein um 67 Prozent höheres Risiko, frühzeitig zu sterben, verglichen mit Menschen mit kräftigem Griff.</p>
+
+    <p>Wichtig zu verstehen: Griffkraft verursacht diese Risiken nicht direkt. Niemand stirbt an einem schwachen Handdruck. Sie ist vielmehr ein Fenster in den Zustand der gesamten Skelettmuskulatur, in Entzündungswerte, Nervenfunktion und metabolische Gesundheit – ein einzelner Messwert, der viele unsichtbare Prozesse im Körper widerspiegelt. Genau das macht sie als Biomarker so wertvoll: schnell messbar, ohne Labor, ohne Wartezeit.</p>
+
+    <div class="highlight">
+      <strong>🔬 Studienfakt</strong>
+      <p>In der PURE-Kohorte übertraf Griffkraft als Vorhersagewert für Sterblichkeit und kardiovaskuläre Ereignisse sogar den systolischen Blutdruck – einen der etabliertesten medizinischen Risikomarker überhaupt.</p>
+    </div>
+
+    <h2>Der Zusammenhang mit Gehirn und biologischem Alter</h2>
+
+    <p>Die Verbindung endet nicht bei Herz und Kreislauf. Beobachtungsstudien zeigen konsistent, dass niedrigere Griffkraft mit schlechterer kognitiver Leistung und schnellerem geistigen Abbau im Alter einhergeht. Eine Untersuchung zur DNA-Methylierung – einem Labormarker für biologisches Alter – fand: Menschen mit schwächerer Griffkraft wiesen eine beschleunigte biologische Alterung auf, unabhängig vom kalendarischen Alter.</p>
+
+    <p>Das passt zu einem größeren Bild aus der Sportmedizin: Muskelmasse und -kraft sind keine reine Fitness-Frage, sondern ein aktives Organsystem. Skelettmuskulatur setzt bei Belastung entzündungshemmende Botenstoffe frei, reguliert den Blutzucker mit und dient als Reserve für Krankheit und Verletzung. Sarkopenie – der altersbedingte Verlust von Muskelmasse und -kraft – beginnt oft schon ab dem 30. Lebensjahr schleichend und beschleunigt sich nach dem 60. deutlich, wenn nicht aktiv gegengesteuert wird.</p>
+
+    <div class="highlight highlight-orange">
+      <strong>⚡ Warnschwelle</strong>
+      <p>Die European Working Group on Sarcopenia in Older People (EWGSOP) definiert eine Griffkraft unter 27 kg bei Männern und unter 16 kg bei Frauen als Grenzwert für ein erhöhtes Sarkopenie-Risiko. Andere Kriterien setzen die Schwelle bei 29 kg (Männer) bzw. 18 kg (Frauen) an.</p>
+    </div>
+
+    <h2>Wo stehst du? Griffkraft-Normwerte im Überblick</h2>
+
+    <p>Gemessen wird mit einem Handdynamometer: aufrecht stehen, Ellbogen 90 Grad angewinkelt, drei bis fünf Sekunden mit maximaler Kraft zudrücken, pro Hand dreimal wiederholen und den Mittelwert bilden. Wer kein Dynamometer besitzt, bekommt zumindest eine grobe Orientierung über einen Dead Hang (siehe unten) oder beim nächsten Arztbesuch.</p>
+
+    <table class="food-table">
+      <thead>
+        <tr>
+          <th>Kategorie</th>
+          <th>Männer (Ø jung. Erw.)</th>
+          <th>Frauen (Ø jung. Erw.)</th>
+          <th>Einordnung</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Durchschnitt</td>
+          <td>ca. 48–53 kg</td>
+          <td>ca. 28–32 kg</td>
+          <td><span class="badge badge-high">normal</span></td>
+        </tr>
+        <tr>
+          <td>Niedrig (Warnsignal)</td>
+          <td>unter 29 kg</td>
+          <td>unter 18 kg</td>
+          <td><span class="badge badge-mid">beobachten</span></td>
+        </tr>
+        <tr>
+          <td>Sarkopenie-Grenzwert (EWGSOP)</td>
+          <td>unter 27 kg</td>
+          <td>unter 16 kg</td>
+          <td><span class="badge badge-low">Risiko</span></td>
+        </tr>
+        <tr>
+          <td>Alterstypischer Rückgang</td>
+          <td>ca. 1–2 % pro Jahr ab 50</td>
+          <td>ca. 1–2 % pro Jahr ab 50</td>
+          <td><span class="badge badge-mid">ohne Training</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Diese Werte schwanken je nach Studie, Messmethode und Population leicht – als grobe Orientierung taugen sie trotzdem gut. Entscheidender als der Einzelwert ist ohnehin der Trend über die Jahre: Ein stetiger Rückgang ist das eigentliche Warnsignal, nicht eine einzelne Momentaufnahme.</p>
+
+    <h2>Griffkraft trainieren: Was wirklich funktioniert</h2>
+
+    <p>Die gute Nachricht: Griffkraft lässt sich in jedem Alter trainieren, mit überschaubarem Zeitaufwand. Zwei bis drei kurze Einheiten von 10 bis 15 Minuten pro Woche reichen aus, mit mindestens 48 Stunden Pause dazwischen, damit sich Sehnen und Bänder anpassen können. Die effektivsten Methoden kombinieren gezieltes Grifftraining mit ohnehin sinnvollem Ganzkörper-Krafttraining:</p>
+
+    <ul class="praxis-list">
+      <li>
+        <span class="praxis-icon">1</span>
+        <span><strong>Dead Hangs (Hängen an der Klimmzugstange).</strong> Einfach an der Stange hängen, so lange wie möglich. 3–4 Sätze, 60–90 Sekunden Pause. Ziel: wöchentlich 5 Sekunden länger hängen.</span>
+      </li>
+      <li>
+        <span class="praxis-icon">2</span>
+        <span><strong>Farmer's Carry.</strong> Zwei schwere Kurzhanteln oder Kettlebells nehmen und 20–30 Meter gehen, ohne Handgelenkbandagen. 2–4 Sätze, 1–2x pro Woche. Eine der beliebtesten Übungen in der Longevity-Medizin.</span>
+      </li>
+      <li>
+        <span class="praxis-icon">3</span>
+        <span><strong>Hand-Gripper.</strong> Klassisches Federgerät für gezielte Kraftausdauer der Fingerbeuger – ideal für unterwegs, im Büro oder vor dem Fernseher.</span>
+      </li>
+      <li>
+        <span class="praxis-icon">4</span>
+        <span><strong>Fat Grips oder ein Handtuch um die Hantelstange wickeln.</strong> Der größere Durchmesser zwingt die Hand bei ganz normalen Übungen wie Rudern oder Bizepscurls, deutlich fester zuzugreifen.</span>
+      </li>
+      <li>
+        <span class="praxis-icon">5</span>
+        <span><strong>Handtuchwringen und Faustschluss-Übungen.</strong> Gerätefrei und einfach zwischendurch machbar – gut für den Einstieg oder als Ergänzung.</span>
+      </li>
+      <li>
+        <span class="praxis-icon">6</span>
+        <span><strong>Progressiv steigern, nicht stagnieren.</strong> Ob Hängezeit, Gewicht beim Farmer's Carry oder Wiederholungen am Gripper – ohne langsame Steigerung bleibt der Trainingsreiz aus.</span>
+      </li>
+      <li>
+        <span class="praxis-icon">7</span>
+        <span><strong>Ausreichend Eiweiß nicht vergessen.</strong> Muskelaufbau und -erhalt – auch in Unterarm und Hand – brauchen ausreichend Protein über den Tag verteilt, nicht nur rund ums Training.</span>
+      </li>
+    </ul>
+
+    <p>Wer bereits Krafttraining betreibt, trainiert die Griffkraft ohnehin teilweise mit – Kreuzheben, Klimmzüge und Rudern beanspruchen den Unterarm erheblich. Wer noch keinen Trainingsplan hat, kann mit Dead Hangs und Farmer's Carry starten: zwei Übungen, minimaler Geräteaufwand, maximaler Transfer in den Alltag – vom Einkaufstüten-Tragen bis zum sicheren Halt beim Stolpern.</p>
+
+    <!-- Affiliate Section -->
+    <h2>Empfohlene Produkte</h2>
+    <p class="affiliate-disclaimer">*Affiliate-Hinweis: Einige Links auf dieser Seite sind Partnerlinks. Bei einem Kauf erhalten wir eine kleine Provision – für dich entstehen keine Mehrkosten. Wir empfehlen nur Produkte, die wir selbst für sinnvoll halten.</p>
+
+    <div class="affiliate-grid">
+      <a href="#" class="affiliate-card">
+        <div class="affiliate-emoji">💊</div>
+        <div class="affiliate-category">Nahrungsergänzung</div>
+        <div class="affiliate-name">Whey-Protein-Isolat</div>
+        <div class="affiliate-desc">Hochwertiges Eiweiß zur Unterstützung von Muskelaufbau und -erhalt – die Grundlage für Kraft in Unterarm und Griff.</div>
+        <span class="affiliate-cta">Jetzt ansehen →</span>
+      </a>
+      <a href="#" class="affiliate-card">
+        <div class="affiliate-emoji">🌰</div>
+        <div class="affiliate-category">Natürliche Lebensmittel</div>
+        <div class="affiliate-name">Protein-Snack-Box (Nüsse &amp; Trockenfleisch)</div>
+        <div class="affiliate-desc">Natürliche, eiweißreiche Snacks für den Alltag – praktisch für unterwegs, ohne Zusatzstoffe.</div>
+        <span class="affiliate-cta">Jetzt ansehen →</span>
+      </a>
+      <a href="#" class="affiliate-card">
+        <div class="affiliate-emoji">📖</div>
+        <div class="affiliate-category">Wissen</div>
+        <div class="affiliate-name">„Outlive" – Peter Attia</div>
+        <div class="affiliate-desc">Standardwerk zu Langlebigkeit, Muskelkraft und Krafttraining als Fundament für ein langes, funktionsfähiges Leben.</div>
+        <span class="affiliate-cta">Jetzt ansehen →</span>
+      </a>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="disclaimer">
+      ⚠️ <strong>Medizinischer Hinweis:</strong> Alle Inhalte dieses Artikels dienen ausschließlich der allgemeinen Information und ersetzen keine individuelle medizinische Beratung. Bei bestehenden Vorerkrankungen, Gelenkbeschwerden oder deutlich abfallender Griffkraft wende dich an eine ärztliche oder physiotherapeutische Fachperson, bevor du ein neues Trainingsprogramm beginnst.
+    </div>
+
+    <!-- Sources -->
+    <div class="sources">
+      <h4>📚 Quellen &amp; weiterführende Literatur</h4>
+      <ol>
+        <li><a href="https://academic.oup.com/ageing/article/51/5/afac117/6593705" target="_blank">Age and Ageing (Oxford Academic): Associations of handgrip strength with all-cause and cancer mortality in older adults – prospective cohort study in 28 countries.</a></li>
+        <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6778477/" target="_blank">PMC: Grip Strength: An Indispensable Biomarker For Older Adults.</a></li>
+        <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5136688/" target="_blank">The association of grip strength from midlife onwards with all-cause and cause-specific mortality – Tromsø Study, 17-year follow-up.</a></li>
+        <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11017659/" target="_blank">Longitudinal association of grip strength with cardiovascular and all-cause mortality in an older urban Lithuanian population.</a></li>
+        <li><a href="https://www.nationalgeographic.com/health/article/grip-strength-health-longevity" target="_blank">National Geographic: Why grip strength may be one of the best predictors of how well – and how long – you live.</a></li>
+        <li><a href="https://de.wikipedia.org/wiki/Griffkraft" target="_blank">Wikipedia: Griffkraft – Definition, Messung und klinische Bedeutung.</a></li>
+      </ol>
+    </div>
+  </article>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+
+    <div class="sidebar-card">
+      <h4>⚡ Schnell-Fakten</h4>
+      <div class="key-fact">
+        <div class="key-fact-dot"></div>
+        <div>PURE-Studie: 140.000+ Teilnehmer, 17 Länder – Griffkraft schlägt systolischen Blutdruck als Risikoprädiktor</div>
+      </div>
+      <div class="key-fact">
+        <div class="key-fact-dot"></div>
+        <div>Pro 5 kg weniger Griffkraft: +16 % Gesamtmortalität, +17 % kardiovaskulärer Tod, +9 % Schlaganfall</div>
+      </div>
+      <div class="key-fact">
+        <div class="key-fact-dot"></div>
+        <div>Meta-Analyse (42 Studien): 67 % höheres Sterberisiko bei niedriger Griffkraft</div>
+      </div>
+      <div class="key-fact">
+        <div class="key-fact-dot"></div>
+        <div>EWGSOP-Grenzwert Sarkopenie: unter 27 kg (Männer) / unter 16 kg (Frauen)</div>
+      </div>
+      <div class="key-fact">
+        <div class="key-fact-dot"></div>
+        <div>2–3 kurze Trainingseinheiten pro Woche reichen für messbare Verbesserung</div>
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>🧭 Trainings-Guide</h4>
+      <p style="font-size:0.85rem;color:var(--text-light);margin-bottom:0.8rem;">Die effektivsten Übungen für Griffkraft:</p>
+      <div style="display:flex;flex-direction:column;gap:0.5rem;">
+        <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.83rem;">
+          <div style="width:12px;height:12px;border-radius:50%;background:#52b788;flex-shrink:0;"></div>
+          <span><strong>Dead Hangs</strong> — Statische Ausdauer</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.83rem;">
+          <div style="width:12px;height:12px;border-radius:50%;background:#f4a261;flex-shrink:0;"></div>
+          <span><strong>Farmer's Carry</strong> — Funktionelle Kraft</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.83rem;">
+          <div style="width:12px;height:12px;border-radius:50%;background:#40916c;flex-shrink:0;"></div>
+          <span><strong>Hand-Gripper</strong> — Isolierte Kraftausdauer</span>
+        </div>
+      </div>
+      <div class="form-index" style="margin-top:1rem;">
+        <div class="form-index-val">10–15 Min.</div>
+        <div class="form-index-label">Pro Einheit, 2–3x wöchentlich</div>
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>🧪 Quiz starten</h4>
+      <p style="font-size:0.85rem;color:var(--text-light);margin-bottom:0.8rem;">Teste dein Wissen über Griffkraft, Langlebigkeit und Grifftraining in 5 kurzen Fragen.</p>
+      <a href="#quiz" style="display:block;background:var(--green-dark);color:white;text-align:center;padding:0.8rem;border-radius:12px;font-weight:700;font-size:0.9rem;text-decoration:none;transition:background 0.2s;"
+         onmouseover="this.style.background='#40916c'" onmouseout="this.style.background='#2d6a4f'">
+        Jetzt Quiz starten →
+      </a>
+    </div>
+
+  </aside>
+</div>
+
+<!-- Quiz Section -->
+<section class="quiz-section" id="quiz">
+  <div class="quiz-inner">
+    <h2>💪 Teste dein Wissen</h2>
+    <p class="quiz-subtitle">5 Fragen rund um Griffkraft, Langlebigkeit und Grifftraining</p>
+
+    <div class="quiz-card">
+      <!-- Progress -->
+      <div class="quiz-progress-text">
+        <span id="quiz-q-label">Frage 1 von 5</span>
+        <span id="quiz-score-live">0 Punkte</span>
+      </div>
+      <div class="quiz-progress-bar-wrap">
+        <div class="quiz-progress-bar" id="quiz-bar" style="width:0%"></div>
+      </div>
+
+      <!-- Question Container -->
+      <div id="quiz-content">
+        <div class="quiz-question-num" id="q-num">FRAGE 1</div>
+        <div class="quiz-question-text" id="q-text"></div>
+        <div class="quiz-options" id="q-options"></div>
+        <div class="quiz-feedback" id="q-feedback">
+          <div class="feedback-title" id="q-feedback-title"></div>
+          <div id="q-feedback-body"></div>
+        </div>
+        <button class="quiz-next-btn" id="quiz-next">Weiter →</button>
+      </div>
+
+      <!-- Result Screen -->
+      <div class="quiz-result" id="quiz-result">
+        <div class="result-circle" id="result-circle"></div>
+        <div class="result-title" id="result-title"></div>
+        <div class="result-subtitle" id="result-subtitle"></div>
+        <div class="result-badges" id="result-badges"></div>
+        <div class="result-actions">
+          <button class="btn-share" onclick="shareResult()">📤 Ergebnis teilen</button>
+          <button class="btn-retry" onclick="restartQuiz()">🔄 Nochmal</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>© 2026 TRHI – The Real Health Institute | <a href="#">Datenschutz</a> | <a href="#">Impressum</a></p>
+  <p style="margin-top:0.5rem;">Dieser Artikel enthält Affiliate-Links. Alle Empfehlungen basieren auf redaktioneller Unabhängigkeit.</p>
+</footer>
+
+<script>
+  // ─── QUIZ DATA ───────────────────────────────────────────────────
+  const questions = [
+    {
+      q: "Wie viele Erwachsene aus 17 Ländern wurden in der PURE-Studie untersucht, um den Zusammenhang zwischen Griffkraft und Sterblichkeit zu prüfen?",
+      options: [
+        "Etwa 14.000",
+        "Über 140.000",
+        "Etwa 1,4 Millionen",
+        "Etwa 14 Millionen"
+      ],
+      correct: 1,
+      feedback: {
+        correct: "✅ Richtig!",
+        wrong: "❌ Nicht ganz.",
+        body: "Die PURE-Studie (Prospective Urban Rural Epidemiology) verfolgte über 140.000 Erwachsene in 17 Ländern – eine der größten Kohortenstudien zu diesem Thema."
+      }
+    },
+    {
+      q: "Um wie viel Prozent steigt laut den PURE-Daten das Risiko für Gesamtmortalität, wenn die Griffkraft um 5 kg abnimmt?",
+      options: [
+        "Etwa 2 %",
+        "Etwa 16 %",
+        "Etwa 40 %",
+        "Etwa 75 %"
+      ],
+      correct: 1,
+      feedback: {
+        correct: "✅ Korrekt!",
+        wrong: "❌ Fast.",
+        body: "Für jede Abnahme der Griffkraft um 5 kg steigt das Risiko für Gesamtmortalität um 16 %, für kardiovaskulären Tod um 17 % und für Schlaganfall um 9 %."
+      }
+    },
+    {
+      q: "Welchen etablierten medizinischen Risikofaktor konnte Griffkraft in der PURE-Studie als Vorhersagewert sogar übertreffen?",
+      options: [
+        "Cholesterinwert",
+        "Systolischer Blutdruck",
+        "Body-Mass-Index",
+        "Ruhepuls"
+      ],
+      correct: 1,
+      feedback: {
+        correct: "✅ Genau richtig!",
+        wrong: "❌ Nicht ganz.",
+        body: "Griffkraft sagte Sterblichkeit und kardiovaskuläre Ereignisse zuverlässiger voraus als der systolische Blutdruck – einer der etabliertesten Risikomarker in der Medizin."
+      }
+    },
+    {
+      q: "Ab welchem Wert gilt die Griffkraft bei Männern laut EWGSOP-Kriterien als Hinweis auf ein erhöhtes Sarkopenie-Risiko?",
+      options: [
+        "Unter 40 kg",
+        "Unter 27 kg",
+        "Unter 15 kg",
+        "Unter 50 kg"
+      ],
+      correct: 1,
+      feedback: {
+        correct: "✅ Stimmt!",
+        wrong: "❌ Verwechslung!",
+        body: "Die European Working Group on Sarcopenia in Older People (EWGSOP) setzt die Schwelle für ein erhöhtes Sarkopenie-Risiko bei Männern bei unter 27 kg und bei Frauen bei unter 16 kg an."
+      }
+    },
+    {
+      q: "Welche Übung zählt laut Artikel zu den effektivsten Methoden, um Griffkraft gezielt zu trainieren?",
+      options: [
+        "Joggen",
+        "Dead Hangs (Hängen an der Klimmzugstange)",
+        "Dehnen der Handgelenke",
+        "Griffkraft lässt sich nicht trainieren"
+      ],
+      correct: 1,
+      feedback: {
+        correct: "✅ Perfekt!",
+        wrong: "❌ Das stimmt nicht.",
+        body: "Dead Hangs und Farmer's Carry gehören zu den effektivsten Übungen für Griffkraft. Bereits 2–3 kurze Einheiten von 10–15 Minuten pro Woche reichen für messbare Fortschritte."
+      }
+    }
+  ];
+
+  // ─── QUIZ STATE ────────────────────────────────────────────────
+  let currentQ = 0;
+  let score = 0;
+  let answered = false;
+
+  function renderQuestion() {
+    const q = questions[currentQ];
+    document.getElementById('q-num').textContent = `FRAGE ${currentQ + 1}`;
+    document.getElementById('q-text').textContent = q.q;
+    document.getElementById('quiz-q-label').textContent = `Frage ${currentQ + 1} von ${questions.length}`;
+    document.getElementById('quiz-bar').style.width = `${(currentQ / questions.length) * 100}%`;
+
+    const optEl = document.getElementById('q-options');
+    optEl.innerHTML = '';
+    const letters = ['A', 'B', 'C', 'D'];
+    q.options.forEach((opt, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'quiz-option';
+      btn.innerHTML = `<span class="option-letter">${letters[i]}</span><span>${opt}</span>`;
+      btn.addEventListener('click', () => selectAnswer(i));
+      optEl.appendChild(btn);
+    });
+
+    document.getElementById('q-feedback').style.display = 'none';
+    document.getElementById('q-feedback').className = 'quiz-feedback';
+    document.getElementById('quiz-next').style.display = 'none';
+    answered = false;
+  }
+
+  function selectAnswer(idx) {
+    if (answered) return;
+    answered = true;
+    const q = questions[currentQ];
+    const btns = document.querySelectorAll('.quiz-option');
+
+    btns.forEach(b => b.disabled = true);
+
+    const isCorrect = idx === q.correct;
+    if (isCorrect) score++;
+
+    btns[idx].classList.add(isCorrect ? 'correct' : 'wrong');
+    if (!isCorrect) btns[q.correct].classList.add('correct');
+
+    const fb = document.getElementById('q-feedback');
+    const fbTitle = document.getElementById('q-feedback-title');
+    const fbBody = document.getElementById('q-feedback-body');
+
+    fb.style.display = 'block';
+    fb.className = `quiz-feedback ${isCorrect ? 'correct' : 'wrong'}`;
+    fbTitle.textContent = isCorrect ? q.feedback.correct : q.feedback.wrong;
+    fbBody.textContent = q.feedback.body;
+
+    document.getElementById('quiz-score-live').textContent = `${score} Punkt${score !== 1 ? 'e' : ''}`;
+    document.getElementById('quiz-next').style.display = 'block';
+    document.getElementById('quiz-next').textContent = currentQ < questions.length - 1 ? 'Weiter →' : 'Ergebnis ansehen 🎯';
+  }
+
+  document.getElementById('quiz-next').addEventListener('click', () => {
+    currentQ++;
+    if (currentQ < questions.length) {
+      renderQuestion();
+    } else {
+      showResult();
+    }
+  });
+
+  function showResult() {
+    document.getElementById('quiz-content').style.display = 'none';
+    document.getElementById('quiz-bar').style.width = '100%';
+    document.getElementById('quiz-q-label').textContent = 'Quiz abgeschlossen';
+    document.getElementById('quiz-score-live').textContent = `${score}/${questions.length} Punkte`;
+
+    const resultEl = document.getElementById('quiz-result');
+    resultEl.style.display = 'block';
+
+    const circle = document.getElementById('result-circle');
+    circle.textContent = `${score}/${questions.length}`;
+
+    let title, subtitle, badges;
+    if (score === 5) {
+      title = '🏆 Griffkraft-Experte!';
+      subtitle = 'Perfektes Ergebnis! Du weißt, warum ein starker Griff mehr ist als nur Handkraft. Teile dieses Wissen!';
+      badges = ['🎯 100 % korrekt', '💪 Kraft-Kenner', '🧠 Longevity-Profi'];
+      circle.style.borderColor = '#52b788';
+    } else if (score >= 3) {
+      title = '💪 Solides Wissen!';
+      subtitle = 'Gut gemacht! Mit ein wenig mehr Praxis erreichst du die volle Punktzahl.';
+      badges = ['✅ Gut informiert', `📊 ${score}/5 Punkte`];
+      circle.style.borderColor = '#f4a261';
+    } else {
+      title = '📚 Noch Lernpotenzial!';
+      subtitle = 'Kein Problem – lies den Artikel nochmals und starte das Quiz neu!';
+      badges = ['🔄 Nochmal versuchen', '📖 Artikel lesen'];
+      circle.style.borderColor = '#e76f51';
+    }
+
+    document.getElementById('result-title').textContent = title;
+    document.getElementById('result-subtitle').textContent = subtitle;
+    document.getElementById('result-badges').innerHTML = badges.map(b =>
+      `<span class="result-badge">${b}</span>`
+    ).join('');
+  }
+
+  function restartQuiz() {
+    currentQ = 0;
+    score = 0;
+    answered = false;
+    document.getElementById('quiz-content').style.display = 'block';
+    document.getElementById('quiz-result').style.display = 'none';
+    document.getElementById('quiz-score-live').textContent = '0 Punkte';
+    renderQuestion();
+  }
+
+  function shareResult() {
+    const text = `Ich habe ${score}/5 Punkte im TRHI Griffkraft-Quiz erreicht! 💪🧠 Wusstest du, dass Griffkraft Sterblichkeit besser vorhersagt als der Blutdruck? Teste auch dein Wissen:`;
+    if (navigator.share) {
+      navigator.share({ title: 'Griffkraft Quiz – TRHI', text, url: window.location.href });
+    } else {
+      navigator.clipboard.writeText(text + ' ' + window.location.href).then(() => {
+        alert('Link in die Zwischenablage kopiert! 📋');
+      });
+    }
+  }
+
+  // Initialize
+  renderQuestion();
+</script>
+</body>
+</html>

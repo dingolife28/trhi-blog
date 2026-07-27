@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VO2max: Der Vitalwert, der mehr über deine Lebenserwartung verrät als dein Cholesterin | TRHI</title>
+  <meta name="description" content="Eine Meta-Analyse mit 3,8 Millionen Beobachtungen zeigt: Jede Steigerung deiner Ausdauerfitness um 1 MET senkt dein Sterberisiko um 13-15 %. Was VO2max ist, warum es Ärzt:innen zunehmend als 'fünften Vitalwert' bezeichnen – und wie du ihn gezielt trainierst." />
+  <meta name="keywords" content="VO2max, Kardiorespiratorische Fitness, Ausdauertraining, Norwegian 4x4, Zone 2 Training, Longevity, Herzkreislauf, Mitochondrien, Cooper Center Studie, Intervalltraining" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green-dark: #2d6a4f;
+      --green-mid: #40916c;
+      --green-light: #52b788;
+      --green-pale: #d8f3dc;
+      --orange: #f4a261;
+      --orange-dark: #e76f51;
+      --text: #1a1a2e;
+      --text-light: #555;
+      --bg: #f8fdf9;
+      --white: #ffffff;
+      --card-shadow: 0 4px 24px rgba(45,106,79,0.10);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── NAVIGATION ── */
+    nav {
+      background: var(--white);
+      border-bottom: 2px solid var(--green-pale);
+      padding: 0 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+    .nav-logo {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--green-dark);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+    .nav-logo span { color: var(--orange); }
+    .nav-tag {
+      background: var(--green-pale);
+      color: var(--green-dark);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, #0d3b27 0%, #1b5e40 50%, #2d6a4f 100%);
+      color: var(--white);
+      padding: 4rem 1.5rem 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 320px; height: 320px;
+      background: radial-gradient(circle, rgba(82,183,136,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -40px; left: -40px;
+      width: 240px; height: 240px;
+      background: radial-gradient(circle, rgba(244,162,97,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-category {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--white);
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1.2rem;
+    }
+    .hero h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--green-light);
+    }
+    .hero-sub {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.85);
+      max-width: 600px;
+      margin-bottom: 1.8rem;
+    }
+    .hero-meta {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.65);
+    }
+    .hero-meta span { display: flex; align-items: center; gap: 5px; }
+
+    /* ── STAT BAR ── */
+    .stat-bar {
+      background: var(--white);
+      border-bottom: 1px solid var(--green-pale);
+      padding: 1.5rem;
+    }
+    .stat-bar-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .stat-item {
+      text-align: center;
+    }
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--green-dark);
+      line-height: 1;
+    }
+    .stat-number span { color: var(--orange); }
+    .stat-label {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      margin-top: 3px;
+    }
+
+    /* ── ARTICLE ── */
+    .article-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 2.5rem;
+      align-items: start;
+    }
+    @media (max-width: 720px) {
+      .article-wrap { grid-template-columns: 1fr; }
+      .sidebar { order: -1; }
+    }
+
+    .article-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 2.5rem;
+      box-shadow: var(--card-shadow);
+    }
+
+    .article-card p {
+      margin-bottom: 1.2rem;
+      color: var(--text);
+      font-size: 1rem;
+    }
+    .article-card h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin: 2rem 0 0.8rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid var(--green-pale);
+    }
+    .article-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--green-mid);
+      margin: 1.2rem 0 0.5rem;
+    }
+
+    /* Highlight Box */
+    .highlight {
+      background: linear-gradient(135deg, #d8f3dc, #b7e4c7);
+      border-left: 4px solid var(--green-dark);
+      border-radius: 0 12px 12px 0;
+      padding: 1.1rem 1.3rem;
+      margin: 1.5rem 0;
+    }
+    .highlight strong {
+      display: block;
+      color: var(--green-dark);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.4rem;
+    }
+    .highlight p {
+      margin: 0;
+      font-size: 0.97rem;
+      color: var(--green-dark);
+    }
+
+    .highlight-orange {
+      background: linear-gradient(135deg, #fdebd0, #fad7a0);
+      border-left-color: var(--orange-dark);
+    }
+    .highlight-orange strong { color: var(--orange-dark); }
+    .highlight-orange p { color: #7d4900; }
+
+    /* Praxistipps */
+    .praxis-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.8rem 0 1.2rem;
+    }
+    .praxis-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+      padding: 0.7rem 0;
+      border-bottom: 1px solid var(--green-pale);
+      font-size: 0.97rem;
+    }
+    .praxis-list li:last-child { border-bottom: none; }
+    .praxis-icon {
+      flex-shrink: 0;
+      width: 28px; height: 28px;
+      background: var(--green-dark);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 1px;
+    }
+
+    /* Comparison Table */
+    .food-table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+    .food-table th {
+      background: var(--green-dark);
+      color: white;
+      padding: 0.6rem 0.8rem;
+      text-align: left;
+      font-weight: 600;
+    }
+    .food-table td { padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--green-pale); }
+    .food-table tr:nth-child(even) td { background: #f0faf4; }
+    .food-table .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+    .badge-high { background: #d8f3dc; color: var(--green-dark); }
+    .badge-mid { background: #fff3cd; color: #7d6200; }
+    .badge-low { background: #ffe5d9; color: #9d2c00; }
+
+    /* Affiliate */
+    .affiliate-disclaimer {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+    .affiliate-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem; }
+    .affiliate-card {
+      border: 2px solid var(--green-pale);
+      border-radius: 14px;
+      padding: 1.2rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .affiliate-card:hover { border-color: var(--green-light); box-shadow: 0 4px 16px rgba(82,183,136,0.2); }
+    .affiliate-emoji { font-size: 2rem; margin-bottom: 0.5rem; }
+    .affiliate-category { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: var(--orange); font-weight: 700; }
+    .affiliate-name { font-size: 0.97rem; font-weight: 700; color: var(--green-dark); margin: 0.3rem 0; }
+    .affiliate-desc { font-size: 0.82rem; color: var(--text-light); }
+    .affiliate-cta {
+      display: inline-block;
+      margin-top: 0.8rem;
+      background: var(--green-dark);
+      color: white;
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    /* Sources */
+    .sources { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--green-pale); }
+    .sources h4 { font-size: 0.9rem; color: var(--green-dark); margin-bottom: 0.6rem; }
+    .sources ol { padding-left: 1.2rem; font-size: 0.8rem; color: var(--text-light); }
+    .sources li { margin-bottom: 0.3rem; }
+    .sources a { color: var(--green-mid); text-decoration: none; }
+    .sources a:hover { text-decoration: underline; }
+
+    .disclaimer {
+      background: #f1f3f4;
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      font-size: 0.8rem;
+      color: var(--text-light);
+      margin-top: 1.5rem;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar { display: flex; flex-direction: column; gap: 1.2rem; }
+    .sidebar-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 1.4rem;
+      box-shadow: var(--card-shadow);
+    }
+    .sidebar-card h4 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--green-dark);
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--green-pale);
+    }
+    .key-fact {
+      display: flex;
+      gap: 0.7rem;
+      align-items: flex-start;
+      margin-bottom: 0.8rem;
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+    .key-fact-dot {
+      flex-shrink: 0;
+      width: 8px; height: 8px;
+      background: var(--green-light);
+      border-radius: 50%;
+      margin-top: 7px;
+    }
+    .form-index {
+      background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
+      color: white;
+      border-radius: 12px;
+      padding: 1rem;
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+    .form-index-val { font-size: 1.6rem; font-weight: 800; }
+    .form-index-label { font-size: 0.78rem; opacity: 0.85; margin-top: 2px; }
+
+    /* ── QUIZ ── */
+    .quiz-section {
+      background: linear-gradient(135deg, #0d3b27 0%, #1b5e40 100%);
+      padding: 4rem 1.5rem;
+      color: white;
+    }
+    .quiz-inner { max-width: 720px; margin: 0 auto; }
+    .quiz-section h2 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+    .quiz-subtitle { text-align: center; color: rgba(255,255,255,0.75); margin-bottom: 2rem; font-size: 0.95rem; }
+
+    .quiz-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 20px;
+      padding: 2rem;
+      backdrop-filter: blur(8px);
+    }
+
+    /* Progress */
+    .quiz-progress-bar-wrap {
+      background: rgba(255,255,255,0.15);
+      border-radius: 10px;
+      height: 6px;
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+    }
+    .quiz-progress-bar {
+      background: var(--orange);
+      height: 100%;
+      border-radius: 10px;
+      transition: width 0.4s ease;
+    }
+    .quiz-progress-text {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 0.4rem;
+    }
+
+    .quiz-question-num {
+      font-size: 0.8rem;
+      color: var(--orange);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+    }
+    .quiz-question-text {
+      font-size: 1.1rem;
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 1.5rem;
+    }
+
+    .quiz-options { display: flex; flex-direction: column; gap: 0.7rem; }
+    .quiz-option {
+      background: rgba(255,255,255,0.1);
+      border: 2px solid rgba(255,255,255,0.2);
+      border-radius: 12px;
+      padding: 0.9rem 1.1rem;
+      cursor: pointer;
+      font-size: 0.95rem;
+      color: white;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      text-align: left;
+      width: 100%;
+    }
+    .quiz-option:hover:not(:disabled) {
+      background: rgba(82,183,136,0.25);
+      border-color: var(--green-light);
+      transform: translateY(-1px);
+    }
+    .quiz-option.correct {
+      background: rgba(82,183,136,0.35);
+      border-color: var(--green-light);
+    }
+    .quiz-option.wrong {
+      background: rgba(231,111,81,0.3);
+      border-color: var(--orange-dark);
+    }
+    .quiz-option:disabled { cursor: default; }
+    .option-letter {
+      flex-shrink: 0;
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .quiz-feedback {
+      margin-top: 1.2rem;
+      padding: 1rem;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      display: none;
+    }
+    .quiz-feedback.correct { background: rgba(82,183,136,0.2); border: 1px solid rgba(82,183,136,0.4); }
+    .quiz-feedback.wrong { background: rgba(231,111,81,0.2); border: 1px solid rgba(231,111,81,0.4); }
+    .quiz-feedback .feedback-title { font-weight: 700; margin-bottom: 0.3rem; }
+
+    .quiz-next-btn {
+      margin-top: 1.2rem;
+      background: var(--orange);
+      color: white;
+      border: none;
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .quiz-next-btn:hover { background: var(--orange-dark); transform: translateY(-2px); }
+
+    /* Score screen */
+    .quiz-result {
+      display: none;
+      text-align: center;
+      padding: 1rem 0;
+    }
+    .result-circle {
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      border: 5px solid var(--green-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-size: 2.5rem;
+      font-weight: 800;
+    }
+    .result-title { font-size: 1.4rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .result-subtitle { color: rgba(255,255,255,0.75); font-size: 0.95rem; margin-bottom: 1.5rem; }
+    .result-badges { display: flex; justify-content: center; gap: 0.8rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .result-badge {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 0.83rem;
+    }
+    .result-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-share, .btn-retry {
+      padding: 0.75rem 1.8rem;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+    .btn-share { background: var(--orange); color: white; }
+    .btn-share:hover { background: var(--orange-dark); }
+    .btn-retry { background: rgba(255,255,255,0.15); color: white; border: 2px solid rgba(255,255,255,0.3); }
+    .btn-retry:hover { background: rgba(255,255,255,0.25); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #0d1f17;
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.8rem;
+    }
+    footer a { color: var(--green-light); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">TRH<span>I</span></a>
+    <span class="nav-tag">🫁 Ausdauer &amp; Langlebigkeit</span>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero">
+  <div class="hero-inner">
+    <span class="hero-category">Ausdauer &amp; Langlebigkeit</span>
+    <h1>VO2max: Der Vitalwert, der mehr über deine <em>Lebenserwartung</em> verrät als dein Cholesterin</h1>
+    <p class="hero-sub">Eine Meta-Analyse mit 3,8 Millionen Beobachtungen aus 42 Studien zeigt: Schon eine kleine Steigerung deiner Ausdauerfitness senkt dein Sterberisiko messbar – unabhängig von Alter, Gewicht oder Vorerkrankungen. Ärzt:innen nennen VO2max zunehmend den „fünften Vitalwert". Was dahintersteckt und wie du ihn gezielt verbesserst.</p>
+    <div class="hero-meta">
+      <span>📅 27. Juli 2026</span>
+      <span>🕑 ca. 7 Min. Lesezeit</span>
+      <span>🔬 Evidenzbasiert</span>
+    </div>
+  </div>
+</header>
+
+<!-- Stat Bar -->
+<div class="stat-bar">
+  <div class="stat-bar-inner">
+    <div class="stat-item">
+      <div class="stat-number">3,8<span> Mio.</span></div>
+      <div class="stat-label">Beobachtungen in der großen 2025er-Meta-Analyse</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">13-15<span>%</span></div>
+      <div class="stat-label">weniger Sterberisiko pro 1 MET Fitness-Steigerung</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">~50<span>%</span></div>
+      <div class="stat-label">weniger Mortalität: unterste 25 % vs. mittlere Fitness</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">7-10<span>%</span></div>
+      <div class="stat-label">VO2max-Zuwachs in 8 Wochen mit Intervalltraining</div>
+    </div>
+  </div>
+</div>
+
+<!-- Article + Sidebar -->
+<div class="article-wrap">
+
+  <!-- Main Article -->
+  <article class="article-card">
+
+    <p>Blutdruck kennst du. Cholesterin auch. Aber die Kennzahl, die laut wachsender Studienlage am stärksten mit deiner Lebenserwartung zusammenhängt, taucht auf den wenigsten Laborzetteln auf: die kardiorespiratorische Fitness, gemessen als VO2max – die maximale Menge Sauerstoff, die dein Körper pro Minute pro Kilogramm Körpergewicht verwerten kann. Eine 2025 veröffentlichte Meta-Analyse mit Daten aus 42 Studien, 35 Kohorten und insgesamt 3,8 Millionen Beobachtungen bestätigte erneut, was kleinere Studien seit Jahrzehnten andeuten: Höhere kardiorespiratorische Fitness senkt sowohl die Gesamtmortalität als auch die kardiovaskuläre Sterblichkeit – und zwar unabhängig davon, ob die Fitness per Spiroergometrie exakt gemessen oder anhand von Belastungstests geschätzt wurde.</p>
+
+    <h2>Was die großen Kohortenstudien zeigen</h2>
+
+    <p>Die Datenlage stammt nicht aus einer einzelnen Studie, sondern aus mehreren der größten Fitness-Kohorten der Welt. In einer Analyse von über 750.000 US-Veteranen ging jede Steigerung um 1 MET – umgerechnet etwa 3,5 ml Sauerstoff pro Kilogramm Körpergewicht und Minute – mit einem 13 bis 15 Prozent niedrigeren Sterberisiko einher, und das über alle Altersgruppen, Gewichtsklassen und Begleiterkrankungen hinweg. Die Cooper Center Longitudinal Study, eine der am längsten laufenden Fitness-Kohorten mit über 122.000 Teilnehmenden, fand einen ähnlich klaren Dosis-Wirkungs-Zusammenhang: Wer von den untersten 25 Prozent der Fitness in den mittleren Bereich (50. Perzentil) aufsteigt, senkt sein Sterberisiko um rund die Hälfte.</p>
+
+    <p>Bemerkenswert ist, wie konsistent dieser Zusammenhang über völlig unterschiedliche Populationen hinweg auftaucht – von Berufstätigen über Kriegsveteranen bis zu Freizeitsportlern. Eine 2026 veröffentlichte Untersuchung an Langstrecken- und Mehrfach-Marathonläufer:innen fand pro 1 ml/kg/min zusätzlichem VO2max eine Reduktion der Gesamtmortalität um 3,7 Prozent – ein weiterer Beleg dafür, dass der Effekt nicht nur bei untrainierten Personen mit sehr niedriger Ausgangsfitness sichtbar wird, sondern sich über das gesamte Fitness-Spektrum fortsetzt.</p>
+
+    <div class="highlight">
+      <strong>🔬 Studienfakt</strong>
+      <p>In der Cooper Center Longitudinal Study (122.000+ Teilnehmende) senkte der Sprung von den untersten 25 % der Fitness auf den Mittelwert (50. Perzentil) das Sterberisiko um rund 50 % – einer der stärksten bekannten Einzeleffekte in der Präventivmedizin.</p>
+    </div>
+
+    <h2>Fitness schlägt Gewicht</h2>
+
+    <p>Einer der praktisch relevantesten Befunde betrifft die Beziehung zwischen Fitness und Körpergewicht. Eine 2026 publizierte Studie mit 398.716 Personen verglich das Sterberisiko über verschiedene BMI-Kategorien hinweg – aber getrennt nach Fitnesslevel. Das Ergebnis: Personen mit guter kardiorespiratorischer Fitness zeigten kein signifikant erhöhtes Sterberisiko, unabhängig von ihrem BMI. Anders gesagt: Ein Mensch mit höherem Körpergewicht, aber guter Ausdauerfitness, hatte statistisch ein niedrigeres Sterberisiko als ein schlanker, aber unfitter Mensch. Das bedeutet nicht, dass Körpergewicht irrelevant ist – aber es relativiert die alleinige Fixierung auf die Waage erheblich.</p>
+
+    <p>Diese „fit over fat"-Beobachtung ist kein neues Phänomen, wurde aber durch die schiere Stichprobengröße erneut untermauert. Für die praktische Gesundheitsvorsorge heißt das: Wer an seiner Ausdauerfitness arbeitet, verbessert einen Risikofaktor, der in mehreren großen Kohorten stärker mit Mortalität korreliert als klassische Marker wie Blutdruck oder LDL-Cholesterin allein.</p>
+
+    <h2>Was VO2max eigentlich misst – und warum es so aussagekräftig ist</h2>
+
+    <p>VO2max bildet nicht nur die Lungenfunktion ab, sondern das Zusammenspiel mehrerer Organsysteme: wie viel Blut dein Herz pro Schlag auswirft (Schlagvolumen), wie effizient dein Blut Sauerstoff transportiert, und wie gut deine Muskelzellen diesen Sauerstoff auf mitochondrialer Ebene tatsächlich zur Energiegewinnung nutzen. Genau diese Kombination macht den Wert so aussagekräftig: Er ist ein integriertes Signal für die Gesundheit von Herz, Gefäßen, Lunge und Muskulatur gleichzeitig – kein isolierter Laborwert, sondern eine Funktionsmessung des gesamten kardiovaskulären Systems unter Belastung.</p>
+
+    <p>Regelmäßiges Ausdauertraining verbessert alle drei Komponenten: Das Herz pumpt mit der Zeit mehr Blut pro Schlag, die Kapillardichte in der Muskulatur nimmt zu, und die Anzahl sowie Effizienz der Mitochondrien in den Muskelzellen steigt. Diese Anpassungen erklären, warum selbst moderate Verbesserungen der Fitness einen so überproportional großen Effekt auf das Sterberisiko haben können – sie wirken auf mehrere physiologische Schwachstellen gleichzeitig.</p>
+
+    <div class="highlight highlight-orange">
+      <strong>⚡ Wichtig zu wissen</strong>
+      <p>VO2max lässt sich per Spiroergometrie im Labor exakt messen, aber auch über submaximale Tests, Fitnessuhren oder anerkannte Schätzformeln annähern. Für die allermeisten Menschen reicht eine Schätzung völlig aus, um den eigenen Trend über Monate zu verfolgen – die exakte Zahl ist weniger wichtig als die Richtung, in die sie sich entwickelt.</p>
+    </div>
+
+    <h2>Zone 2 oder Intervalltraining? Was die aktuelle Debatte zeigt</h2>
+
+    <p>In der Trainingswissenschaft wird derzeit intensiv diskutiert, ob niedrig-intensives „Zone 2"-Training (locker, gesprächstauglich) einzigartige mitochondriale Vorteile bietet. Eine 2025 im Fachjournal Sports Medicine erschienene Übersichtsarbeit kam zu einem nüchternen Ergebnis: Wird das gesamte Trainingsvolumen gleich gehalten, erzeugt höher-intensives Training gleichwertige oder sogar stärkere mitochondriale Anpassungen als reines Zone-2-Training. Für Menschen, die weniger als sechs Stunden pro Woche trainieren, sind höhere Intensitäten zeiteffizienter, um VO2max zu steigern.</p>
+
+    <p>Das am besten untersuchte Protokoll für gezielte VO2max-Verbesserung ist die norwegische 4x4-Methode, entwickelt an der NTNU Trondheim: vier Intervalle à vier Minuten bei 90 bis 95 Prozent der maximalen Herzfrequenz, unterbrochen von jeweils drei Minuten aktiver Erholung. Inklusive Auf- und Abwärmen dauert eine komplette Einheit rund 38 Minuten. Studien zeigen VO2max-Zuwächse von 7 bis 10 Prozent innerhalb von acht Wochen bei zwei bis drei Einheiten pro Woche – unabhängig davon, ob die Belastung durch Laufen, Radfahren, Rudern oder Schwimmen erzeugt wird. Das heißt nicht, dass Zone-2-Training wertlos ist – es bleibt ein sinnvoller Grundlagenbaustein –, aber wer gezielt VO2max steigern will, kommt an höheren Intensitäten kaum vorbei.</p>
+
+    <h2>VO2max gezielt trainieren: praktische Tipps</h2>
+
+    <ul class="praxis-list">
+      <li>
+        <span class="praxis-icon">1</span>
+        <span><strong>Norwegian 4x4 als Kernworkout nutzen.</strong> Vier Intervalle à vier Minuten bei 90-95 % der maximalen Herzfrequenz, dazwischen drei Minuten aktive Erholung – zwei- bis dreimal pro Woche, Studien zeigen 7-10 % VO2max-Zuwachs in acht Wochen.</span>
+      </li>
+      <li>
+        <span class="praxis-icon">2</span>
+        <span><strong>Als Einsteiger:in mit weniger Intervallen starten.</strong> Zwei bis drei statt vier Wiederholungen bei moderaterer Intensität reichen für den Start – die Belastung schrittweise steigern, statt sofort ans Limit zu gehen.</span>
+      </li>
+      <li>
+        <span class="praxis-icon">3</span>
+        <span><strong>Grundlagenausdauer (Zone 2) als Basis beibehalten.</strong> Lockeres, gesprächstaugliches Training bleibt sinnvoll für Regeneration und Fettstoffwechsel – ersetzt aber nicht das gezielte Intervalltraining für VO2max-Zuwächse.</span>
+      </li>
+      <li>
+        <span class="praxis-icon">4</span>
+        <span><strong>Fitness statt nur Gewicht im Blick behalten.</strong> Die Datenlage zeigt: Gute kardiorespiratorische Fitness relativiert das Sterberisiko unabhängig vom BMI – regelmäßiges Ausdauertraining lohnt sich unabhängig vom Gewichtsziel.</span>
+      </li>
+      <li>
+        <span class="praxis-icon">5</span>
+        <span><strong>Trend verfolgen, nicht nur Einzelwert.</strong> Ob per Fitnessuhr geschätzt oder im Labor gemessen – entscheidend ist, ob sich der eigene VO2max-Wert über Monate hinweg verbessert.</span>
+      </li>
+      <li>
+        <span class="praxis-icon">6</span>
+        <span><strong>Aktivität wählen, die zur Belastung passt.</strong> Laufen, Radfahren, Rudern und Schwimmen zeigen alle vergleichbare VO2max-Effekte – die beste Sportart ist die, die du langfristig durchhältst.</span>
+      </li>
+      <li>
+        <span class="praxis-icon">7</span>
+        <span><strong>Bei Vorerkrankungen ärztlich abklären.</strong> Wer Herz-Kreislauf-Erkrankungen hat oder lange inaktiv war, sollte vor intensivem Intervalltraining Rücksprache mit einer ärztlichen Fachperson halten.</span>
+      </li>
+    </ul>
+
+    <!-- Affiliate Section -->
+    <h2>Empfohlene Produkte</h2>
+    <p class="affiliate-disclaimer">*Affiliate-Hinweis: Einige Links auf dieser Seite sind Partnerlinks. Bei einem Kauf erhalten wir eine kleine Provision – für dich entstehen keine Mehrkosten. Wir empfehlen nur Produkte, die wir selbst für sinnvoll halten.</p>
+
+    <div class="affiliate-grid">
+      <a href="#" class="affiliate-card">
+        <div class="affiliate-emoji">🩸</div>
+        <div class="affiliate-category">Nahrungsergänzung</div>
+        <div class="affiliate-name">Rote-Bete-Extrakt (Nitrat)</div>
+        <div class="affiliate-desc">Natürliche Nitratquelle, die die Sauerstoffeffizienz der Muskulatur unterstützen kann – häufig von Ausdauersportler:innen vor Intervalleinheiten genutzt.</div>
+        <span class="affiliate-cta">Jetzt ansehen →</span>
+      </a>
+      <a href="#" class="affiliate-card">
+        <div class="affiliate-emoji">⌚</div>
+        <div class="affiliate-category">Zuhause &amp; Ausrüstung</div>
+        <div class="affiliate-name">Pulsuhr mit VO2max-Schätzung</div>
+        <div class="affiliate-desc">Verfolgt Herzfrequenz-Zonen live während des 4x4-Intervalltrainings und schätzt den VO2max-Trend über Wochen und Monate.</div>
+        <span class="affiliate-cta">Jetzt ansehen →</span>
+      </a>
+      <a href="#" class="affiliate-card">
+        <div class="affiliate-emoji">📖</div>
+        <div class="affiliate-category">Wissen</div>
+        <div class="affiliate-name">Online-Kurs: Ausdauertraining für Longevity</div>
+        <div class="affiliate-desc">Vertiefender Kurs zu Trainingszonen, Intervallprotokollen und der Studienlage rund um VO2max, Herzgesundheit und Lebenserwartung.</div>
+        <span class="affiliate-cta">Jetzt ansehen →</span>
+      </a>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="disclaimer">
+      ⚠️ <strong>Medizinischer Hinweis:</strong> Alle Inhalte dieses Artikels dienen ausschließlich der allgemeinen Information und ersetzen keine individuelle medizinische Beratung. Personen mit Herz-Kreislauf-Erkrankungen, langer Trainingspause oder anderen relevanten Vorerkrankungen sollten vor intensivem Intervalltraining ärztlichen Rat einholen.
+    </div>
+
+    <!-- Sources -->
+    <div class="sources">
+      <h4>📚 Quellen &amp; weiterführende Literatur</h4>
+      <ol>
+        <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11863309/" target="_blank">PMC: Commentary on „A systematic review and meta-analysis comparing objectively measured and estimated fitness to predict all-cause and cardiovascular disease mortality in adults" (2025).</a></li>
+        <li><a href="https://www.jacc.org/doi/10.1016/j.jacc.2018.06.045" target="_blank">Journal of the American College of Cardiology (JACC): Midlife Cardiorespiratory Fitness and the Long-Term Risk of Mortality – 46 Years of Follow-Up.</a></li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/29293447/" target="_blank">PubMed: Survival of the fittest – VO2max als Prädiktor für Langlebigkeit.</a></li>
+        <li><a href="https://www.nature.com/articles/s41598-026-52475-x" target="_blank">Scientific Reports (Nature): VO2max, Alterung und Gesamtmortalität in einer globalen Kohorte von Mehrfach-Marathonläufer:innen (2026).</a></li>
+        <li><a href="https://www.medsci.org/v22p2830.pdf" target="_blank">International Journal of Medical Sciences: Association of cardiorespiratory fitness with adverse outcomes across BMI categories.</a></li>
+        <li><a href="https://healthcrunch.org/articles/2026-02-06-zone-2-training-longevity-research-update" target="_blank">Health Crunch: Zone 2 Training for Longevity – What 2026 Research Shows.</a></li>
+        <li><a href="https://norwegian4x4.com/posts/vo2max" target="_blank">Norwegian4x4: Unlocking the Power of VO2max with the Norwegian 4x4 Protocol.</a></li>
+      </ol>
+    </div>
+  </article>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+
+    <div class="sidebar-card">
+      <h4>⚡ Schnell-Fakten</h4>
+      <div class="key-fact">
+        <div class="key-fact-dot"></div>
+        <div>2025-Meta-Analyse: 42 Studien, 35 Kohorten, 3,8 Mio. Beobachtungen</div>
+      </div>
+      <div class="key-fact">
+        <div class="key-fact-dot"></div>
+        <div>+1 MET Fitness (~3,5 ml/kg/min) = 13-15 % weniger Sterberisiko</div>
+      </div>
+      <div class="key-fact">
+        <div class="key-fact-dot"></div>
+        <div>Cooper Center Studie (122.000+): unterste 25 % → 50. Perzentil = -50 % Mortalität</div>
+      </div>
+      <div class="key-fact">
+        <div class="key-fact-dot"></div>
+        <div>2026-Studie (398.716 Personen): gute Fitness relativiert BMI-Risiko</div>
+      </div>
+      <div class="key-fact">
+        <div class="key-fact-dot"></div>
+        <div>Norwegian 4x4: +7-10 % VO2max in 8 Wochen</div>
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>🧭 Trainings-Guide</h4>
+      <p style="font-size:0.85rem;color:var(--text-light);margin-bottom:0.8rem;">Kernelemente des Norwegian-4x4-Protokolls:</p>
+      <div style="display:flex;flex-direction:column;gap:0.5rem;">
+        <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.83rem;">
+          <div style="width:12px;height:12px;border-radius:50%;background:#52b788;flex-shrink:0;"></div>
+          <span><strong>Intervalle</strong> — 4 × 4 Minuten</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.83rem;">
+          <div style="width:12px;height:12px;border-radius:50%;background:#f4a261;flex-shrink:0;"></div>
+          <span><strong>Intensität</strong> — 90-95 % max. Herzfrequenz</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.83rem;">
+          <div style="width:12px;height:12px;border-radius:50%;background:#40916c;flex-shrink:0;"></div>
+          <span><strong>Erholung</strong> — 3 Minuten aktiv, zwischen Intervallen</span>
+        </div>
+      </div>
+      <div class="form-index" style="margin-top:1rem;">
+        <div class="form-index-val">38 Min.</div>
+        <div class="form-index-label">Gesamtdauer inkl. Auf-/Abwärmen</div>
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>🧪 Quiz starten</h4>
+      <p style="font-size:0.85rem;color:var(--text-light);margin-bottom:0.8rem;">Teste dein Wissen über VO2max, Ausdauerfitness und Langlebigkeit in 5 kurzen Fragen.</p>
+      <a href="#quiz" style="display:block;background:var(--green-dark);color:white;text-align:center;padding:0.8rem;border-radius:12px;font-weight:700;font-size:0.9rem;text-decoration:none;transition:background 0.2s;"
+         onmouseover="this.style.background='#40916c'" onmouseout="this.style.background='#2d6a4f'">
+        Jetzt Quiz starten →
+      </a>
+    </div>
+
+  </aside>
+</div>
+
+<!-- Quiz Section -->
+<section class="quiz-section" id="quiz">
+  <div class="quiz-inner">
+    <h2>🫁 Teste dein Wissen</h2>
+    <p class="quiz-subtitle">5 Fragen rund um VO2max, Ausdauerfitness und Langlebigkeit</p>
+
+    <div class="quiz-card">
+      <!-- Progress -->
+      <div class="quiz-progress-text">
+        <span id="quiz-q-label">Frage 1 von 5</span>
+        <span id="quiz-score-live">0 Punkte</span>
+      </div>
+      <div class="quiz-progress-bar-wrap">
+        <div class="quiz-progress-bar" id="quiz-bar" style="width:0%"></div>
+      </div>
+
+      <!-- Question Container -->
+      <div id="quiz-content">
+        <div class="quiz-question-num" id="q-num">FRAGE 1</div>
+        <div class="quiz-question-text" id="q-text"></div>
+        <div class="quiz-options" id="q-options"></div>
+        <div class="quiz-feedback" id="q-feedback">
+          <div class="feedback-title" id="q-feedback-title"></div>
+          <div id="q-feedback-body"></div>
+        </div>
+        <button class="quiz-next-btn" id="quiz-next">Weiter →</button>
+      </div>
+
+      <!-- Result Screen -->
+      <div class="quiz-result" id="quiz-result">
+        <div class="result-circle" id="result-circle"></div>
+        <div class="result-title" id="result-title"></div>
+        <div class="result-subtitle" id="result-subtitle"></div>
+        <div class="result-badges" id="result-badges"></div>
+        <div class="result-actions">
+          <button class="btn-share" onclick="shareResult()">📤 Ergebnis teilen</button>
+          <button class="btn-retry" onclick="restartQuiz()">🔄 Nochmal</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>© 2026 TRHI – The Real Health Institute | <a href="#">Datenschutz</a> | <a href="#">Impressum</a></p>
+  <p style="margin-top:0.5rem;">Dieser Artikel enthält Affiliate-Links. Alle Empfehlungen basieren auf redaktioneller Unabhängigkeit.</p>
+</footer>
+
+<script>
+  // ─── QUIZ DATA ───────────────────────────────────────────────────
+  const questions = [
+    {
+      q: "Wie viele Beobachtungen umfasste die 2025 veröffentlichte Meta-Analyse zu kardiorespiratorischer Fitness und Mortalität?",
+      options: [
+        "Etwa 50.000",
+        "Etwa 500.000",
+        "3,8 Millionen",
+        "Über 100 Millionen"
+      ],
+      correct: 2,
+      feedback: {
+        correct: "✅ Richtig!",
+        wrong: "❌ Nicht ganz.",
+        body: "Die Meta-Analyse fasste 42 Studien mit 35 Kohorten und insgesamt 3,8 Millionen Beobachtungen zusammen."
+      }
+    },
+    {
+      q: "Um wie viel Prozent sinkt das Sterberisiko pro 1 MET (~3,5 ml/kg/min) Steigerung der Ausdauerfitness laut der Veteranen-Studie?",
+      options: [
+        "Etwa 2-3 %",
+        "Etwa 13-15 %",
+        "Etwa 40 %",
+        "Es gibt keinen messbaren Effekt"
+      ],
+      correct: 1,
+      feedback: {
+        correct: "✅ Korrekt!",
+        wrong: "❌ Fast.",
+        body: "In der Analyse von über 750.000 US-Veteranen ging jede 1-MET-Steigerung mit einem 13-15 % niedrigeren Sterberisiko einher – unabhängig von Alter, BMI und Vorerkrankungen."
+      }
+    },
+    {
+      q: "Was zeigte die 2026er-Studie mit 398.716 Teilnehmenden zum Zusammenhang von Fitness und Körpergewicht?",
+      options: [
+        "Nur das Körpergewicht zählt, Fitness spielt keine Rolle",
+        "Gute Fitness zeigte kein signifikant erhöhtes Sterberisiko, unabhängig vom BMI",
+        "Nur sehr schlanke Personen profitieren von Fitness",
+        "Der Zusammenhang war in dieser Studie nicht nachweisbar"
+      ],
+      correct: 1,
+      feedback: {
+        correct: "✅ Stimmt!",
+        wrong: "❌ Nicht ganz.",
+        body: "Personen mit guter kardiorespiratorischer Fitness zeigten unabhängig von ihrem BMI kein signifikant erhöhtes Sterberisiko – Fitness relativierte den Effekt des Körpergewichts deutlich."
+      }
+    },
+    {
+      q: "Wie lange dauert eine komplette Trainingseinheit nach dem Norwegian-4x4-Protokoll inklusive Auf- und Abwärmen?",
+      options: [
+        "Etwa 15 Minuten",
+        "Etwa 38 Minuten",
+        "Etwa 90 Minuten",
+        "Über 2 Stunden"
+      ],
+      correct: 1,
+      feedback: {
+        correct: "✅ Genau richtig!",
+        wrong: "❌ Verwechslung!",
+        body: "Das Protokoll besteht aus 5 Minuten Aufwärmen, vier 4-Minuten-Intervallen mit je 3 Minuten aktiver Erholung dazwischen, und 5 Minuten Abwärmen – insgesamt rund 38 Minuten."
+      }
+    },
+    {
+      q: "Wie viel Prozent VO2max-Zuwachs zeigten Studien zur Norwegian-4x4-Methode innerhalb von 8 Wochen?",
+      options: [
+        "1-2 %",
+        "7-10 %",
+        "30-40 %",
+        "Kein messbarer Effekt"
+      ],
+      correct: 1,
+      feedback: {
+        correct: "✅ Perfekt!",
+        wrong: "❌ Das stimmt nicht.",
+        body: "Bei zwei bis drei Einheiten pro Woche zeigten Studien einen VO2max-Zuwachs von 7-10 % innerhalb von acht Wochen – unabhängig von der gewählten Ausdaueraktivität."
+      }
+    }
+  ];
+
+  // ─── QUIZ STATE ────────────────────────────────────────────────
+  let currentQ = 0;
+  let score = 0;
+  let answered = false;
+
+  function renderQuestion() {
+    const q = questions[currentQ];
+    document.getElementById('q-num').textContent = `FRAGE ${currentQ + 1}`;
+    document.getElementById('q-text').textContent = q.q;
+    document.getElementById('quiz-q-label').textContent = `Frage ${currentQ + 1} von ${questions.length}`;
+    document.getElementById('quiz-bar').style.width = `${(currentQ / questions.length) * 100}%`;
+
+    const optEl = document.getElementById('q-options');
+    optEl.innerHTML = '';
+    const letters = ['A', 'B', 'C', 'D'];
+    q.options.forEach((opt, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'quiz-option';
+      btn.innerHTML = `<span class="option-letter">${letters[i]}</span><span>${opt}</span>`;
+      btn.addEventListener('click', () => selectAnswer(i));
+      optEl.appendChild(btn);
+    });
+
+    document.getElementById('q-feedback').style.display = 'none';
+    document.getElementById('q-feedback').className = 'quiz-feedback';
+    document.getElementById('quiz-next').style.display = 'none';
+    answered = false;
+  }
+
+  function selectAnswer(idx) {
+    if (answered) return;
+    answered = true;
+    const q = questions[currentQ];
+    const btns = document.querySelectorAll('.quiz-option');
+
+    btns.forEach(b => b.disabled = true);
+
+    const isCorrect = idx === q.correct;
+    if (isCorrect) score++;
+
+    btns[idx].classList.add(isCorrect ? 'correct' : 'wrong');
+    if (!isCorrect) btns[q.correct].classList.add('correct');
+
+    const fb = document.getElementById('q-feedback');
+    const fbTitle = document.getElementById('q-feedback-title');
+    const fbBody = document.getElementById('q-feedback-body');
+
+    fb.style.display = 'block';
+    fb.className = `quiz-feedback ${isCorrect ? 'correct' : 'wrong'}`;
+    fbTitle.textContent = isCorrect ? q.feedback.correct : q.feedback.wrong;
+    fbBody.textContent = q.feedback.body;
+
+    document.getElementById('quiz-score-live').textContent = `${score} Punkt${score !== 1 ? 'e' : ''}`;
+    document.getElementById('quiz-next').style.display = 'block';
+    document.getElementById('quiz-next').textContent = currentQ < questions.length - 1 ? 'Weiter →' : 'Ergebnis ansehen 🎯';
+  }
+
+  document.getElementById('quiz-next').addEventListener('click', () => {
+    currentQ++;
+    if (currentQ < questions.length) {
+      renderQuestion();
+    } else {
+      showResult();
+    }
+  });
+
+  function showResult() {
+    document.getElementById('quiz-content').style.display = 'none';
+    document.getElementById('quiz-bar').style.width = '100%';
+    document.getElementById('quiz-q-label').textContent = 'Quiz abgeschlossen';
+    document.getElementById('quiz-score-live').textContent = `${score}/${questions.length} Punkte`;
+
+    const resultEl = document.getElementById('quiz-result');
+    resultEl.style.display = 'block';
+
+    const circle = document.getElementById('result-circle');
+    circle.textContent = `${score}/${questions.length}`;
+
+    let title, subtitle, badges;
+    if (score === 5) {
+      title = '🏆 VO2max-Expert:in!';
+      subtitle = 'Perfektes Ergebnis! Du weißt genau, warum Ausdauerfitness der unterschätzte Vitalwert ist. Teile dieses Wissen!';
+      badges = ['🎯 100 % korrekt', '🫁 Fitness-Kenner:in', '🧠 Longevity-Profi'];
+      circle.style.borderColor = '#52b788';
+    } else if (score >= 3) {
+      title = '💪 Solides Wissen!';
+      subtitle = 'Gut gemacht! Mit etwas mehr Lesestoff erreichst du die volle Punktzahl.';
+      badges = ['✅ Gut informiert', `📊 ${score}/5 Punkte`];
+      circle.style.borderColor = '#f4a261';
+    } else {
+      title = '📚 Noch Lernpotenzial!';
+      subtitle = 'Kein Problem – lies den Artikel nochmals und starte das Quiz neu!';
+      badges = ['🔄 Nochmal versuchen', '📖 Artikel lesen'];
+      circle.style.borderColor = '#e76f51';
+    }
+
+    document.getElementById('result-title').textContent = title;
+    document.getElementById('result-subtitle').textContent = subtitle;
+    document.getElementById('result-badges').innerHTML = badges.map(b =>
+      `<span class="result-badge">${b}</span>`
+    ).join('');
+  }
+
+  function restartQuiz() {
+    currentQ = 0;
+    score = 0;
+    answered = false;
+    document.getElementById('quiz-content').style.display = 'block';
+    document.getElementById('quiz-result').style.display = 'none';
+    document.getElementById('quiz-score-live').textContent = '0 Punkte';
+    renderQuestion();
+  }
+
+  function shareResult() {
+    const text = `Ich habe ${score}/5 Punkte im TRHI VO2max-Quiz erreicht! 🫁💪 Wusstest du, dass jede Steigerung deiner Ausdauerfitness um 1 MET dein Sterberisiko um 13-15 % senken kann? Teste auch dein Wissen:`;
+    if (navigator.share) {
+      navigator.share({ title: 'VO2max-Quiz – TRHI', text, url: window.location.href });
+    } else {
+      navigator.clipboard.writeText(text + ' ' + window.location.href).then(() => {
+        alert('Link in die Zwischenablage kopiert! 📋');
+      });
+    }
+  }
+
+  // Initialize
+  renderQuestion();
+</script>
+</body>
+</html>
